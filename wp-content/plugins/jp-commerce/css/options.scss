@@ -1,0 +1,14 @@
+.sitelogo-preview.image-container {
+  display: block;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  margin: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: lightgray;
+}
