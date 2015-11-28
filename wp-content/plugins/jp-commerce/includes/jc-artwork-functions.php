@@ -34,8 +34,8 @@ function get_images( $post_id ) {
  */
 function get_thumbnails( $post_id ) {
 
-    // Don't save for autosaves
-    if ( defined( 'DOING_AUTOSAVE' ) || is_int( wp_is_post_autosave( $post_id ) ) ) {
+    // Don't save meta boxes for revisions or autosaves
+    if ( defined( 'DOING_AUTOSAVE' ) || is_int( wp_is_post_revision( $post_id ) ) || is_int( wp_is_post_autosave( $post_id ) ) ) {
         return;
     }
 
@@ -43,7 +43,7 @@ function get_thumbnails( $post_id ) {
 
 
     $thumbnails = get_post_meta( $post_id, "_thumbnails", true );
-    $thumbnails = $thumbnails ? $thumbnails : array();
+    $thumbnails = is_array($thumbnails) ? $thumbnails : array();
     $missing_thumbnails = get_post_meta( $post_id, "_missing_thumbnails", true );
 
     if (
@@ -90,6 +90,7 @@ function get_thumbnails( $post_id ) {
  * @return string. URL to the featured image.
  */
 function get_featured_image( $post_id ) {
+
     $featured = get_post_meta($post_id, "_featured_image", true);
     $images = get_images($post_id);
     if (! $featured ) {
@@ -111,6 +112,12 @@ function get_featured_image( $post_id ) {
  * @return string. URL to wechat image.
  */
 function get_wechat_image($post_id) {
+
+    // Don't save meta boxes for revisions or autosaves
+    if ( defined( 'DOING_AUTOSAVE' ) || is_int( wp_is_post_revision( $post_id ) ) || is_int( wp_is_post_autosave( $post_id ) ) ) {
+        return;
+    }
+
     $wechat = get_post_meta($post_id, "_wechat", true); // path string
 
     if (!$wechat) {

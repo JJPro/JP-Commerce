@@ -84,7 +84,22 @@ jQuery(function ($){
 
     // retrieve the dropzone instance for further event handlers
     var myDropzone = Dropzone.instances[0];
-    myDropzone.on("addedfile", function() {$("#media-upload-wrap").append($("#upload-indicator-wrap"));});
+    myDropzone.on("addedfile", function(file) {
+        $("#media-upload-wrap").append($("#upload-indicator-wrap"));
+
+        // avoid adding the same file
+        if (this.files.length) {
+            var _i, _len;
+            for (_i = 0, _len = this.files.length; _i < _len - 1; _i++) // -1 to exclude the current file
+            {
+                if (this.files[_i].name === file.name) {
+                    this.removeFile(file);
+                    alert("Another file with the same name already exists!");
+                }
+            }
+        }
+
+    });
     //myDropzone.on("maxfilesreached", function(file) {this.enqueueFile(file); this.disable();});
     myDropzone.on("maxfilesexceeded", function(file) {this.removeFile(file);});
     myDropzone.on("removedfile", function(file) {

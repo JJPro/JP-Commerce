@@ -26938,3 +26938,1353 @@ _thumbnails: Not applicable
 2015-11-28 16:29:35 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/801/thumbnails/bjpx10-120x120.JPG
 2015-11-28 16:29:36 | The file bjpx10.JPG has been deleted from post meta for post 801: 
 2015-11-28 16:29:48 | Existing thumbnails: [{"name":"ball7l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/801\/thumbnails\/ball7l-120x120.gif"},{"name":"ball11l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/801\/thumbnails\/ball11l-120x120.gif"},{"name":"btx3.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/801\/thumbnails\/btx3-120x120.JPG"},{"name":"btx4.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/801\/thumbnails\/btx4-120x120.JPG"}]
+2015-11-28 16:34:40 | Existing thumbnails: []
+2015-11-28 16:34:50 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 16:34:50 | Error: 0
+2015-11-28 16:34:50 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802
+2015-11-28 16:34:50 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/ball6l.gif
+2015-11-28 16:34:50 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 16:34:50 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 16:34:50 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:34:50 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/ball6l.gif
+)
+
+2015-11-28 16:34:50 | Error: 0
+2015-11-28 16:34:50 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802
+2015-11-28 16:34:50 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/ball7l.gif
+2015-11-28 16:34:50 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif"]
+_thumbnails: ""
+
+2015-11-28 16:34:50 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 16:34:50 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:34:50 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/ball6l.gif
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/ball7l.gif
+)
+
+2015-11-28 16:34:50 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/ball6l-120x120.gif
+2015-11-28 16:34:50 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/ball7l.gif
+)
+
+2015-11-28 16:34:50 | Error: 0
+2015-11-28 16:34:50 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802
+2015-11-28 16:34:50 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/ball11l.gif
+2015-11-28 16:34:50 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif"]
+_thumbnails: ""
+
+2015-11-28 16:34:50 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball11l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 16:34:50 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:34:50 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/ball7l-120x120.gif
+2015-11-28 16:34:50 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/btx4-120x120.JPG
+2015-11-28 16:34:50 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/ball6l-120x120.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/ball7l-120x120.gif
+)
+
+2015-11-28 16:34:50 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/ball6l-120x120.gif
+2015-11-28 16:34:50 | The file btx4.JPG has been deleted from post meta for post 802: 
+2015-11-28 16:34:50 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/ball7l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/ball11l.gif
+)
+
+2015-11-28 16:34:50 | Error: 0
+2015-11-28 16:34:50 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802
+2015-11-28 16:34:50 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/bjpx10.JPG
+2015-11-28 16:34:50 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball11l.gif"]
+_missing: ""
+_thumbnails: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/thumbnails\/ball7l-120x120.gif"]
+
+2015-11-28 16:34:50 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:34:50 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:34:50 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/ball7l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/ball11l.gif
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/802/bjpx10.JPG
+)
+
+2015-11-28 16:34:50 | Error: 0
+2015-11-28 16:34:50 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802
+2015-11-28 16:34:50 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/btx3.JPG
+2015-11-28 16:34:50 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/bjpx10.JPG"]
+_thumbnails: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/thumbnails\/ball7l-120x120.gif"]
+
+2015-11-28 16:34:50 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:34:50 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:35:07 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/bjpx10.JPG
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/btx3.JPG
+)
+
+2015-11-28 16:35:07 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/bjpx10-120x120.JPG
+2015-11-28 16:35:07 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/802/thumbnails/btx3-120x120.JPG
+2015-11-28 16:35:07 | Existing thumbnails: [{"name":"ball7l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/thumbnails\/ball7l-120x120.gif"},{"name":"ball11l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/thumbnails\/bjpx10-120x120.JPG"},{"name":"bjpx10.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/802\/thumbnails\/btx3-120x120.JPG"}]
+2015-11-28 16:37:02 | Existing thumbnails: []
+2015-11-28 16:37:10 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 16:37:10 | Error: 0
+2015-11-28 16:37:10 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803
+2015-11-28 16:37:10 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803/btx3.JPG
+2015-11-28 16:37:10 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 16:37:10 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:37:10 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:37:10 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803/btx3.JPG
+)
+
+2015-11-28 16:37:10 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 16:37:10 | Error: 0
+2015-11-28 16:37:10 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803/thumbnails/btx3-120x120.JPG
+2015-11-28 16:37:10 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803
+2015-11-28 16:37:10 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803/btx4.JPG
+2015-11-28 16:37:10 | BEFORE UPDATING META: _images: []
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG"]
+_thumbnails: ""
+
+2015-11-28 16:37:10 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:37:10 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/thumbnails/bx15-120x120.jpg
+2015-11-28 16:37:10 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:37:10 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/thumbnails/btx3-120x120.JPG
+)
+
+2015-11-28 16:37:10 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/thumbnails/btx3-120x120.JPG
+2015-11-28 16:37:10 | The file bx15.jpg has been deleted from post meta for post 803: 
+2015-11-28 16:37:10 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/btx4.JPG
+)
+
+2015-11-28 16:37:10 | Error: 0
+2015-11-28 16:37:10 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803
+2015-11-28 16:37:10 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803/btx11.JPG
+2015-11-28 16:37:10 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG"]
+_thumbnails: []
+
+2015-11-28 16:37:10 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:37:10 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:37:10 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/btx4.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/btx11.JPG
+)
+
+2015-11-28 16:37:10 | Error: 0
+2015-11-28 16:37:10 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803
+2015-11-28 16:37:10 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803/btx19.JPG
+2015-11-28 16:37:10 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG"]
+_thumbnails: []
+
+2015-11-28 16:37:10 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx19.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx19.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:37:10 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/btx4.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/803/btx11.JPG
+)
+
+2015-11-28 16:37:10 | Error: 0
+2015-11-28 16:37:10 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:37:10 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803
+2015-11-28 16:37:10 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/803/bx14.jpg
+2015-11-28 16:37:10 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG"]
+_thumbnails: []
+
+2015-11-28 16:37:10 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/bx14.jpg"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/803\/bx14.jpg"]
+_thumbnails: Not applicable
+
+2015-11-28 16:37:10 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:39:14 | Existing thumbnails: []
+2015-11-28 16:39:24 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 16:39:24 | Error: 0
+2015-11-28 16:39:24 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804
+2015-11-28 16:39:24 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx3.JPG
+2015-11-28 16:39:24 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 16:39:24 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:39:24 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:39:24 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx3.JPG
+)
+
+2015-11-28 16:39:24 | Error: 0
+2015-11-28 16:39:24 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804
+2015-11-28 16:39:24 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/bjpx10.JPG
+2015-11-28 16:39:24 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG"]
+_thumbnails: ""
+
+2015-11-28 16:39:24 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:39:24 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:39:24 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx3.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/bjpx10.JPG
+)
+
+2015-11-28 16:39:24 | Error: 0
+2015-11-28 16:39:24 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804
+2015-11-28 16:39:24 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx4.JPG
+2015-11-28 16:39:24 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG"]
+_thumbnails: ""
+
+2015-11-28 16:39:24 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:39:24 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:39:24 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx3.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/bjpx10.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx4.JPG
+)
+
+2015-11-28 16:39:24 | Error: 0
+2015-11-28 16:39:24 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804
+2015-11-28 16:39:24 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx11.JPG
+2015-11-28 16:39:24 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG"]
+_thumbnails: ""
+
+2015-11-28 16:39:24 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:39:24 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:39:25 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx3.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/bjpx10.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx4.JPG
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx11.JPG
+)
+
+2015-11-28 16:39:25 | Error: 0
+2015-11-28 16:39:25 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804
+2015-11-28 16:39:25 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx19.JPG
+2015-11-28 16:39:25 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG"]
+_thumbnails: ""
+
+2015-11-28 16:39:25 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx19.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx19.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:39:25 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:39:39 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx3.JPG
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/bjpx10.JPG
+    [2] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx4.JPG
+    [3] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx11.JPG
+    [4] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx19.JPG
+)
+
+2015-11-28 16:39:39 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx3-120x120.JPG
+2015-11-28 16:39:39 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/bjpx10-120x120.JPG
+2015-11-28 16:39:39 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx4-120x120.JPG
+2015-11-28 16:39:39 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx11-120x120.JPG
+2015-11-28 16:39:39 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx19-120x120.JPG
+2015-11-28 16:39:39 | Existing thumbnails: [{"name":"btx3.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx3-120x120.JPG"},{"name":"bjpx10.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/bjpx10-120x120.JPG"},{"name":"btx4.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx4-120x120.JPG"},{"name":"btx11.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx11-120x120.JPG"},{"name":"btx19.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx19-120x120.JPG"}]
+2015-11-28 16:39:47 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx4-120x120.JPG
+2015-11-28 16:39:47 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx3-120x120.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/bjpx10-120x120.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx4-120x120.JPG
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx11-120x120.JPG
+    [4] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx19-120x120.JPG
+)
+
+2015-11-28 16:39:47 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx4-120x120.JPG
+2015-11-28 16:39:47 | The file btx4.JPG has been deleted from post meta for post 804: 
+2015-11-28 16:39:48 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx19-120x120.JPG
+2015-11-28 16:39:48 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx3-120x120.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/bjpx10-120x120.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx11-120x120.JPG
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx19-120x120.JPG
+)
+
+2015-11-28 16:39:49 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx19-120x120.JPG
+2015-11-28 16:39:49 | The file btx19.JPG has been deleted from post meta for post 804: 
+2015-11-28 16:39:50 | Existing thumbnails: [{"name":"btx3.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx3-120x120.JPG"},{"name":"bjpx10.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/bjpx10-120x120.JPG"},{"name":"btx11.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx11-120x120.JPG"}]
+2015-11-28 16:43:16 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx19-120x120.JPG
+2015-11-28 16:43:16 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx3-120x120.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/bjpx10-120x120.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx11-120x120.JPG
+)
+
+2015-11-28 16:43:16 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/bjpx10.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx11.JPG
+)
+
+2015-11-28 16:43:16 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx3-120x120.JPG
+2015-11-28 16:43:16 | Error: 0
+2015-11-28 16:43:16 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/bjpx10.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/btx11.JPG
+)
+
+2015-11-28 16:43:16 | The file btx19.JPG has been deleted from post meta for post 804: 
+2015-11-28 16:43:16 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804
+2015-11-28 16:43:16 | Error: 0
+2015-11-28 16:43:16 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx11-120x120.JPG
+2015-11-28 16:43:16 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx3.JPG
+2015-11-28 16:43:16 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804
+2015-11-28 16:43:16 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/bjpx10-120x120.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx11-120x120.JPG
+)
+
+2015-11-28 16:43:16 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG"]
+_missing: ""
+_thumbnails: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx3-120x120.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/bjpx10-120x120.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx11-120x120.JPG"]
+
+2015-11-28 16:43:16 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx4.JPG
+2015-11-28 16:43:16 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx11-120x120.JPG
+2015-11-28 16:43:17 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:43:17 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG"]
+_missing: ""
+_thumbnails: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx3-120x120.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/bjpx10-120x120.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx11-120x120.JPG"]
+
+2015-11-28 16:43:17 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:43:17 | The file btx11.JPG has been deleted from post meta for post 804: 
+2015-11-28 16:43:17 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:43:17 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:43:37 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/btx4.JPG
+)
+
+2015-11-28 16:43:37 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/804/thumbnails/btx4-120x120.JPG
+2015-11-28 16:43:37 | Existing thumbnails: [{"name":"bjpx10.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/bjpx10-120x120.JPG"},{"name":"btx11.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/804\/thumbnails\/btx4-120x120.JPG"}]
+2015-11-28 16:48:32 | Existing thumbnails: []
+2015-11-28 16:49:51 | Existing thumbnails: []
+2015-11-28 16:49:58 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 16:49:58 | Error: 0
+2015-11-28 16:49:58 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806
+2015-11-28 16:49:58 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806/ball6l.gif
+2015-11-28 16:49:58 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 16:49:58 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 16:49:58 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:49:58 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball6l.gif
+)
+
+2015-11-28 16:49:58 | Error: 0
+2015-11-28 16:49:58 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806
+2015-11-28 16:49:58 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806/ball7l.gif
+2015-11-28 16:49:58 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif"]
+_thumbnails: ""
+
+2015-11-28 16:49:58 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 16:49:58 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:49:58 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball6l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball7l.gif
+)
+
+2015-11-28 16:49:58 | Error: 0
+2015-11-28 16:49:58 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806
+2015-11-28 16:49:58 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806/ball11l.gif
+2015-11-28 16:49:58 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif"]
+_thumbnails: ""
+
+2015-11-28 16:49:58 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 16:49:58 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:49:58 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball6l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball7l.gif
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball11l.gif
+)
+
+2015-11-28 16:49:58 | Error: 0
+2015-11-28 16:49:58 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806
+2015-11-28 16:49:58 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806/bjpx10.JPG
+2015-11-28 16:49:58 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif"]
+_thumbnails: ""
+
+2015-11-28 16:49:58 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 16:49:58 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:50:55 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball6l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball7l.gif
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/ball11l.gif
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/806/bjpx10.JPG
+)
+
+2015-11-28 16:50:55 | Error: 0
+2015-11-28 16:50:55 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806
+2015-11-28 16:50:55 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/806/ball6l.gif
+2015-11-28 16:50:55 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/bjpx10.JPG"]
+_thumbnails: ""
+
+2015-11-28 16:50:55 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/806\/ball6l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 16:50:55 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 16:51:12 | Existing thumbnails: []
+2015-11-28 16:55:40 | Existing thumbnails: []
+2015-11-28 17:01:09 | Existing thumbnails: []
+2015-11-28 17:01:19 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:01:19 | Error: 0
+2015-11-28 17:01:19 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809
+2015-11-28 17:01:19 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809/bjpx10.JPG
+2015-11-28 17:01:19 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:01:19 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:01:19 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:01:19 | Error: 0
+2015-11-28 17:01:19 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:01:19 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809
+2015-11-28 17:01:19 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809/btx3.JPG
+2015-11-28 17:01:19 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:01:19 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:01:19 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809/bjpx10.JPG
+)
+
+2015-11-28 17:01:19 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:01:19 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809/thumbnails/bjpx10-120x120.JPG
+2015-11-28 17:01:19 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/809/thumbnails/bx14-120x120.jpg
+2015-11-28 17:01:19 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/809/thumbnails/bjpx10-120x120.JPG
+)
+
+2015-11-28 17:01:19 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/809/thumbnails/bjpx10-120x120.JPG
+2015-11-28 17:01:19 | The file bx14.jpg has been deleted from post meta for post 809: 
+2015-11-28 17:01:19 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/809/btx3.JPG
+)
+
+2015-11-28 17:01:19 | Error: 0
+2015-11-28 17:01:19 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809
+2015-11-28 17:01:19 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/809/btx3.JPG
+)
+
+2015-11-28 17:01:19 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809/btx4.JPG
+2015-11-28 17:01:19 | Error: 0
+2015-11-28 17:01:19 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG"]
+_missing: ""
+_thumbnails: []
+
+2015-11-28 17:01:19 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809
+2015-11-28 17:01:19 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:01:19 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809/btx11.JPG
+2015-11-28 17:01:19 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG"]
+_missing: ""
+_thumbnails: []
+
+2015-11-28 17:01:19 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx11.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:01:19 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:01:19 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:01:19 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/809/btx3.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/809/btx11.JPG
+)
+
+2015-11-28 17:01:19 | Error: 0
+2015-11-28 17:01:19 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809
+2015-11-28 17:01:19 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/809/btx19.JPG
+2015-11-28 17:01:19 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx11.JPG"]
+_thumbnails: []
+
+2015-11-28 17:01:19 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx19.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/809\/btx19.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:01:19 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:06:46 | Existing thumbnails: []
+2015-11-28 17:06:53 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:06:53 | Error: 0
+2015-11-28 17:06:53 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810
+2015-11-28 17:06:53 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810/ball6l.gif
+2015-11-28 17:06:53 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:06:53 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:06:53 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:06:53 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:06:53 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball6l.gif
+)
+
+2015-11-28 17:06:53 | Error: 0
+2015-11-28 17:06:53 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810
+2015-11-28 17:06:53 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810/ball2l.gif
+2015-11-28 17:06:53 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:06:53 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:06:53 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:06:53 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:06:53 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball6l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball2l.gif
+)
+
+2015-11-28 17:06:53 | Error: 0
+2015-11-28 17:06:53 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810
+2015-11-28 17:06:53 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810/ball7l.gif
+2015-11-28 17:06:53 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:06:53 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:06:53 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:06:53 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:06:53 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball6l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball2l.gif
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball7l.gif
+)
+
+2015-11-28 17:06:53 | Error: 0
+2015-11-28 17:06:53 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810
+2015-11-28 17:06:53 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810/ball11l.gif
+2015-11-28 17:06:53 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:06:53 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:06:53 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:06:53 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:06:53 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball6l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball2l.gif
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball7l.gif
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/810/ball11l.gif
+)
+
+2015-11-28 17:06:53 | Error: 0
+2015-11-28 17:06:53 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810
+2015-11-28 17:06:53 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/810/bjpx10.JPG
+2015-11-28 17:06:53 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:06:53 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:06:53 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:06:53 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/bjpx10.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball7l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/810\/bjpx10.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:07:12 | Existing thumbnails: []
+2015-11-28 17:07:21 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:07:21 | Error: 0
+2015-11-28 17:07:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811
+2015-11-28 17:07:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811/ball11l.gif
+2015-11-28 17:07:21 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:07:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:21 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/ball11l.gif
+)
+
+2015-11-28 17:07:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:07:21 | Error: 0
+2015-11-28 17:07:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811
+2015-11-28 17:07:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811/bjpx10.JPG
+2015-11-28 17:07:21 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:07:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:07:21 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/ball11l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/bjpx10.JPG
+)
+
+2015-11-28 17:07:21 | Error: 0
+2015-11-28 17:07:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811
+2015-11-28 17:07:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811/btx3.JPG
+2015-11-28 17:07:21 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG"]
+_thumbnails: ""
+
+2015-11-28 17:07:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:07:21 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/ball11l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/bjpx10.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/btx3.JPG
+)
+
+2015-11-28 17:07:21 | Error: 0
+2015-11-28 17:07:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811
+2015-11-28 17:07:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811/btx4.JPG
+2015-11-28 17:07:21 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG"]
+_thumbnails: ""
+
+2015-11-28 17:07:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:07:21 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/ball11l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/bjpx10.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/btx3.JPG
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/811/btx4.JPG
+)
+
+2015-11-28 17:07:21 | Error: 0
+2015-11-28 17:07:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811
+2015-11-28 17:07:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/811/btx11.JPG
+2015-11-28 17:07:21 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG"]
+_thumbnails: ""
+
+2015-11-28 17:07:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx11.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx11.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/bjpx10.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/811\/btx11.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:07:42 | Existing thumbnails: []
+2015-11-28 17:07:49 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:07:49 | Error: 0
+2015-11-28 17:07:49 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812
+2015-11-28 17:07:49 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/ball00l.gif
+2015-11-28 17:07:49 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:07:49 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:49 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:49 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/ball00l.gif
+)
+
+2015-11-28 17:07:49 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:07:49 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/ball00l.gif
+)
+
+2015-11-28 17:07:49 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/ball00l-120x120.gif
+2015-11-28 17:07:49 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/ball00l-120x120.gif
+2015-11-28 17:07:49 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:07:49 | Error: 0
+2015-11-28 17:07:49 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812
+2015-11-28 17:07:49 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/ball2l 2.gif
+2015-11-28 17:07:49 | BEFORE UPDATING META: _images: []
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:07:49 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:49 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/ball11l-120x120.gif
+2015-11-28 17:07:49 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/btx4-120x120.JPG
+2015-11-28 17:07:49 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:49 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/ball00l-120x120.gif
+)
+
+2015-11-28 17:07:49 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/ball00l-120x120.gif
+)
+
+2015-11-28 17:07:49 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif"]]
+_thumbnails: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/thumbnails\/ball00l-120x120.gif"]]
+
+2015-11-28 17:07:49 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/ball00l-120x120.gif
+2015-11-28 17:07:49 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/thumbnails/ball00l-120x120.gif
+2015-11-28 17:07:49 | The file btx4.JPG has been deleted from post meta for post 812: 
+2015-11-28 17:07:49 | The file ball11l.gif has been deleted from post meta for post 812: 
+2015-11-28 17:07:49 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/ball2l 2.gif
+)
+
+2015-11-28 17:07:49 | Error: 0
+2015-11-28 17:07:49 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812
+2015-11-28 17:07:49 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/ball2l.gif
+2015-11-28 17:07:49 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif"]
+_thumbnails: []
+
+2015-11-28 17:07:49 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:49 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:49 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif"]]
+_thumbnails: [[]]
+
+2015-11-28 17:07:50 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/ball2l 2.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/ball2l.gif
+)
+
+2015-11-28 17:07:50 | Error: 0
+2015-11-28 17:07:50 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812
+2015-11-28 17:07:50 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/ball6l.gif
+2015-11-28 17:07:50 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif"]
+_thumbnails: []
+
+2015-11-28 17:07:50 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:50 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:50 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif"]]
+_thumbnails: [[]]
+
+2015-11-28 17:07:50 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/ball2l 2.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/ball2l.gif
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/812/ball6l.gif
+)
+
+2015-11-28 17:07:50 | Error: 0
+2015-11-28 17:07:50 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812
+2015-11-28 17:07:50 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/812/ball7l.gif
+2015-11-28 17:07:50 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif"]
+_thumbnails: []
+
+2015-11-28 17:07:50 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball7l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball7l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:07:50 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:07:50 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball7l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball00l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l 2.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball2l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball6l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/812\/ball7l.gif"]]
+_thumbnails: [[]]
+
+2015-11-28 17:13:08 | Existing thumbnails: []
+2015-11-28 17:13:15 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:13:15 | Error: 0
+2015-11-28 17:13:15 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813
+2015-11-28 17:13:15 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813/ball11l.gif
+2015-11-28 17:13:15 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:13:15 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:13:15 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:13:15 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/ball11l.gif
+)
+
+2015-11-28 17:13:15 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:13:15 | Error: 0
+2015-11-28 17:13:15 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813
+2015-11-28 17:13:15 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813/ball11l.gif
+)
+
+2015-11-28 17:13:15 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813/bjpx10.JPG
+2015-11-28 17:13:15 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:13:15 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:13:15 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:13:15 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:13:15 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813/thumbnails/ball11l-120x120.gif
+2015-11-28 17:13:15 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/thumbnails/btx19-120x120.JPG
+2015-11-28 17:13:15 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/thumbnails/ball11l-120x120.gif
+)
+
+2015-11-28 17:13:15 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/thumbnails/ball11l-120x120.gif
+2015-11-28 17:13:15 | The file btx19.JPG has been deleted from post meta for post 813: 
+2015-11-28 17:13:15 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/ball11l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/bjpx10.JPG
+)
+
+2015-11-28 17:13:15 | Error: 0
+2015-11-28 17:13:15 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813
+2015-11-28 17:13:15 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813/btx3.JPG
+2015-11-28 17:13:15 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG"]
+_missing: ""
+_thumbnails: []
+
+2015-11-28 17:13:15 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:13:15 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:13:15 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG"]]
+_thumbnails: [[]]
+
+2015-11-28 17:13:15 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/ball11l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/bjpx10.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/btx3.JPG
+)
+
+2015-11-28 17:13:15 | Error: 0
+2015-11-28 17:13:15 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813
+2015-11-28 17:13:15 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813/btx4.JPG
+2015-11-28 17:13:15 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG"]
+_thumbnails: []
+
+2015-11-28 17:13:15 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:13:15 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:13:15 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG"]]
+_thumbnails: [[]]
+
+2015-11-28 17:13:16 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/ball11l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/bjpx10.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/btx3.JPG
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/813/btx4.JPG
+)
+
+2015-11-28 17:13:16 | Error: 0
+2015-11-28 17:13:16 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813
+2015-11-28 17:13:16 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/813/btx11.JPG
+2015-11-28 17:13:16 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG"]
+_thumbnails: []
+
+2015-11-28 17:13:16 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx11.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:13:16 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:13:16 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/bjpx10.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx11.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/813\/btx11.JPG"]]
+_thumbnails: [[]]
+
+2015-11-28 17:15:14 | Existing thumbnails: []
+2015-11-28 17:15:21 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:15:21 | Error: 0
+2015-11-28 17:15:21 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:15:21 | Error: 0
+2015-11-28 17:15:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814
+2015-11-28 17:15:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814
+2015-11-28 17:15:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/bjpx10.JPG
+2015-11-28 17:15:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/ball11l.gif
+2015-11-28 17:15:21 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:15:21 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:15:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/bjpx10.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/bjpx10.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:15:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]
+_thumbnails: Not applicable
+
+2015-11-28 17:15:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:15:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:15:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/bjpx10.JPG"],["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/bjpx10.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:15:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"],["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]]
+_thumbnails: []
+
+2015-11-28 17:15:21 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/ball11l.gif
+)
+
+2015-11-28 17:15:21 | Error: 0
+2015-11-28 17:15:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814
+2015-11-28 17:15:21 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/ball11l.gif
+)
+
+2015-11-28 17:15:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/btx3.JPG
+2015-11-28 17:15:21 | Error: 0
+2015-11-28 17:15:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814
+2015-11-28 17:15:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/btx4.JPG
+2015-11-28 17:15:21 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:15:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:15:21 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif"]
+_thumbnails: ""
+
+2015-11-28 17:15:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:15:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:15:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:15:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"],["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:15:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"],["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:15:21 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/ball11l.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/btx3.JPG
+)
+
+2015-11-28 17:15:21 | Error: 0
+2015-11-28 17:15:21 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814
+2015-11-28 17:15:21 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/btx11.JPG
+2015-11-28 17:15:21 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG"]
+_thumbnails: ""
+
+2015-11-28 17:15:21 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx11.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:15:21 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:15:21 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx11.JPG"],["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx11.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/ball11l.gif","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx3.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/814\/btx11.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:15:54 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/ball11l.gif
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/btx3.JPG
+    [2] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/btx11.JPG
+)
+
+2015-11-28 17:15:54 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/thumbnails/ball11l-120x120.gif
+2015-11-28 17:15:54 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/814/thumbnails/btx3-120x120.JPG
+2015-11-28 17:15:54 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/thumbnails/btx11-120x120.JPG
+2015-11-28 17:15:54 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/thumbnails/ball11l-120x120.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/thumbnails/btx3-120x120.JPG
+)
+
+2015-11-28 17:15:54 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/814/thumbnails/ball11l-120x120.gif
+2015-11-28 17:15:54 | The file btx11.JPG has been deleted from post meta for post 814: 
+2015-11-28 17:16:09 | Existing thumbnails: []
+2015-11-28 17:16:15 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:16:15 | Error: 0
+2015-11-28 17:16:15 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815
+2015-11-28 17:16:15 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx4.JPG
+2015-11-28 17:16:15 | BEFORE UPDATING META: _images: ""
+_missing: ""
+_thumbnails: ""
+
+2015-11-28 17:16:15 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx4.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx4.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:16:15 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:16:15 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx4.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx4.JPG"]]
+_thumbnails: []
+
+2015-11-28 17:16:15 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx4.JPG
+)
+
+2015-11-28 17:16:15 | LAST SAVED FILES: Array
+(
+)
+
+2015-11-28 17:16:15 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx4.JPG
+)
+
+2015-11-28 17:16:15 | Error: 0
+2015-11-28 17:16:15 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815
+2015-11-28 17:16:15 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx4-120x120.JPG
+2015-11-28 17:16:15 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx3.JPG
+2015-11-28 17:16:15 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx4-120x120.JPG
+2015-11-28 17:16:15 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/dax3-120x120.gif
+2015-11-28 17:16:16 | BEFORE UPDATING META: _images: []
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx4.JPG"]
+_thumbnails: ""
+
+2015-11-28 17:16:16 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx4-120x120.JPG
+)
+
+2015-11-28 17:16:16 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx4-120x120.JPG
+2015-11-28 17:16:16 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx4.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:16:16 | The file dax3.gif has been deleted from post meta for post 815: 
+2015-11-28 17:16:16 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:16:16 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/chanel perfume-120x120.jpg
+2015-11-28 17:16:16 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG"]]
+_missing: [""]
+_thumbnails: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/thumbnails\/btx4-120x120.JPG"]]
+
+2015-11-28 17:16:16 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/btx3.JPG
+)
+
+2015-11-28 17:16:16 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx4-120x120.JPG
+)
+
+2015-11-28 17:16:16 | Error: 0
+2015-11-28 17:16:16 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx4-120x120.JPG
+2015-11-28 17:16:16 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815
+2015-11-28 17:16:16 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx11.JPG
+2015-11-28 17:16:16 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG"]
+_missing: ""
+_thumbnails: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/thumbnails\/btx4-120x120.JPG"]
+
+2015-11-28 17:16:16 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:16:16 | The file chanel perfume.jpg has been deleted from post meta for post 815: 
+2015-11-28 17:16:16 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:16:16 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG"]]
+_thumbnails: [[]]
+
+2015-11-28 17:16:16 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/btx3.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/btx11.JPG
+)
+
+2015-11-28 17:16:16 | Error: 0
+2015-11-28 17:16:16 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815
+2015-11-28 17:16:16 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx19.JPG
+2015-11-28 17:16:16 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG"]
+_thumbnails: []
+
+2015-11-28 17:16:16 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG"]
+_thumbnails: Not applicable
+
+2015-11-28 17:16:16 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:16:16 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG"]]
+_thumbnails: [[]]
+
+2015-11-28 17:16:16 | LAST SAVED FILES: Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/btx3.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/btx11.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/815/btx19.JPG
+)
+
+2015-11-28 17:16:16 | Error: 0
+2015-11-28 17:16:16 | Directory created or exists: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815
+2015-11-28 17:16:16 | Success: Moved file to location /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/bx14.jpg
+2015-11-28 17:16:16 | BEFORE UPDATING META: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG"]
+_thumbnails: []
+
+2015-11-28 17:16:16 | WILL UPDATE TO: _images: ["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/bx14.jpg"]
+_missing: ["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/bx14.jpg"]
+_thumbnails: Not applicable
+
+2015-11-28 17:16:16 | Success: Finished Updating _images and _missing_thumbnails
+2015-11-28 17:16:16 | Check: _images: [["http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx3.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG","http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/bx14.jpg"]]
+_missing: [["\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx11.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/btx19.JPG","\/Users\/jjpro\/Sites\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/bx14.jpg"]]
+_thumbnails: [[]]
+
+2015-11-28 17:16:49 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx11.JPG
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/btx19.JPG
+    [2] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/bx14.jpg
+)
+
+2015-11-28 17:16:49 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx11-120x120.JPG
+2015-11-28 17:16:49 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/btx19-120x120.JPG
+2015-11-28 17:16:50 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/815/thumbnails/bx14-120x120.jpg
+2015-11-28 17:16:50 | Existing thumbnails: [{"name":"btx3.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/thumbnails\/btx11-120x120.JPG"},{"name":"btx11.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/thumbnails\/btx19-120x120.JPG"},{"name":"btx19.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/815\/thumbnails\/bx14-120x120.jpg"}]

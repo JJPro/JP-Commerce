@@ -54,7 +54,7 @@ class JC_AJAX
 
         // save newly uploaded images to meta so that get_thumbnails() knows to when to update thumbnails.
         $missing_thumbnails = get_post_meta($post_id, "_missing_thumbnails", true);
-        $missing_thumbnails = $missing_thumbnails ? $missing_thumbnails : array();
+        $missing_thumbnails = is_array($missing_thumbnails) ? $missing_thumbnails : array();
 
         if (! wp_verify_nonce($nonce, "jc_upload_media") )
             wp_die("Operation is forbidden.");
@@ -65,7 +65,7 @@ class JC_AJAX
         if ( is_array($_FILES) && count($_FILES) > 0 )
         {
             $saved_files = get_post_meta($post_id, "_images", true);
-            $saved_files = $saved_files ? $saved_files : array();
+            $saved_files = is_array($saved_files) ? $saved_files : array();
 
             if (JC_DEBUG)
                 $logger->log_action("LAST SAVED FILES", $saved_files);
@@ -129,7 +129,10 @@ class JC_AJAX
                         update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
 
                     if (JC_DEBUG) $logger->log_action("Success", "Finished Updating _images and _missing_thumbnails");
-                }
+                    if (JC_DEBUG) $logger->log_action("Check", sprintf("_images: %s\n_missing: %s\n_thumbnails: %s\n",
+                        wp_json_encode(get_post_meta($post_id, "_images")),
+                        wp_json_encode(get_post_meta($post_id, "_missing_thumbnails")),
+                        wp_json_encode(get_post_meta($post_id, "_thumbnails"))));                }
             }
             wp_die( "Your file is uploaded!" );
         } else {

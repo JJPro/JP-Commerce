@@ -30,7 +30,7 @@ define('LOGGED_IN_SALT',   'hF@XO~i|,D{>yF_y73YP|+[3$u-6|.hv:ge*|I|G88v|IFm3@^52
 define('NONCE_SALT',       'ybj8}{xy#m&XOO%3.g|[/M*F`zyH;F]hE6+Q;O{l3_Q3-(?}-Q}kD[^jf|yWCIR|');
 
 define('WP_DEBUG', true);
-define('AUTOSAVE_INTERVAL', 300);
+//define('AUTOSAVE_INTERVAL', 300);
 
 $table_prefix = 'wp_';
 
