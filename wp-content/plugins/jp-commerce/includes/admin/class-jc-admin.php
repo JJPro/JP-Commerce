@@ -101,8 +101,6 @@ class JC_Admin
 
         add_filter('request', '__limit_artists_visibility_of_posts');
         function __limit_artists_visibility_of_posts($request){
-            global $logger;
-            $logger->log_action('limiting artist visibility');
             global $current_screen;
             if ($current_screen->post_type == 'artwork'){
 

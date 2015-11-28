@@ -15,11 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class JC_Meta_Box_Artwork_Type
 {
-    public static function init() {
-        self::enqueue_scripts();
-    }
-
-    private static function enqueue_scripts() {
+    public static function enqueue_scripts() {
         add_action("admin_enqueue_scripts", function() {wp_enqueue_script('meta-boxes-artwork-type', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-type.min.js', ['jquery-ui-selectable']);});
     }
 

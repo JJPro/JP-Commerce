@@ -15,65 +15,67 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class JC_Meta_Box_Artwork_Media 
 {
-    public static function init(){
+    public static function init() {
         self::enqueue_scripts();
-        self::register_ajax_functions();
+        self::register_actions();
+    }
+
+    private static function register_actions() {
+        add_action( 'before_delete_post', function($post_id){
+                /**
+                 * remove all media files associated with it.
+                 *   meta value will be taken care of automatically.
+                 */
+                $files = get_post_meta($post_id, "_images", true);
+                $files = array_merge($files, get_post_meta($post_id, "_thumbnails", true));
+                $files[] = get_post_meta($post_id, "_wechat", true);
+                foreach( $files as $key=>$file) {
+                    wp_delete_file( $file );
+                }
+                global $logger;
+                $logger->log_action(__CLASS__, "all media files associated with post {$post_id} is deleted." );
+
+            }
+        );
     }
 
     private static function enqueue_scripts() {
         add_action("admin_enqueue_scripts",
             function()
             {
-                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.min.js', ['jquery-core', 'dropzone-core']);
-                wp_localize_script('meta-boxes-artwork-media', 'myAjax', array(
-//                        'ajaxurl'   => admin_url('admin-ajax.php'),
-                        'ajaxurl'   => JC_PLUGIN_DIR_URL . 'test_ajax.php'
+                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.js', ['jquery-core', 'dropzone-core']);
+                wp_localize_script('meta-boxes-artwork-media', 'jc_data', array(
+                        'ajaxurl'   => admin_url('admin-ajax.php'),
                     )
                 );
+
+                wp_enqueue_style("font-awesome");
             }
         );
     }
 
-    private static function register_ajax_functions() {
-        global $logger;
-        $logger->log_action('registering ajax functions');
-        $logger->log_action($_FILES);
-
-        add_action("wp_ajax_meta_box_artwork_media_upload", function() {
-
-            /**
-             * Move uploaded files to artists own directory
-             *      directory structure: uploads/artwork-images/artistusername/post_id/*.*
-             */
-            $name = $_FILES["name"];
-            $type = $_FILES["type"];
-            $size = $_FILES["size"];
-            $tmp_path = $_FILES["tmp_name"];
-            $errn = $_FILES["error"];
-
-            global $logger;
-            $logger->log_action($_FILES);
-            $logger->log_action("AJax is triggerred");
-        });
-        add_action("wp_ajax_nopriv_meta_box_artwork_media_upload", function(){
-            wp_die("You must log in to upload files.");
-        });
-    }
-
     public static function output( $post ) {
-        $thumbnails = [];
+        global $logger;
+
         $post_id = $post->ID;
+        $author_id = $post->post_author;
         $nonce = wp_create_nonce("jc_upload_media");
 
+        $existing_thumbnails = wp_json_encode( self::get_existing_thumbnails($post_id) );
 
+        if (JC_DEBUG)
+            $logger->log_action("Existing thumbnails", $existing_thumbnails);
 
         ?>
-        <div id="media-upload-wrap" class="dz-clickable clearfix" data-post_id="<?php echo $post_id; ?>" data-nonce="<?php echo $nonce; ?>">
-<!--            <span class="dz-message">Drop files here or click to upload.</span>-->
+        <div id="media-upload-wrap" class="dz-clickable clearfix" data-post_id="<?php echo $post_id; ?>" data-author_id="<?php echo $author_id; ?>" data-nonce="<?php echo $nonce; ?>">
+            <span class="dz-message">Drop files here or click to upload.</span>
             <div id="upload-indicator-wrap">
                 <div id="upload-indicator" class="dz-clickable">&#43;</div>
             </div>
         </div>
+        <script type="text/javascript">
+            var existing_thumbnails = <?php echo $existing_thumbnails; ?>;
+        </script>
         <style>
             .clearfix::after {
                 content: "";
@@ -107,13 +109,16 @@ class JC_Meta_Box_Artwork_Media
             #media-upload-wrap.dz-started span.dz-message {
                 display: none;
             }
-            #upload-indicator-wrap {
-                display: inline-block;
+            #media-upload-wrap #upload-indicator-wrap {
+                display: none;
                 padding: 15px;
                 width: calc(120px - 15*2px);
                 float: left;
                 margin-right:5px;
             }
+            #media-upload-wrap.dz-started #upload-indicator-wrap {
+                display: inline-block;
+             }
             #upload-indicator {
                 font-size: 60px;
                 line-height: calc(120px - 15*2px - 3*2px);
@@ -154,7 +159,6 @@ class JC_Meta_Box_Artwork_Media
                 -o-transition-duration: 400ms;
                 transition-duration: 400ms;
             }
-            .dz-process,
             .dz-error-message {
                 position: absolute;
                 top: 50%;
@@ -166,29 +170,6 @@ class JC_Meta_Box_Artwork_Media
                 padding: 3px;
                 display: none;
             }
-            .dz-preview.dz-processing .dz-progress{
-                position: absolute;
-                bottom: 10%;
-
-                height: 10px;
-                width: 95%;
-                left: 50%;
-                -webkit-transform: translateX(-50%);
-                -moz-transform: translateX(-50%);
-                -ms-transform: translateX(-50%);
-                -o-transform: translateX(-50%);
-                transform: translateX(-50%);
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                border-radius: 5px;
-                overflow: hidden;
-            }
-            .dz-preview.dz-processing .dz-progress .dz-upload {
-                display: block;
-                height: 100%;
-                background-color: #74c9ee;
-
-            }
             .dz-preview.dz-error .dz-error-message{
                 display: block;
 
@@ -196,8 +177,52 @@ class JC_Meta_Box_Artwork_Media
                 color: #FFF;
             }
 
+
+
+            /********* PROGRESS BAR *********/
+            .dz-preview .dz-progress{
+                position: absolute;
+                bottom: 10%;
+
+                height: 10px;
+                width: 95%;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                overflow: hidden;
+
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+
+            .dz-preview .dz-upload {
+                height: 100%;
+                background-color: #74c9ee;
+
+                display: block;
+
+                /*opacity: 0;*/
+                -webkit-transition-property: opacity;
+                -moz-transition-property: opacity;
+                -ms-transition-property: opacity;
+                -o-transition-property: opacity;
+                transition-property: opacity;
+            }
+            .dz-preview.dz-processing .dz-upload {
+                opacity: 1;
+            }
+            .dz-preview.dz-complete .dz-upload {
+                opacity: 0;
+            }
+
+
             .dz-preview .dz-feature,
             .dz-preview .dz-remove {
+                cursor: pointer;
                 position: absolute;
                 right: -20px;
                 font-size: 30px;
@@ -224,12 +249,15 @@ class JC_Meta_Box_Artwork_Media
                 transform: translateY(-50%);
             }
             .dz-remove {
-                bottom: 12px;
+                top: 0;
             }
-            .dz-preview:hover .dz-feature,
+            .dz-preview:hover .dz-feature {
+                opacity: 1;
+                right: 5px;
+            }
             .dz-preview:hover .dz-remove {
                 opacity: 1;
-                right: 10px;
+                right: 8px;
             }
             .dz-preview:hover img {
                 opacity: 0.7;
@@ -240,7 +268,22 @@ class JC_Meta_Box_Artwork_Media
         <?php
     }
 
-    private static function thumbnails( $post ) {
 
+    /**
+     * Gets the file NAMES of the existing thumbnails
+     *
+     * @param $post_id int
+     * @return array. [name => url]
+     */
+    private static function get_existing_thumbnails($post_id) {
+        $existing_thumbnails_urls = get_thumbnails($post_id);
+//        $existing_images_urls = get_images($post_id);
+
+        return array_map(
+            function($thumbnail){
+                return ["name" => pathinfo($thumbnail, PATHINFO_BASENAME), "url" => $thumbnail];
+            },
+            $existing_thumbnails_urls );
     }
+
 }

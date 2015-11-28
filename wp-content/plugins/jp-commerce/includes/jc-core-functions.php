@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Include core functions (available in both admin and frontend)
 include_once( 'jc-page-functions.php' );
 include_once( 'jc-tax-functions.php' );
+include_once( 'jc-artwork-functions.php' );
 
 
 /**

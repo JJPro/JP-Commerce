@@ -52,7 +52,7 @@ class JC_Admin_Meta_Boxes
 
     public function add_meta_boxes(){
         // Artworks
-        JC_Meta_Box_Artwork_Type::init();
+        JC_Meta_Box_Artwork_Type::enqueue_scripts();
         JC_Meta_Box_Artwork_Media::init();
         add_meta_box('artwork-media', 'Upload Some Pictures', 'JC_Meta_Box_Artwork_Media::output', 'artwork', 'normal', 'default');
         add_meta_box('artwork-data', 'Artwork Information', 'JC_Meta_Box_Artwork_Data::output', 'artwork', 'normal', 'default');

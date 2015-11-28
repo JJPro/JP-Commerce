@@ -123,6 +123,7 @@ final class JJProCommerce {
         $this->define('JC_ADMIN', 'includes/admin');
         $this->define('JC_META_BOXES', JC_ADMIN . '/meta-boxes');
         $this->define( 'JC_PLUGIN_DIR_URL', plugin_dir_url(__FILE__) );
+        $this->define( 'JC_DEBUG', true );
     }
 
     /**
@@ -164,15 +165,11 @@ final class JJProCommerce {
         include_once( 'includes/class-jc-post-types.php' );                     // Registers post types
         include_once( 'includes/class-jc-install.php' );
         require_once( 'includes/class-jc-scripts.php' ); // (register only)
-//        include_once( 'includes/class-jc-ajax.php' );
+        include_once( 'includes/class-jc-ajax.php' );
 //        include_once( 'includes/class-jc-artwork-factory.php' );                // Product factory
 
-        global $logger;
         if ( $this->is_request( 'admin' ) ) {
             include_once( 'includes/admin/class-jc-admin.php' );
-        }
-
-        if ( $this->is_request( 'ajax' ) ) {
 
         }
 
@@ -248,6 +245,14 @@ final class JJProCommerce {
         
         // Init action
         do_action( 'jp_commerce_init' );
+    }
+
+    /**
+     * Get Ajax URL.
+     * @return string
+     */
+    public function ajax_url() {
+        return admin_url( 'admin-ajax.php' );
     }
 }
 

@@ -14,7 +14,8 @@ class JC_Scripts {
     }
 
     public static function register_frontend_scripts() {
-
+        add_action("wp_enqueue_scripts", array(__CLASS__, "frontend_js"));
+        add_action("wp_enqueue_scripts", array(__CLASS__, "frontend_css"));
     }
 
     /**
@@ -29,7 +30,8 @@ class JC_Scripts {
      * @private_use_DO_NOT_CALL
      */
     public static function admin_css() {
-
+        // font awesome
+        wp_register_style('font-awesome', JC_PLUGIN_DIR_URL . 'fonts/font-awesome/css/font-awesome.min.css');
     }
 
     /**
