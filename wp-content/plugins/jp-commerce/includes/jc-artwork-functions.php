@@ -33,6 +33,12 @@ function get_images( $post_id ) {
  * @return array. URLs to thumbnail images.
  */
 function get_thumbnails( $post_id ) {
+
+    // Don't save for autosaves
+    if ( defined( 'DOING_AUTOSAVE' ) || is_int( wp_is_post_autosave( $post_id ) ) ) {
+        return;
+    }
+
     global $logger;
 
 
@@ -60,13 +66,15 @@ function get_thumbnails( $post_id ) {
 
                 if (JC_DEBUG)
                     $logger->log_action("Thumbnail path", $path);
+
                 if ( ! is_wp_error( $image_editor->save( $path ) ) ){
                     $thumbnails[] = $url;
                 }
             }
         }
 
-        update_post_meta($post_id, "_thumbnails", $thumbnails);
+        if ( is_numeric( update_post_meta($post_id, "_thumbnails", $thumbnails) ) )
+            update_post_meta($post_id, "_thumbnails", $thumbnails);
         update_post_meta($post_id, "_missing_thumbnails", false);
     }
 
@@ -122,7 +130,8 @@ function get_wechat_image($post_id) {
         $image_editor->resize(300, 300, ["center", "center"]);
         $url = _get_image_url($post_id, null, WECHAT, pathinfo($featured, PATHINFO_BASENAME));
         if (! is_wp_error( $image_editor->save($path) ) ){
-            update_post_meta($post_id, "_wechat", $url);
+            if ( is_numeric( update_post_meta($post_id, "_wechat", $url) ) )
+                update_post_meta($post_id, "_wechat", $url);
             return $url;
         } else {
             return '';
@@ -151,6 +160,7 @@ function _get_image_path( $post_id, $author_id = null, $image_size, $image_name)
 
 /**
  * Gets URL to image
+ *
  * @internal
  * @param $post_id int
  * @param $author_id int

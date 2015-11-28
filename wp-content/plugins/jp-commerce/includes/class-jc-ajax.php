@@ -59,8 +59,8 @@ class JC_AJAX
         if (! wp_verify_nonce($nonce, "jc_upload_media") )
             wp_die("Operation is forbidden.");
 
-        if (JC_DEBUG)
-            $logger->log_action("FILES", $_FILES);
+//        if (JC_DEBUG)
+//            $logger->log_action("FILES", $_FILES);
 
         if ( is_array($_FILES) && count($_FILES) > 0 )
         {
@@ -68,7 +68,7 @@ class JC_AJAX
             $saved_files = $saved_files ? $saved_files : array();
 
             if (JC_DEBUG)
-                $logger->log_action("SAVED FILES", $saved_files);
+                $logger->log_action("LAST SAVED FILES", $saved_files);
 
             foreach( $_FILES as $key=>$file ){
 
@@ -79,6 +79,8 @@ class JC_AJAX
 
                 $dest_dir = wp_upload_dir()["basedir"] . "/artworks/{$author_id}/{$post_id}";
                 $dest_file_path = "{$dest_dir}/{$filename}";
+
+                if (JC_DEBUG) $logger->log_action("Error", $errn);
 
                 switch ($errn) {
                     case 1:
@@ -99,15 +101,34 @@ class JC_AJAX
                 }
 
                 if ( wp_mkdir_p( $dest_dir ) ) { // create dir if not already exists
-                    if (!move_uploaded_file($tmp_path, $dest_file_path))
-                        wp_die("Failed to save file on the server.");
-                    $saved_files[] = wp_upload_dir()["baseurl"] . "/artworks/{$author_id}/{$post_id}/{$filename}";
 
-                    $logger->log_action(__FUNCTION__ . "Before updating _missing_thumbnails", $dest_file_path);
+                    if (JC_DEBUG) $logger->log_action("Directory created or exists", $dest_dir);
+
+                    if (!move_uploaded_file($tmp_path, $dest_file_path)) {
+                        if (JC_DEBUG) $logger->log_action("Error", "Cannot move file to location $dest_file_path");
+                        wp_die("Failed to save file on the server.");
+                    }
+                    if (JC_DEBUG) $logger->log_action("Success", "Moved file to location $dest_file_path");
+                    $saved_files[] = _get_image_url($post_id, $author_id, ORIGINAL, $filename);
                     $missing_thumbnails[] = $dest_file_path;
 
-                    update_post_meta($post_id, "_images", $saved_files);
-                    update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
+                    if (JC_DEBUG) {
+                        $__images = get_post_meta($post_id, "_images", true);
+                        $__missing = get_post_meta($post_id, "_missing_thumbnails", true);
+                        $__thumbnails = get_post_meta($post_id, "_thumbnails", true);
+                        $logger->log_action("BEFORE UPDATING META", sprintf("_images: %s\n_missing: %s\n_thumbnails: %s\n",
+                            wp_json_encode($__images), wp_json_encode($__missing), wp_json_encode($__thumbnails)));
+
+                        $logger->log_action("WILL UPDATE TO", sprintf("_images: %s\n_missing: %s\n_thumbnails: %s\n",
+                            wp_json_encode($saved_files), wp_json_encode($missing_thumbnails), "Not applicable"));
+                    }
+
+                    if (is_numeric( update_post_meta($post_id, "_images", $saved_files) ))
+                        update_post_meta($post_id, "_images", $saved_files);
+                    if (is_numeric( update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails) ))
+                        update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
+
+                    if (JC_DEBUG) $logger->log_action("Success", "Finished Updating _images and _missing_thumbnails");
                 }
             }
             wp_die( "Your file is uploaded!" );
@@ -148,6 +169,7 @@ class JC_AJAX
         $image_url_for_file = _get_image_url($post_id, $author_id, ORIGINAL, $file);
         $key = array_search($image_url_for_file, $images);
         unset( $images[$key] );
+        $images = array_values($images);
         update_post_meta($post_id, "_images", $images);
 
 
@@ -159,14 +181,31 @@ class JC_AJAX
         if ($missing_thumbnails && in_array($image_path, $missing_thumbnails)){
 
             $key = array_search($image_path, $missing_thumbnails);
+
+            if (JC_DEBUG)
+                $logger->log_action("Unsetting in Missing_Thumbnails: ", $missing_thumbnails[$key]);
+
             unset($missing_thumbnails[$key]);
+            $missing_thumbnails = array_values($missing_thumbnails);
             update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
         } else {
 
-            $thumbnail_url_for_file = _get_image_url($post_id, $author_id, ORIGINAL, $file);
+            $thumbnail_url_for_file = _get_image_url($post_id, $author_id, THUMBNAIL, $file);
+
+            if (JC_DEBUG):
+                $logger->log_action("Deleting thumbnail_url_for_file: ", $thumbnail_url_for_file);
+                $logger->log_action("From processed_thumbnails: ", $processed_thumbnails);
+            endif;
+
+
             $key = array_search($thumbnail_url_for_file, $processed_thumbnails);
+
+            if (JC_DEBUG)
+                $logger->log_action("Unsetting in _Thumbnails: ", $processed_thumbnails[$key]);
+
             unset($processed_thumbnails[$key]);
-            update_post_meta($post_id, "_images", $processed_thumbnails);
+            $processed_thumbnails = array_values($processed_thumbnails);
+            update_post_meta($post_id, "_thumbnails", $processed_thumbnails);
 
         }
 
@@ -216,7 +255,8 @@ class JC_AJAX
             $logger->log_action("URL of the new featured image", $new_featured);
 
         if ( $new_featured != get_featured_image($post_id) ) {
-            update_post_meta($post_id, "_featured_image", $new_featured);
+            if (is_numeric( update_post_meta($post_id, "_featured_image", $new_featured) ))
+                update_post_meta($post_id, "_featured_image", $new_featured);
         }
 
         wp_die();

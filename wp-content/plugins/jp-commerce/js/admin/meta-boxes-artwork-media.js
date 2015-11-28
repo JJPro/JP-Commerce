@@ -142,6 +142,8 @@ jQuery(function ($){
 
         console.log("mockFile: " + mockFile.size);
 
+        myDropzone.files.push(mockFile);
+
         myDropzone.emit("addedfile", mockFile);
 
         myDropzone.emit("thumbnail", mockFile, thumbnail.url);

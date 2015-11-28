@@ -277,13 +277,21 @@ class JC_Meta_Box_Artwork_Media
      */
     private static function get_existing_thumbnails($post_id) {
         $existing_thumbnails_urls = get_thumbnails($post_id);
-//        $existing_images_urls = get_images($post_id);
+        $existing_images_urls = get_images($post_id);
 
-        return array_map(
-            function($thumbnail){
-                return ["name" => pathinfo($thumbnail, PATHINFO_BASENAME), "url" => $thumbnail];
-            },
-            $existing_thumbnails_urls );
+        $result = [];
+
+        for ($i=0, $len = count($existing_thumbnails_urls); $i<$len; $i++){
+            $result[] = ["name" => pathinfo($existing_images_urls[$i], PATHINFO_BASENAME),
+                         "url"  => $existing_thumbnails_urls[$i]];
+        }
+
+//        foreach ($existing_thumbnails_urls as $key => $url) {
+//            $result[] = ["name" => pathinfo($existing_images_urls[$key], PATHINFO_BASENAME),
+//                "url"  => $url];
+//        }
+
+        return $result;
     }
 
 }
