@@ -44,9 +44,6 @@ class JC_AJAX
 
     /**
      * AJAX upload artwork pictures
-     *
-     * Saved images are named with unique numbers and
-     * Responses back with the new name, so that the Dropzone js can update with the file names in its local cache.
      */
     public static function upload_artwork_media() {
         global $logger;
@@ -72,8 +69,7 @@ class JC_AJAX
             $tmp_path = $file["tmp_name"];
             $errn = $file["error"];
 
-            $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
-            $filename = sprintf("%d.%s", count($saved_files) + 1, $ext);
+            $filename = $file['name'];
 
 
             $dest_dir = wp_upload_dir()["basedir"] . "/artworks/{$author_id}/{$post_id}";
@@ -149,6 +145,10 @@ class JC_AJAX
 
         if (! wp_verify_nonce($nonce, "jc_upload_media") )
             wp_die("Operation is forbidden.");
+
+        if (! file_exists($image_path))
+            wp_die(); // we don't do anything if file doesn't exists, because this might be called from "removedfile" emit from Dropzone JS.
+
         wp_delete_file($image_path);
         wp_delete_file($thumbnail_path);
         $images = get_images($post_id);
@@ -164,34 +164,42 @@ class JC_AJAX
 
 
         // unset and delete from _thumbnails
-        $processed_thumbnails = get_thumbnails($post_id);
+        $processed_thumbnails = get_post_meta($post_id, "_thumbnails", true); // Can't use get_thumbnails(), because it will mess up the missing_thumbnails variable we are getting next.
         $missing_thumbnails = get_post_meta($post_id, "_missing_thumbnails", true);
 
         if ($missing_thumbnails && in_array($image_path, $missing_thumbnails)){
 
+            if (JC_DEBUG)
+                $logger->log_action("The thumbnail for the deleted file has not been created yet");
+
             $key = array_search($image_path, $missing_thumbnails);
+
+            if (JC_DEBUG)
+                $logger->log_action("Will unset from missing_thumbnails", sprintf("deleting %s from %s", $thumbnail_path, $missing_thumbnails));
 
             unset($missing_thumbnails[$key]);
             $missing_thumbnails = array_values($missing_thumbnails);
             update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
+
+            if (JC_DEBUG)
+                $logger->log_action("Did unset thumbnail from missing thumbnails: ", sprintf("rest missing thumbnails", json_encode(get_post_meta($post_id, "_missing_thumbnails", true))));
+
         } else {
 
             $thumbnail_url_for_file = _get_image_url($post_id, $author_id, THUMBNAIL, $file);
 
-            if (JC_DEBUG):
-                $logger->log_action("Deleting thumbnail_url_for_file: ", $thumbnail_url_for_file);
-                $logger->log_action("From processed_thumbnails: ", $processed_thumbnails);
-            endif;
+            if (JC_DEBUG)
+                $logger->log_action("Will unset thumbnail: ", sprintf("deleting %s from %s", $thumbnail_url_for_file, json_encode($processed_thumbnails)));
 
 
             $key = array_search($thumbnail_url_for_file, $processed_thumbnails);
 
-            if (JC_DEBUG)
-                $logger->log_action("Unsetting in _Thumbnails: ", $processed_thumbnails[$key]);
-
             unset($processed_thumbnails[$key]);
             $processed_thumbnails = array_values($processed_thumbnails);
             update_post_meta($post_id, "_thumbnails", $processed_thumbnails);
+
+            if (JC_DEBUG)
+                $logger->log_action("Did unset thumbnail: ", sprintf("rest thumbnails", json_encode(get_post_meta($post_id, "_thumbnails", true))));
 
         }
 

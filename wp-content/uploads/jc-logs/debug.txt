@@ -28424,3 +28424,199 @@ _thumbnails: [[]]
 2015-11-29 08:52:42 | Existing thumbnails: []
 2015-11-29 08:55:27 | Existing thumbnails: []
 2015-11-29 08:56:14 | Existing thumbnails: []
+2015-11-29 09:10:47 | Existing thumbnails: []
+2015-11-29 09:11:58 | Existing thumbnails: []
+2015-11-29 09:12:43 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/832/bjpx10.JPG
+)
+
+2015-11-29 09:12:43 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/832/thumbnails/bjpx10-120x120.JPG
+2015-11-29 09:12:43 | From processed_thumbnails: : Array
+(
+)
+
+2015-11-29 09:12:43 | Unsetting in _Thumbnails: : 
+2015-11-29 09:12:43 | The file bjpx10.JPG has been deleted from post meta for post 832: 
+2015-11-29 09:13:14 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/832/thumbnails/btx19-120x120.JPG
+2015-11-29 09:13:14 | From processed_thumbnails: : Array
+(
+)
+
+2015-11-29 09:13:14 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/832/thumbnails/btx11-120x120.JPG
+2015-11-29 09:13:14 | From processed_thumbnails: : Array
+(
+)
+
+2015-11-29 09:13:14 | Unsetting in _Thumbnails: : 
+2015-11-29 09:13:14 | Unsetting in _Thumbnails: : 
+2015-11-29 09:13:14 | The file btx11.JPG has been deleted from post meta for post 832: 
+2015-11-29 09:13:14 | The file btx19.JPG has been deleted from post meta for post 832: 
+2015-11-29 09:17:22 | Existing thumbnails: []
+2015-11-29 09:17:35 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/833/ball6l.gif
+)
+
+2015-11-29 09:17:35 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/833/ball6l.gif
+)
+
+2015-11-29 09:17:35 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/ball6l-120x120.gif
+2015-11-29 09:17:35 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/ball6l-120x120.gif
+2015-11-29 09:17:35 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/btx11-120x120.JPG
+2015-11-29 09:17:35 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/btx4-120x120.JPG
+2015-11-29 09:17:35 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/ball6l-120x120.gif
+)
+
+2015-11-29 09:17:35 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/ball6l-120x120.gif
+)
+
+2015-11-29 09:17:35 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/ball6l-120x120.gif
+2015-11-29 09:17:35 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/833/thumbnails/ball6l-120x120.gif
+2015-11-29 09:17:35 | The file btx11.JPG has been deleted from post meta for post 833: 
+2015-11-29 09:17:35 | The file btx4.JPG has been deleted from post meta for post 833: 
+2015-11-29 09:23:29 | Existing thumbnails: []
+2015-11-29 09:32:27 | Existing thumbnails: []
+2015-11-29 09:37:18 | Existing thumbnails: []
+2015-11-29 09:37:46 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/ball7l.gif
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/bjpx10.JPG
+    [2] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/btx3.JPG
+    [3] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/btx4.JPG
+)
+
+2015-11-29 09:37:46 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/ball7l-120x120.gif
+2015-11-29 09:37:46 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/bjpx10-120x120.JPG
+2015-11-29 09:37:46 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx3-120x120.JPG
+2015-11-29 09:37:46 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx4-120x120.JPG
+2015-11-29 09:37:46 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/dax3-120x120.gif
+2015-11-29 09:37:46 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/ball7l-120x120.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/bjpx10-120x120.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx3-120x120.JPG
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx4-120x120.JPG
+)
+
+2015-11-29 09:37:46 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/ball7l-120x120.gif
+2015-11-29 09:37:46 | The file dax3.gif has been deleted from post meta for post 836: 
+2015-11-29 09:37:55 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx3-120x120.JPG
+2015-11-29 09:37:55 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/bjpx10-120x120.JPG
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx3-120x120.JPG
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx4-120x120.JPG
+)
+
+2015-11-29 09:37:55 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/836/thumbnails/btx3-120x120.JPG
+2015-11-29 09:37:55 | The file btx3.JPG has been deleted from post meta for post 836: 
+2015-11-29 09:40:12 | Existing thumbnails: []
+2015-11-29 09:40:17 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/837/ball6l.gif
+)
+
+2015-11-29 09:40:17 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/837/ball6l.gif
+)
+
+2015-11-29 09:40:17 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/ball6l-120x120.gif
+2015-11-29 09:40:17 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/ball6l-120x120.gif
+2015-11-29 09:40:17 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/bx14-120x120.jpg
+2015-11-29 09:40:17 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/btx19-120x120.JPG
+2015-11-29 09:40:17 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/ball6l-120x120.gif
+)
+
+2015-11-29 09:40:17 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/ball6l-120x120.gif
+)
+
+2015-11-29 09:40:17 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/ball6l-120x120.gif
+2015-11-29 09:40:17 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/ball6l-120x120.gif
+2015-11-29 09:40:17 | The file btx19.JPG has been deleted from post meta for post 837: 
+2015-11-29 09:40:17 | The file bx14.jpg has been deleted from post meta for post 837: 
+2015-11-29 09:40:17 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/bx15-120x120.jpg
+2015-11-29 09:40:17 | From processed_thumbnails: : Array
+(
+)
+
+2015-11-29 09:40:17 | Unsetting in _Thumbnails: : 
+2015-11-29 09:40:17 | The file bx15.jpg has been deleted from post meta for post 837: 
+2015-11-29 09:40:20 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/837/bjpx10.JPG
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/837/btx3.JPG
+)
+
+2015-11-29 09:40:20 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/bjpx10-120x120.JPG
+2015-11-29 09:40:20 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/btx3-120x120.JPG
+2015-11-29 09:40:20 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/bjpx10-120x120.JPG
+)
+
+2015-11-29 09:40:20 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/837/thumbnails/bjpx10-120x120.JPG
+2015-11-29 09:40:20 | The file btx3.JPG has been deleted from post meta for post 837: 
+2015-11-29 09:41:12 | Existing thumbnails: []
+2015-11-29 09:41:22 | Existing thumbnails: []
+2015-11-29 09:41:47 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/ball7l.gif
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/ball11l.gif
+    [2] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/bjpx10.JPG
+    [3] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/btx3.JPG
+    [4] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/btx4.JPG
+)
+
+2015-11-29 09:41:47 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/ball7l-120x120.gif
+2015-11-29 09:41:47 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/ball11l-120x120.gif
+2015-11-29 09:41:47 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/bjpx10-120x120.JPG
+2015-11-29 09:41:47 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/btx3-120x120.JPG
+2015-11-29 09:41:47 | Deleting thumbnail_url_for_file: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/btx4-120x120.JPG
+2015-11-29 09:41:47 | From processed_thumbnails: : Array
+(
+    [0] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/ball7l-120x120.gif
+    [1] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/ball11l-120x120.gif
+    [2] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/bjpx10-120x120.JPG
+    [3] => http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/btx3-120x120.JPG
+)
+
+2015-11-29 09:41:47 | Unsetting in _Thumbnails: : http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/838/thumbnails/ball7l-120x120.gif
+2015-11-29 09:41:47 | The file btx4.JPG has been deleted from post meta for post 838: 
+2015-11-29 09:57:29 | Existing thumbnails: []
+2015-11-29 09:57:35 | Will unset thumbnail: : deleting http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/839/thumbnails/btx19-120x120.JPG from ""
+2015-11-29 09:57:35 | Will unset thumbnail: : deleting http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/839/thumbnails/bx14-120x120.jpg from ""
+2015-11-29 09:57:35 | Will unset thumbnail: : deleting http://localhost/~jjpro/wp_clean/wp-content/uploads/artworks/5/839/thumbnails/bx15-120x120.jpg from ""
+2015-11-29 10:02:31 | Existing thumbnails: []
+2015-11-29 10:04:32 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/ball11l.gif
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/btx3.JPG
+    [2] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/btx4.JPG
+)
+
+2015-11-29 10:04:32 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/thumbnails/ball11l-120x120.gif
+2015-11-29 10:04:32 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/thumbnails/btx3-120x120.JPG
+2015-11-29 10:04:32 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/thumbnails/btx4-120x120.JPG
+2015-11-29 10:04:32 | Existing thumbnails: [{"name":"ball11l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/840\/thumbnails\/ball11l-120x120.gif"},{"name":"bjpx10.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/840\/thumbnails\/btx3-120x120.JPG"},{"name":"btx3.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/840\/thumbnails\/btx4-120x120.JPG"}]
+2015-11-29 10:05:51 | Existing thumbnails: []
+2015-11-29 10:13:18 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/841/ball0l.gif
+    [1] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/841/ball2l.gif
+)
+
+2015-11-29 10:13:18 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/841/thumbnails/ball0l-120x120.gif
+2015-11-29 10:13:18 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/841/thumbnails/ball2l-120x120.gif
+2015-11-29 10:13:18 | Existing thumbnails: [{"name":"ball00l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/841\/thumbnails\/ball0l-120x120.gif"},{"name":"ball0l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/841\/thumbnails\/ball2l-120x120.gif"}]

@@ -50,6 +50,44 @@ jQuery(function ($){
     // disable auto discover
     Dropzone.autoDiscover = false;
 
+    // eliminate duplicate uploads
+    Dropzone.prototype.addFile = function(file) {
+
+        /***** CODE TO ELIMINATE DUPLICATES *******/
+        if (this.files.length) {
+            var _i, _len;
+            for (_i = 0, _len = this.files.length; _i < _len; _i++) {
+                if(this.files[_i].name === file.name && this.files[_i].size === file.size){
+                    return false;
+                }
+            }
+        }
+        /*******************************************/
+        file.upload = {
+            progress: 0,
+            total: file.size,
+            bytesSent: 0
+        };
+        this.files.push(file);
+        file.status = Dropzone.ADDED;
+        this.emit("addedfile", file);
+        this._enqueueThumbnail(file);
+        return this.accept(file, (function(_this) {
+            return function(error) {
+                if (error) {
+                    file.accepted = false;
+                    _this._errorProcessing([file], error);
+                } else {
+                    file.accepted = true;
+                    if (_this.options.autoQueue) {
+                        _this.enqueueFile(file);
+                    }
+                }
+                return _this._updateMaxFilesReachedClass();
+            };
+        })(this));
+    };
+
     var action = "jp_commerce_upload_artwork_media",
         post_id = $("#media-upload-wrap").attr("data-post_id"),
         author_id = $("#media-upload-wrap").attr("data-author_id"),
@@ -101,8 +139,13 @@ jQuery(function ($){
 
     });
     //myDropzone.on("maxfilesreached", function(file) {this.enqueueFile(file); this.disable();});
-    myDropzone.on("maxfilesexceeded", function(file) {this.removeFile(file);});
+    myDropzone.on("maxfilesexceeded", function(file) {
+
+        this.removeFile(file);
+    });
     myDropzone.on("removedfile", function(file) {
+        console.log(this.files.length);
+
         // re-enable dropzone if it is out of the "max file reached" situation
         if (this.files.length == 4){
             this.enable();
@@ -123,9 +166,6 @@ jQuery(function ($){
                     author_id: author_id
                 }
             })
-            .done(function() {
-                alert( "file is successfully deleted.");
-            })
             .fail(function() {
                 alert( "failed to delete file from server.");
             });
@@ -137,14 +177,9 @@ jQuery(function ($){
         data.append("nonce", nonce);
     });
     myDropzone.on("success", function(file, response){
-        console.log(file);
-        console.log(response.data.filename);
-        var index = $.inArray(file, this.files);
-        //var fileOrig = this.files[index];
         var success = response.success;
         if (success) {
-            this.files[index].name = response.data.filename;
-            console.log(this.files[index].name);
+
         } else {
             alert(response.data);
         }
