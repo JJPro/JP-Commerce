@@ -1,0 +1,11 @@
+/**
+ * Author: Lu Ji
+ *
+ * Description:
+ *      This tooltip is super lightweight, responsive and mobile-friendly (support touching anywhere else to dismiss the tooltip).
+ *      It composes of a js and a css file.
+ * Author: Original script is written by Osvaldas Valutis.
+ * URI   : http://osvaldas.info/elegant-css-and-jquery-tooltip-responsive-mobile-friendly
+ *
+ * Usage : e.g. <abbr title="tooltip message" rel="tooltip">UX</abbr>
+ */

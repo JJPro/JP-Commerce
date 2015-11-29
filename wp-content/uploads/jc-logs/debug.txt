@@ -28620,3 +28620,13 @@ _thumbnails: [[]]
 2015-11-29 10:13:18 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/841/thumbnails/ball0l-120x120.gif
 2015-11-29 10:13:18 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/841/thumbnails/ball2l-120x120.gif
 2015-11-29 10:13:18 | Existing thumbnails: [{"name":"ball00l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/841\/thumbnails\/ball0l-120x120.gif"},{"name":"ball0l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/841\/thumbnails\/ball2l-120x120.gif"}]
+2015-11-29 10:19:23 | Existing thumbnails: []
+2015-11-29 10:50:27 | get_thumbnails Missing Thumbnails: Array
+(
+    [0] => /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/btx4.JPG
+)
+
+2015-11-29 10:50:27 | Thumbnail path: /Users/jjpro/Sites/wp_clean/wp-content/uploads/artworks/5/840/thumbnails/btx4-120x120.JPG
+2015-11-29 10:50:27 | Existing thumbnails: [{"name":"ball11l.gif","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/840\/thumbnails\/ball11l-120x120.gif"},{"name":"bjpx10.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/840\/thumbnails\/btx3-120x120.JPG"},{"name":"btx3.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/840\/thumbnails\/btx4-120x120.JPG"},{"name":"btx4.JPG","url":"http:\/\/localhost\/~jjpro\/wp_clean\/wp-content\/uploads\/artworks\/5\/840\/thumbnails\/btx4-120x120.JPG"}]
+2015-11-29 11:01:00 | Will delete post : 834
+2015-11-29 11:18:57 | post type: artwork

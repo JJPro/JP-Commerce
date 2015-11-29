@@ -60,6 +60,7 @@ class JC_Admin
                 break;
             case 'artwork' :
                 $this->one_column_layout();
+                add_action('before_delete_post', '__delete_artwork_files');
                 break;
 
         }

@@ -11,11 +11,35 @@ class JC_Scripts {
         add_action("admin_enqueue_scripts", array(__CLASS__, "admin_js"));
         // admin css
         add_action("admin_enqueue_scripts", array(__CLASS__, "admin_css"));
+
+        // shared js
+        add_action("admin_enqueue_scripts", array(__CLASS__, "shared_js"));
+        // shared css
+        add_action("admin_enqueue_scripts", array(__CLASS__, "shared_css"));
     }
 
     public static function register_frontend_scripts() {
         add_action("wp_enqueue_scripts", array(__CLASS__, "frontend_js"));
         add_action("wp_enqueue_scripts", array(__CLASS__, "frontend_css"));
+
+        // shared js
+        add_action("admin_enqueue_scripts", array(__CLASS__, "shared_js"));
+        // shared css
+        add_action("admin_enqueue_scripts", array(__CLASS__, "shared_css"));
+    }
+
+    /**
+     * @private use DO NOT CALL
+     */
+    public static function share_js() {
+
+    }
+
+    /**
+     * @private use DO NOT CALL
+     */
+    public static function share_css() {
+
     }
 
     /**
@@ -47,6 +71,7 @@ class JC_Scripts {
     public static function frontend_css() {
 
     }
+
 }
 
 /*

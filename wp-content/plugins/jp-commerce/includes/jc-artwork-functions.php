@@ -13,6 +13,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Deletes all files related to the artwork post
+ * This function is triggered by "before_delete_post" action.
+ *
+ * @param $post_id int
+ */
+function __delete_artwork_files( $post_id ) {
+    // only delete files when this is an artwork post type
+    global $post_type, $logger;
+
+    if ( $post_type != 'artwork' )
+        return;
+
+    $author_id = get_post_field("post_author", $post_id);
+    $files_dir = wp_upload_dir()["basedir"] . "/artworks/{$author_id}/{$post_id}";
+
+    WP_Filesystem_Direct::delete( $files_dir, true);
+}
+
+
+/**
  * Retrieve original size media files associated to the artwork
  *
  * @param $post_id int
@@ -20,6 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function get_images( $post_id ) {
     $images = get_post_meta($post_id, "_images", true);
+    $images = is_array($images) ? $images : array();
 
     return $images;
 }

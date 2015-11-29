@@ -71,9 +71,8 @@ class JC_AJAX
 
             $filename = $file['name'];
 
-
-            $dest_dir = wp_upload_dir()["basedir"] . "/artworks/{$author_id}/{$post_id}";
-            $dest_file_path = "{$dest_dir}/{$filename}";
+            $dest_file_path = _get_image_path($post_id, $author_id, ORIGINAL, $filename);
+            $dest_dir       = dirname($dest_file_path);
 
             switch ($errn) {
                 case 1:
@@ -99,8 +98,8 @@ class JC_AJAX
                 if (!move_uploaded_file($tmp_path, $dest_file_path)) {
                     wp_die("Failed to save file on the server.");
                 }
-                $saved_files[] = _get_image_url($post_id, $author_id, ORIGINAL, $filename);
-                $missing_thumbnails[] = $dest_file_path;
+                $saved_files[]          = _get_image_url($post_id, $author_id, ORIGINAL, $filename);
+                $missing_thumbnails[]   = $dest_file_path;
 
 
                 if (is_numeric( update_post_meta($post_id, "_images", $saved_files) ))

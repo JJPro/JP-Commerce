@@ -33,3 +33,14 @@ function jc_mail( $to, $subject, $message, $headers = "Content-Type: text/html\r
 
     $mailer->send( $to, $subject, $message, $headers, $attachments );
 }
+
+/**
+ * Generates respective Path from an URL
+ *
+ * @param $url string
+ * @return string
+ */
+function url_to_path($url) {
+    $url = str_replace(rtrim(get_site_url(), '/') . '/', ABSPATH, $url);
+    return $url;
+}

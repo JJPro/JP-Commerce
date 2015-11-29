@@ -159,43 +159,42 @@ final class JJProCommerce {
      * Include required core files used in admin and on the frontend.
      */
     public function includes() {
+        // SHARED MODULES
         include_once( 'includes/libs/Logger.php' );
         include_once( 'includes/jc-core-functions.php' );
         include_once( 'includes/class-jc-user-roles.php' );
         include_once( 'includes/class-jc-post-types.php' );                     // Registers post types
         include_once( 'includes/class-jc-install.php' );
-        require_once( 'includes/class-jc-scripts.php' ); // (register only)
         include_once( 'includes/class-jc-ajax.php' );
+        require_once( 'includes/admin-bar.php' );
+        // Registration functions for all scripts in JP Commerce.
+        // You have to call the respective class functions to register scripts in either admin or frontend.
+        require_once( 'includes/class-jc-scripts.php' );
 //        include_once( 'includes/class-jc-artwork-factory.php' );                // Product factory
 
+
+
+        // ADMIN MODULES
         if ( $this->is_request( 'admin' ) ) {
             include_once( 'includes/admin/class-jc-admin.php' );
 
         }
 
+        // FRONTEND MODULES
         if ( $this->is_request( 'frontend' ) ) {
-            $this->frontend_includes();
+            include_once( 'includes/class-jc-frontend.php' );
         }
 
+        // CRON MODULES
         if ( $this->is_request( 'frontend' ) || $this->is_request( 'cron' ) ) {
 
         }
 
 //        $this->query = include( 'includes/class-jc-query.php' );                // The main query class
 
-        require_once( 'includes/admin-bar.php' );
     }
 
-    /**
-     * Include required frontend files.
-     */
-    public function frontend_includes() {
-//        include_once( 'includes/jc-template-hooks.php' );
-//        include_once( 'includes/class-jc-frontend-scripts.php' );               // Frontend Scripts
-//        include_once( 'includes/class-jc-cart.php' );                           // The main cart class
-//        include_once( 'includes/class-jc-customer.php' );                       // Customer class
-//        include_once( 'includes/class-jc-https.php' );                          // https Helper
-    }
+
 
     /**
      * Get Checkout Class.

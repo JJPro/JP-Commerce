@@ -26,12 +26,12 @@ class JC_Meta_Box_Artwork_Media
                  * remove all media files associated with it.
                  *   meta value will be taken care of automatically.
                  */
-                $files = get_post_meta($post_id, "_images", true);
-                $files = array_merge($files, get_post_meta($post_id, "_thumbnails", true));
-                $files[] = get_post_meta($post_id, "_wechat", true);
-                foreach( $files as $key=>$file) {
-                    wp_delete_file( $file );
-                }
+//                $files = get_post_meta($post_id, "_images", true);
+//                $files = array_merge($files, get_post_meta($post_id, "_thumbnails", true));
+//                $files[] = get_post_meta($post_id, "_wechat", true);
+//                foreach( $files as $key=>$file) {
+//                    wp_delete_file( $file );
+//                }
                 global $logger;
                 $logger->log_action(__CLASS__, "all media files associated with post {$post_id} is deleted." );
 
