@@ -44,6 +44,9 @@ class JC_AJAX
 
     /**
      * AJAX upload artwork pictures
+     *
+     * Saved images are named with unique numbers and
+     * Responses back with the new name, so that the Dropzone js can update with the file names in its local cache.
      */
     public static function upload_artwork_media() {
         global $logger;
@@ -59,84 +62,67 @@ class JC_AJAX
         if (! wp_verify_nonce($nonce, "jc_upload_media") )
             wp_die("Operation is forbidden.");
 
-//        if (JC_DEBUG)
-//            $logger->log_action("FILES", $_FILES);
-
         if ( is_array($_FILES) && count($_FILES) > 0 )
         {
             $saved_files = get_post_meta($post_id, "_images", true);
             $saved_files = is_array($saved_files) ? $saved_files : array();
 
-            if (JC_DEBUG)
-                $logger->log_action("LAST SAVED FILES", $saved_files);
+            $file = $_FILES['file']; // uploadMultiple is disabled.
 
-            foreach( $_FILES as $key=>$file ){
+            $tmp_path = $file["tmp_name"];
+            $errn = $file["error"];
 
-                $filename = $file["name"];
-                $tmp_path = $file["tmp_name"];
-                $errn = $file["error"];
+            $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
+            $filename = sprintf("%d.%s", count($saved_files) + 1, $ext);
 
 
-                $dest_dir = wp_upload_dir()["basedir"] . "/artworks/{$author_id}/{$post_id}";
-                $dest_file_path = "{$dest_dir}/{$filename}";
+            $dest_dir = wp_upload_dir()["basedir"] . "/artworks/{$author_id}/{$post_id}";
+            $dest_file_path = "{$dest_dir}/{$filename}";
 
-                if (JC_DEBUG) $logger->log_action("Error", $errn);
-
-                switch ($errn) {
-                    case 1:
-                        wp_die( "Error: File is too large" );
-                        break;
-                    case 3:
-                        wp_die( "Error: File is not complete." );
-                        break;
-                    case 4:
-                        wp_die( "Error: No file is provided." );
-                        break;
-                    case 6:
-                        wp_die( "Error: No tmp dir exists on the server. Please contact your server's administrator." );
-                        break;
-                    case 7:
-                        wp_die( "Error: Permission denied to write to tmp dir." );
-                        break;
-                }
-
-                if ( wp_mkdir_p( $dest_dir ) ) { // create dir if not already exists
-
-                    if (JC_DEBUG) $logger->log_action("Directory created or exists", $dest_dir);
-
-                    if (!move_uploaded_file($tmp_path, $dest_file_path)) {
-                        if (JC_DEBUG) $logger->log_action("Error", "Cannot move file to location $dest_file_path");
-                        wp_die("Failed to save file on the server.");
-                    }
-                    if (JC_DEBUG) $logger->log_action("Success", "Moved file to location $dest_file_path");
-                    $saved_files[] = _get_image_url($post_id, $author_id, ORIGINAL, $filename);
-                    $missing_thumbnails[] = $dest_file_path;
-
-                    if (JC_DEBUG) {
-                        $__images = get_post_meta($post_id, "_images", true);
-                        $__missing = get_post_meta($post_id, "_missing_thumbnails", true);
-                        $__thumbnails = get_post_meta($post_id, "_thumbnails", true);
-                        $logger->log_action("BEFORE UPDATING META", sprintf("_images: %s\n_missing: %s\n_thumbnails: %s\n",
-                            wp_json_encode($__images), wp_json_encode($__missing), wp_json_encode($__thumbnails)));
-
-                        $logger->log_action("WILL UPDATE TO", sprintf("_images: %s\n_missing: %s\n_thumbnails: %s\n",
-                            wp_json_encode($saved_files), wp_json_encode($missing_thumbnails), "Not applicable"));
-                    }
-
-                    if (is_numeric( update_post_meta($post_id, "_images", $saved_files) ))
-                        update_post_meta($post_id, "_images", $saved_files);
-                    if (is_numeric( update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails) ))
-                        update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
-
-                    if (JC_DEBUG) $logger->log_action("Success", "Finished Updating _images and _missing_thumbnails");
-                    if (JC_DEBUG) $logger->log_action("Check", sprintf("_images: %s\n_missing: %s\n_thumbnails: %s\n",
-                        wp_json_encode(get_post_meta($post_id, "_images")),
-                        wp_json_encode(get_post_meta($post_id, "_missing_thumbnails")),
-                        wp_json_encode(get_post_meta($post_id, "_thumbnails"))));                }
+            switch ($errn) {
+                case 1:
+                    wp_die( "Error: File is too large" );
+                    break;
+                case 3:
+                    wp_die( "Error: File is not complete." );
+                    break;
+                case 4:
+                    wp_die( "Error: No file is provided." );
+                    break;
+                case 6:
+                    wp_die( "Error: No tmp dir exists on the server. Please contact your server's administrator." );
+                    break;
+                case 7:
+                    wp_die( "Error: Permission denied to write to tmp dir." );
+                    break;
             }
-            wp_die( "Your file is uploaded!" );
+
+            if ( wp_mkdir_p( $dest_dir ) ) { // create dir if not already exists
+
+
+                if (!move_uploaded_file($tmp_path, $dest_file_path)) {
+                    wp_die("Failed to save file on the server.");
+                }
+                $saved_files[] = _get_image_url($post_id, $author_id, ORIGINAL, $filename);
+                $missing_thumbnails[] = $dest_file_path;
+
+
+                if (is_numeric( update_post_meta($post_id, "_images", $saved_files) ))
+                    update_post_meta($post_id, "_images", $saved_files);
+                if (is_numeric( update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails) ))
+                    update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
+            }
+
+
+            wp_send_json_success( array(
+                'filename'      => $filename
+            ) );
+                // The sent message will be a json object of array( 'success' => true, 'data' => array( 'filename' => xxx ) ).
+
+
         } else {
-            wp_die("Error: No files are provided");
+            wp_send_json_error("Error: No files are provided");
+                // The sent message will be a json object of array( 'success'   => false, 'data' => 'Error: No files are provided').
         }
     }
 
@@ -184,9 +170,6 @@ class JC_AJAX
         if ($missing_thumbnails && in_array($image_path, $missing_thumbnails)){
 
             $key = array_search($image_path, $missing_thumbnails);
-
-            if (JC_DEBUG)
-                $logger->log_action("Unsetting in Missing_Thumbnails: ", $missing_thumbnails[$key]);
 
             unset($missing_thumbnails[$key]);
             $missing_thumbnails = array_values($missing_thumbnails);
@@ -253,9 +236,6 @@ class JC_AJAX
          * (Note: don't have to do anything with _wechat meta, get_wechat() will auto-generate the wechat image and meta from featured image)
          */
         $new_featured = _get_image_url($post_id, $author_id, ORIGINAL, $file);
-
-        if (JC_DEBUG)
-            $logger->log_action("URL of the new featured image", $new_featured);
 
         if ( $new_featured != get_featured_image($post_id) ) {
             if (is_numeric( update_post_meta($post_id, "_featured_image", $new_featured) ))

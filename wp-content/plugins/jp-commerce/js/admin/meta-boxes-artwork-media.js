@@ -93,7 +93,7 @@ jQuery(function ($){
             for (_i = 0, _len = this.files.length; _i < _len - 1; _i++) // -1 to exclude the current file
             {
                 if (this.files[_i].name === file.name) {
-                    this.removeFile(file);
+                    this.files.splice(_i, 1);
                     alert("Another file with the same name already exists!");
                 }
             }
@@ -137,7 +137,17 @@ jQuery(function ($){
         data.append("nonce", nonce);
     });
     myDropzone.on("success", function(file, response){
-        console.log(response);
+        console.log(file);
+        console.log(response.data.filename);
+        var index = $.inArray(file, this.files);
+        //var fileOrig = this.files[index];
+        var success = response.success;
+        if (success) {
+            this.files[index].name = response.data.filename;
+            console.log(this.files[index].name);
+        } else {
+            alert(response.data);
+        }
     });
 
 

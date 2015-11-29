@@ -151,7 +151,6 @@ function get_wechat_image($post_id) {
 /**
  * Gets path to image
  *
- * @internal
  * @param $post_id int
  * @param $author_id int
  * @param $image_size int ORIGINAL|THUMBNAIL|WECHAT
@@ -168,7 +167,6 @@ function _get_image_path( $post_id, $author_id = null, $image_size, $image_name)
 /**
  * Gets URL to image
  *
- * @internal
  * @param $post_id int
  * @param $author_id int
  * @param $image_size int ORIGINAL|THUMBNAIL|WECHAT

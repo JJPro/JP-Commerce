@@ -1,4 +1,13 @@
 <?php
+
+/**
+ * TODO:
+ * 1. Register Notifications & Emails section on options page
+ *      1.1. jp_commerce_email_from_name
+ *      1.2. jp_commerce_email_from_address
+ */
+
+
 /**
  * JC Emails
  *
