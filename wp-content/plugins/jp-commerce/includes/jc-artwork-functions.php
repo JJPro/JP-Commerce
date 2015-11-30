@@ -234,3 +234,12 @@ function __get_image__( $post_id, $author_id = null, $image_size, $image_name, $
     return $path;
 }
 
+/**
+ * Retrieve artwork object
+ *
+ * @param $post int|Object
+ * @return JC_Artwork|bool False if artwork not found.
+ */
+function get_artwork( $post ) {
+//    $product = new JC_Artwork($post);
+}

@@ -35,9 +35,6 @@ class JC_Meta_Box_Artwork_Submit
             }
             ?>
         </div>
-        <div id="action-delete">
-            <a class="submitdelete deletion button" href="<?php echo get_delete_post_link($post->ID); ?>">Move To Trash</a>
-        </div>
         <div id="action-save">
             <input type="submit" name="save" value="<?php esc_attr_e('Save as Draft'); ?>" class="button" />
             <span class="spinner"></span>
@@ -77,7 +74,6 @@ class JC_Meta_Box_Artwork_Submit
                 text-align: center;
             }
             #action-submit,
-            #action-delete,
             #action-save,
             #action-preview {
                 display: inline-block;
@@ -89,17 +85,6 @@ class JC_Meta_Box_Artwork_Submit
             }
             .spinner {
                 float: left;
-            }
-            #action-delete .button {
-                background-color:transparent;
-                border: solid 2px rgba(255, 0, 0, 0.65);
-                -webkit-box-shadow: none;
-                -moz-box-shadow: none;
-                box-shadow: none;
-            }
-            #action-delete .button:hover {
-                background-color:rgba(255, 0, 0, 0.8);
-                color: white;
             }
         </style>
         <?php

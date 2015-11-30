@@ -28,6 +28,8 @@ class JC_Admin
         add_action('current_screen', array($this, 'limit_artists_visibility_of_posts'));
         $this->remove_footer_text();
         JC_Scripts::register_admin_scripts();
+
+        $this->enqueue_common_scripts();
     }
 
     /**
@@ -59,7 +61,7 @@ class JC_Admin
                 */
                 break;
             case 'artwork' :
-                $this->one_column_layout();
+//                $this->one_column_layout();
                 add_action('before_delete_post', '__delete_artwork_files');
                 break;
 
@@ -185,6 +187,22 @@ class JC_Admin
                 'advanced' => '',
             );
         }
+    }
+
+    /**
+     * Enqueues commonly used scripts on most admin pages.
+     */
+    private function enqueue_common_scripts() {
+
+        add_action('admin_enqueue_scripts', function() {
+            // tipTip jquery plugin
+            wp_enqueue_script ( 'tiptip' );
+            wp_enqueue_style  ( 'tiptip' );
+            // shared script
+            wp_enqueue_script ( 'jc-shared' );
+
+
+        });
     }
 }
 

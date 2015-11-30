@@ -44,6 +44,8 @@ class JC_Admin_Meta_Boxes
 
     public function remove_meta_boxes(){
         remove_meta_box('submitdiv', 'artwork', 'normal');
+        remove_meta_box('submitdiv', 'artwork', 'side');
+        remove_meta_box('artwork_typediv', 'artwork', 'side');
     }
 
     public function rename_meta_boxes(){
@@ -54,8 +56,17 @@ class JC_Admin_Meta_Boxes
         // Artworks
         JC_Meta_Box_Artwork_Type::enqueue_scripts();
         JC_Meta_Box_Artwork_Media::init();
-        add_meta_box('artwork-media', 'Upload Some Pictures', 'JC_Meta_Box_Artwork_Media::output', 'artwork', 'normal', 'default');
+        add_meta_box('artwork_typediv', __('Artwork Type'),
+            function($post, $box) {
+                if ( wp_is_mobile() ){
+                    return post_categories_meta_box($post, $box);
+                }
+                else {
+                    return JC_Meta_Box_Artwork_Type::output($post);
+                }
+            }, 'artwork', 'normal', 'high');
         add_meta_box('artwork-data', 'Artwork Information', 'JC_Meta_Box_Artwork_Data::output', 'artwork', 'normal', 'default');
+        add_meta_box('artwork-media', 'Pictures', 'JC_Meta_Box_Artwork_Media::output', 'artwork', 'side', 'default');
         add_meta_box('artwork-submit', 'Submit', 'JC_Meta_Box_Artwork_Submit::output', 'artwork', 'normal', 'default');
 
         // Promotions

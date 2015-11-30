@@ -43,7 +43,7 @@ class JC_Meta_Box_Artwork_Media
         add_action("admin_enqueue_scripts",
             function()
             {
-                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.js', ['jquery-core', 'dropzone-core']);
+                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.js', ['tiptip', 'jquery-core', 'dropzone-core']);
                 wp_localize_script('meta-boxes-artwork-media', 'jc_data', array(
                         'ajaxurl'   => admin_url('admin-ajax.php'),
                     )
@@ -62,21 +62,40 @@ class JC_Meta_Box_Artwork_Media
         $nonce = wp_create_nonce("jc_upload_media");
 
         $existing_thumbnails = wp_json_encode( self::get_existing_thumbnails($post_id) );
-
-        if (JC_DEBUG)
-            $logger->log_action("Existing thumbnails", $existing_thumbnails);
-
         ?>
-        <div id="media-upload-wrap" class="dz-clickable clearfix" data-post_id="<?php echo $post_id; ?>" data-author_id="<?php echo $author_id; ?>" data-nonce="<?php echo $nonce; ?>">
-            <span class="dz-message">Drop files here or click to upload.</span>
-            <div id="upload-indicator-wrap">
-                <div id="upload-indicator" class="dz-clickable">&#43;</div>
+        <div id="cover-image">
+            <h3><i class="tiptip" title="Cover image">Cover</i> Image
+                <span>Cover image will be shown on the main page. You may crop and resize it to show customers exactly the way you like it to be.</span>
+            </h3>
+
+        </div>
+        <div id="other-images">
+            <h3>Other Images
+                <span>These images will be shown on artwork detail page only. <br />Click <strong>Preview</strong> at the bottom to preview the final result.</span>
+            </h3>
+            <div id="media-upload-wrap" class="dz-clickable clearfix" data-post_id="<?php echo $post_id; ?>" data-author_id="<?php echo $author_id; ?>" data-nonce="<?php echo $nonce; ?>">
+                <span class="dz-message">Drop files here or click to upload.</span>
+                <div id="upload-indicator-wrap">
+                    <div id="upload-indicator" class="dz-clickable">&#43;</div>
+                </div>
             </div>
         </div>
         <script type="text/javascript">
             var existing_thumbnails = <?php echo $existing_thumbnails; ?>;
         </script>
         <style>
+            #artwork-media .inside h3 {
+                padding-left: 0;
+            }
+            #artwork-media .inside h3 span {
+                font-weight: lighter;
+                font-size: smaller;
+                display: block;
+                color: rgb(145, 145, 145);
+                padding-top: 5px;
+
+            }
+
             .clearfix::after {
                 content: "";
                 display: table;
@@ -90,7 +109,6 @@ class JC_Meta_Box_Artwork_Media
                 border: 2px dashed lightblue;
                 background-color: #f7f7f7;
                 text-align: center;
-                vertical-align: top;
             }
 
             #media-upload-wrap:hover,
@@ -99,9 +117,7 @@ class JC_Meta_Box_Artwork_Media
                 background-color: #f3f3f3;
             }
             #media-upload-wrap span.dz-message {
-                display: block;
-                text-align: center;
-                line-height: 120px;
+                line-height: 60px;
                 font-weight: bold;
                 font-size: large;
                 color: rgba(18, 161, 224, 0.65);
@@ -148,16 +164,25 @@ class JC_Meta_Box_Artwork_Media
                 border-radius: 5px;
 
                 opacity: 1;
-                -webkit-transition-property: opacity;
-                -moz-transition-property: opacity;
-                -ms-transition-property: opacity;
-                -o-transition-property: opacity;
-                transition-property: opacity;
+                -webkit-transition-property: opacity, blur;
+                -moz-transition-property: opacity, blur;
+                -ms-transition-property: opacity, blur;
+                -o-transition-property: opacity, blur;
+                transition-property: opacity, blur;
                 -webkit-transition-duration: 400ms;
                 -moz-transition-duration: 400ms;
                 -ms-transition-duration: 400ms;
                 -o-transition-duration: 400ms;
                 transition-duration: 400ms;
+            }
+            .dz-preview:hover img {
+                cursor: move;
+                opacity: 0.7;
+                -webkit-filter: blur(3px);
+                -moz-filter: blur(3px);
+                -o-filter: blur(3px);
+                -ms-filter: blur(3px);
+                filter: blur(3px);
             }
             .dz-error-message {
                 position: absolute;
@@ -220,47 +245,32 @@ class JC_Meta_Box_Artwork_Media
             }
 
 
-            .dz-preview .dz-feature,
             .dz-preview .dz-remove {
                 cursor: pointer;
                 position: absolute;
-                right: -20px;
-                font-size: 30px;
-                color: brown;
+                display: block;
+                width: 26px;
+                height: 26px;
+                top: 8px;
+                right: 8px;
+                font-size: 2em;
+                /*color: brown;*/
                 text-decoration: none;
                 opacity: 0;
-                -webkit-transition-property: opacity, right;
-                -moz-transition-property: opacity, right;
-                -ms-transition-property: opacity, right;
-                -o-transition-property: opacity, right;
-                transition-property: opacity, right;
+                -webkit-transition-property: opacity;
+                -moz-transition-property: opacity;
+                -ms-transition-property: opacity;
+                -o-transition-property: opacity;
+                transition-property: opacity;
                 -webkit-transition-duration: 400ms;
                 -moz-transition-duration: 400ms;
                 -ms-transition-duration: 400ms;
                 -o-transition-duration: 400ms;
                 transition-duration: 400ms;
             }
-            .dz-feature {
-                top: 50%;
-                -webkit-transform: translateY(-50%);
-                -moz-transform: translateY(-50%);
-                -ms-transform: translateY(-50%);
-                -o-transform: translateY(-50%);
-                transform: translateY(-50%);
-            }
-            .dz-remove {
-                top: 0;
-            }
-            .dz-preview:hover .dz-feature {
-                opacity: 1;
-                right: 5px;
-            }
+
             .dz-preview:hover .dz-remove {
                 opacity: 1;
-                right: 8px;
-            }
-            .dz-preview:hover img {
-                opacity: 0.7;
             }
 
 

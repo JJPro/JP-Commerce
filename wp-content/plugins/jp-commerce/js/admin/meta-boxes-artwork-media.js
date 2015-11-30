@@ -109,8 +109,7 @@ jQuery(function ($){
                     '   </div>' +
                     '   <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div> ' +
                     '   <div class="controls">' +
-                    '       <i class="dz-remove fa fa-close" data-dz-remove></i>' +
-                    '       <i class="dz-feature fa fa-heart-o"></i>' +
+                    '       <i class="dz-remove fa fa-close tiptip" data-dz-remove title="Delete"></i>' +
                     '   </div>' +
                     '</div> ',
             clickable: ".dz-clickable",
@@ -136,7 +135,7 @@ jQuery(function ($){
                 }
             }
         }
-
+        $(".tiptip").tipTip({delay: 200});
     });
     //myDropzone.on("maxfilesreached", function(file) {this.enqueueFile(file); this.disable();});
     myDropzone.on("maxfilesexceeded", function(file) {

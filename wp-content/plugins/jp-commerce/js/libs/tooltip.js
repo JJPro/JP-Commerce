@@ -1,11 +1,10 @@
-$( function()
+jQuery( function($)
 {
-    var targets = $( '[rel~=tooltip]' ),
-        target  = false,
+    var target  = false,
         tooltip = false,
         title   = false;
  
-    targets.bind( 'mouseenter', function()
+    $("body").on('mouseenter', '[rel~=tooltip]',  function()
     {
         target  = $( this );
         tip     = target.attr( 'title' );
