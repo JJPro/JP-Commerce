@@ -4,6 +4,7 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/libs/tooltip.min.js" />
         <item url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/libs/dropzone.min.js" />
+        <item url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/admin/meta-boxes-artwork-data.min.js" />
         <item url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/libs/jquery.tipTip.min.js" />
         <item url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/admin/meta-boxes-artwork-type.min.js" />
         <item url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/script.min.js" />
@@ -12,8 +13,10 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/script.min.js" />
       <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/libs/tooltip.min.js" />
       <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/libs/dropzone.min.js" />
+      <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/admin/meta-boxes-artwork-data.min.js" />
       <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/libs/jquery.tipTip.min.js" />
       <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/admin/meta-boxes-artwork-type.min.js" />
       <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/script.min.js" />

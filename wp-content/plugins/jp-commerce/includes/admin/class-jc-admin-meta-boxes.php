@@ -54,8 +54,9 @@ class JC_Admin_Meta_Boxes
 
     public function add_meta_boxes(){
         // Artworks
-        JC_Meta_Box_Artwork_Type::enqueue_scripts();
         JC_Meta_Box_Artwork_Media::init();
+        JC_Meta_Box_Artwork_Type::enqueue_scripts();
+        JC_Meta_Box_Artwork_Data::init();
         add_meta_box('artwork_typediv', __('Artwork Type'),
             function($post, $box) {
                 if ( wp_is_mobile() ){

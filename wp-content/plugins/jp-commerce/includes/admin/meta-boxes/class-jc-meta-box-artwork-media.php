@@ -43,7 +43,8 @@ class JC_Meta_Box_Artwork_Media
         add_action("admin_enqueue_scripts",
             function()
             {
-                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.js', ['tiptip', 'jquery-core', 'dropzone-core']);
+                wp_register_script('dropzone-core', JC_PLUGIN_DIR_URL . 'js/libs/dropzone.min.js');
+                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.js', ['tiptip', 'jquery-ui-sortable', 'dropzone-core']);
                 wp_localize_script('meta-boxes-artwork-media', 'jc_data', array(
                         'ajaxurl'   => admin_url('admin-ajax.php'),
                     )
@@ -64,7 +65,7 @@ class JC_Meta_Box_Artwork_Media
         $existing_thumbnails = wp_json_encode( self::get_existing_thumbnails($post_id) );
         ?>
         <div id="cover-image">
-            <h3><i class="tiptip" title="Cover image">Cover</i> Image
+            <h3>Cover Image
                 <span>Cover image will be shown on the main page. You may crop and resize it to show customers exactly the way you like it to be.</span>
             </h3>
 
@@ -74,7 +75,7 @@ class JC_Meta_Box_Artwork_Media
                 <span>These images will be shown on artwork detail page only. <br />Click <strong>Preview</strong> at the bottom to preview the final result.</span>
             </h3>
             <div id="media-upload-wrap" class="dz-clickable clearfix" data-post_id="<?php echo $post_id; ?>" data-author_id="<?php echo $author_id; ?>" data-nonce="<?php echo $nonce; ?>">
-                <span class="dz-message">Drop files here or click to upload.</span>
+                <span class="dz-message">Drop files here or click</span>
                 <div id="upload-indicator-wrap">
                     <div id="upload-indicator" class="dz-clickable">&#43;</div>
                 </div>
@@ -117,7 +118,7 @@ class JC_Meta_Box_Artwork_Media
                 background-color: #f3f3f3;
             }
             #media-upload-wrap span.dz-message {
-                line-height: 60px;
+                line-height: 120px;
                 font-weight: bold;
                 font-size: large;
                 color: rgba(18, 161, 224, 0.65);
@@ -177,7 +178,6 @@ class JC_Meta_Box_Artwork_Media
             }
             .dz-preview:hover img {
                 cursor: move;
-                opacity: 0.7;
                 -webkit-filter: blur(3px);
                 -moz-filter: blur(3px);
                 -o-filter: blur(3px);

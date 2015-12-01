@@ -52,7 +52,7 @@ class JC_Scripts {
      * @private_use_DO_NOT_CALL
      */
     private static function admin_js() {
-        wp_register_script('dropzone-core', JC_PLUGIN_DIR_URL . 'js/libs/dropzone.min.js');
+
 
     }
 

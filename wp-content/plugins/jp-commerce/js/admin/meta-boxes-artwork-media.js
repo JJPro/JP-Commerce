@@ -100,7 +100,7 @@ jQuery(function ($){
             method: "post",
             maxFiles: 5,
             acceptedFiles: "image/*",
-            //autoProcessQueue: false,
+            autoProcessQueue: false,
             uploadMultiple: false,
             previewTemplate: '' +
                     '<div class="dz-preview dz-file-preview">' +
@@ -123,6 +123,8 @@ jQuery(function ($){
     var myDropzone = Dropzone.instances[0];
     myDropzone.on("addedfile", function(file) {
         $("#media-upload-wrap").append($("#upload-indicator-wrap"));
+
+        console.log(file);
 
         // avoid adding the same file
         if (this.files.length) {
@@ -209,6 +211,35 @@ jQuery(function ($){
 
         // Make sure that there is no progress bar
         myDropzone.emit("complete", mockFile);
+    }
+
+
+    /******** Sortable ***********/
+    var move = {};
+    $("#media-upload-wrap").sortable( {
+        items: '.dz-preview',
+        containment: 'parent',
+        distance: 20,
+        tolerance: 'pointer',
+        start: function(e, ui) {
+            move.from = ui.item.index('.dz-preview');
+        },
+        update: function(e, ui) {
+            move.to = ui.item.index('.dz-preview');
+            //console.log(move);
+            var fn = function(file) {return file.name;};
+            //console.log(myDropzone.files.map(fn));
+            myDropzone.files.move(move.from, move.to);
+            //console.log(myDropzone.files.map(fn));
+        }
+    });
+
+
+    /****
+     * UTILITY FUNCTIONS
+     */
+    Array.prototype.move = function( from, to) {
+        this.splice(to, 0, this.splice(from, 1)[0]);
     }
 
 

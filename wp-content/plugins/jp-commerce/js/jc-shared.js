@@ -5,27 +5,6 @@ jQuery(function($){
     // tiptip
     $(".tiptip").tipTip({delay: 200});
 
-    //// datepicker
-    //$('.datepicker').datepicker({maxDate: 0});
-    //
-    //$("#price-input").on("focus", function(){
-    //    $("#profit-calculator").show("slow");
-    //    var commission_rate = $("#commission-rate").val();
-    //    var commission_fee = parseFloat(commission_rate * $(this).val()).toFixed(2);
-    //    var profit = parseFloat(($(this).val() - commission_fee)).toFixed(2);
-    //    $("#commission-fee").html("$ " + commission_fee);
-    //    $("#profit").html("$ " + profit);
-    //});
-    //
-    //$("#price-input").on("keyup", function() {
-    //    var commission_rate = $("#commission-rate").val();
-    //    var commission_fee = parseFloat(commission_rate * $(this).val()).toFixed(2);
-    //    var profit = parseFloat(($(this).val() - commission_fee)).toFixed(2);
-    //    $("#commission-fee").html("$ " + commission_fee);
-    //    $("#profit").html("$ " + profit);
-    //})
-    //
-    //
     //var admin_branding = $("<div id='admin-corner-branding'></div>")
     //    .css({"width": "100%", "height": "160px",
     //        "background-position": "center center",
