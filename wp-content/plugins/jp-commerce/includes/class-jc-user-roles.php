@@ -21,6 +21,8 @@ class JC_User_Roles
     }
 
     public static function register_user_roles(){
+        global $logger;
+        $logger->log_action(__CLASS__, __FUNCTION__);
         remove_role('contributor');
 
         add_role('superadmin', 'Super Admin',

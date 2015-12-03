@@ -198,8 +198,9 @@ class JC_Admin
             // tipTip jquery plugin
             wp_enqueue_script ( 'tiptip' );
             wp_enqueue_style  ( 'tiptip' );
-            // shared script
+            // shared
             wp_enqueue_script ( 'jc-shared' );
+            wp_enqueue_style  ( 'jc-shared' );
 
 
         });

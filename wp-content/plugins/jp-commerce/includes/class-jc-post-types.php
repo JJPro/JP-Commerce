@@ -137,6 +137,7 @@ class JC_Post_Types
     }
 
     public static function register_taxonomies() {
+
         if ( taxonomy_exists( 'artwork_type' ) ) {
             return;
         }
@@ -172,6 +173,41 @@ class JC_Post_Types
                     'manage_terms'  => 'manage_artwork_types',
                     'edit_terms'    => 'manage_artwork_types',
                     'delete_terms'  => 'manage_artwork_types',
+                    'assign_terms'  => 'edit_artworks',
+                )
+            )
+        );
+
+        register_taxonomy('artwork_tag',
+            'artwork',
+            array(
+                'labels'            => array(
+                    'name'          => __('Artwork Tags', 'jp_commerce'),
+                    'singular_name' => __('Artwork Tag', 'jp_commerce'),
+                    'search_items'  => __('Search Artwork Tags', 'jp_commerce'),
+                    'popular_items' => __('Popular Artwork Tags', 'jp_commerce'),
+                    'all_items'     => __('All Artwork Tags', 'jp_commerce'),
+                    'edit_item'     => __('Edit Artwork Tag', 'jp_commerce'),
+                    'view_item'     => __('View Artwork Tag', 'jp_commerce'),
+                    'update_item'   => __('Update Artwork Tag', 'jp_commerce'),
+                    'add_new_item'  => __('Add New Artwork Tag', 'jp_commerce'),
+                    'new_item_name' => __('New Artwork Tag Name', 'jp_commerce'),
+                    'not_found'     => __('No artwork tags found', 'jp_commerce'),
+                    'no_terms'      => __('No artwork tags', 'jp_commerce')
+                ),
+                'description'       => 'Tags will help find artworks while searching',
+                'public'            => true,
+                'hierarchical'      => false,
+                'show_ui'           => true,
+                'show_in_menu'      => false,
+                'show_in_nav_menus' => false,
+                'show_tagcloud'     => true,
+                'show_admin_column' => true,
+                'meta_box_cb'       => array('JC_Meta_Box_Artwork_Tag', 'output'),
+                'capabilities'      => array(
+                    'manage_terms'  => 'edit_artworks',
+                    'edit_terms'    => 'edit_artworks',
+                    'delete_terms'  => 'edit_artworks',
                     'assign_terms'  => 'edit_artworks',
                 )
             )

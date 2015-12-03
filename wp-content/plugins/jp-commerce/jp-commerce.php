@@ -170,7 +170,7 @@ final class JJProCommerce {
         // Registration functions for all scripts in JP Commerce.
         // You have to call the respective class functions to register scripts in either admin or frontend.
         require_once( 'includes/class-jc-scripts.php' );
-//        include_once( 'includes/class-jc-artwork-factory.php' );                // Product factory
+        include_once( 'includes/class-jc-artwork.php' );
 
 
 
@@ -232,6 +232,9 @@ final class JJProCommerce {
         */
         // Before init action
         do_action( 'before_jp_commerce_init' );
+
+        // register user roles
+        $this->create_roles();
         
         // Load class instances
 
@@ -252,6 +255,15 @@ final class JJProCommerce {
      */
     public function ajax_url() {
         return admin_url( 'admin-ajax.php' );
+    }
+
+    /**
+     * Modify User Roles and Capabilities
+     */
+    public function create_roles() {
+        global $logger;
+        $logger->log_action("creating roles");
+        JC_User_Roles::init();
     }
 }
 

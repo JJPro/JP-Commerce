@@ -32,7 +32,6 @@ class JC_Install {
 
         self::create_options();
         self::create_tables();
-        self::create_roles();
 
         // register post types and taxonomies before calling create_terms()
         JC_Post_Types::register_post_types();
@@ -53,6 +52,7 @@ class JC_Install {
     private static function create_options() {
 
     }
+
 
     /**
      * Default Terms
@@ -125,12 +125,6 @@ class JC_Install {
         add_option('jp_commerce_db_version', $jc_db_version);
     }
 
-    /**
-     * Modify User Roles and Capabilities
-     */
-    public static function create_roles() {
-        JC_User_Roles::init();
-    }
 
     /**
      * Add more cron schedules

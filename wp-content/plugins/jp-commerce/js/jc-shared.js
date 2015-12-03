@@ -3,7 +3,7 @@
  */
 jQuery(function($){
     // tiptip
-    $(".tiptip").tipTip({delay: 200});
+    $(".tiptip").tipTip({delay: 200, maxWidth: "360px"});
 
     //var admin_branding = $("<div id='admin-corner-branding'></div>")
     //    .css({"width": "100%", "height": "160px",

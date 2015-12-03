@@ -66,13 +66,13 @@ class JC_Meta_Box_Artwork_Media
         ?>
         <div id="cover-image">
             <h3>Cover Image
-                <span>Cover image will be shown on the main page. You may crop and resize it to show customers exactly the way you like it to be.</span>
+                <span class="description">Cover image will show on the main page. You may crop and resize it to show customers exactly the way you like it to be.</span>
             </h3>
 
         </div>
         <div id="other-images">
             <h3>Other Images
-                <span>These images will be shown on artwork detail page only. <br />Click <strong>Preview</strong> at the bottom to preview the final result.</span>
+                <span class="description">These images will be shown on artwork detail page only. <br />Click <strong>Preview</strong> at the bottom of the page to see how your artwork will look like.</span>
             </h3>
             <div id="media-upload-wrap" class="dz-clickable clearfix" data-post_id="<?php echo $post_id; ?>" data-author_id="<?php echo $author_id; ?>" data-nonce="<?php echo $nonce; ?>">
                 <span class="dz-message">Drop files here or click</span>
