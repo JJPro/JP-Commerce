@@ -46,9 +46,9 @@ class JC_Scripts {
         // tipTip
         wp_register_style('tiptip', JC_PLUGIN_DIR_URL . 'css/libs/tipTip.min.css');
         // css for jquery-ui
-        wp_register_style('jquery-ui', 'https://code.jquery.com/ui/1.11.4/jquery-ui.min.js');
-        // bootstrap
-        wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+        wp_register_style('jquery-ui', 'https://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css');
+//        // bootstrap
+//        wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
         // generic css for both frontend and admin areas
         wp_register_style('jc-shared', JC_PLUGIN_DIR_URL . 'css/jc-shared.min.css');
     }

@@ -25,7 +25,6 @@ class JC_Meta_Box_Artwork_Data
             {
                 wp_enqueue_script('meta-boxes-artwork-data', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-data.min.js', ['tiptip', 'jquery-ui-datepicker']);
                 wp_enqueue_style ('jquery-ui');
-                wp_enqueue_style ('bootstrap');
             }
         );
     }
@@ -42,36 +41,49 @@ class JC_Meta_Box_Artwork_Data
                 <label for="make-date">When was it made?</label><input id="make-date" name="make-date" max="<?php echo date_i18n( 'm/d/Y', time() ); ?>" value="<?php echo $artwork->make_date; ?>"/>
             </p>
             <p>
-                <label for="_length">Dimensions (in)</label>
-            <span class="wrap" data-required="true" style="display: inline-block; margin: 0; width: 60%">
-                <input type="text" id="_length" name="dimensions['length']" placeholder="Length" value="<?php echo @$dimensions['length']; ?>"/>
-                <input type="text" name="dimensions['width']" placeholder="Width" value="<?php echo @$dimensions['width']; ?>"/>
-                <input type="text" name="dimensions['height']" placeholder="Height" value="<?php echo @$dimensions['height']; ?>"/>
-            </span>
+                <label>Does this item have a frame?</label>
+                <span>
+                    <label for="with-frame">YES </label><input type="radio" id="with-frame" name="has-frame" value="true" />
+                    <label for="no-frame">NO </label><input type="radio" id="no-frame" name="has-frame" value="false" />
+                </span>
             </p>
             <p>
-                <label for="weight">Weight (lbs)</label><span data-required=true><input type="text" id="weight" name="weight" /></span>
+                <label>Is the frame an optional add-on?</label>
+                <span>
+                    <label for="frame-optional-true">YES </label><input type="radio" id="frame-optional-true" name="frame-optional" value="true" />
+                    <label for="frame-optional-false">NO </label><input type="radio" id="frame-optional-false" name="frame-optional" value="false" />
+                </span>
+            </p>
+            <p id="dimensions-with-frame">
+                <label>Dimensions with frame</label>
+                <span class="wrap" style="display: inline-block; margin: 0; width: 60%">
+                    <input type="text" id="_length" name="dimensions_with_frame['length']" placeholder="Length" />
+                    <input type="text" name="$dimensions_with_frame['width']" placeholder="Width" />
+                    <input type="text" name="$dimensions_with_frame['height']" placeholder="Height" />
+                </span>
+            </p>
+            <p>
+                <label for="weight-with-frame">Weight with frame (lbs)</label><span><input type="text" id="weight-with-frame" name="weight_with_frame" /></span>
+            </p>
+            <p id="dimensions-without-frame">
+                <label>Dimensions without frame</label>
+                <span class="wrap" style="display: inline-block; margin: 0; width: 60%">
+                    <input type="text" id="_length" name="dimensions_without_frame['length']" placeholder="Length" />
+                    <input type="text" name="dimensions_without_frame['width']" placeholder="Width" />
+                    <input type="text" name="dimensions_without_frame['height']" placeholder="Height" />
+                </span>
+            </p>
+            <p>
+                <label for="weight-without-frame">Weight without frame (lbs)</label><span><input type="text" id="weight-without-frame" name="weight_without_frame" /></span>
             </p>
             <p>
                 <label for="not-for-sale">Not for sale</label><span><input type="checkbox" id="not-for-sale" name="not_for_sale" /></span>
             </p>
             <div id="for-sale-wrap">
                 <p>
-                    <label>Does this item have a frame?</label>
-                    <span>
-                        <label for="with-frame">YES</label><input type="radio" id="with-frame" name="has-frame" value="true" />
-                        <label for="no-frame">NO</label><input type="radio" id="no-frame" name="has-frame" value="false" />
-                    </span>
-                </p>
-                <p>
-                    <label>Is the frame an optional add-on?</label>
-                    <span>
-                        <label for="frame-optional-true">YES</label><input type="radio" id="frame-optional-true" name="frame-optional" value="true" />
-                        <label for="frame-optional-false">NO</label><input type="radio" id="frame-optional-false" name="frame-optional" value="false" />
-                    </span>
-                </p>
-                <p>
-                    <label for="price">Price</label><span data-required=true style="position:relative"><span class="currency-symbol" style="color: gray; font-size: larger; position:absolute; top: -4px; left: 5px;">$</span><input type="text" id="price" name="price" style="padding-left: 14px; -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;" /></span>
+                    <label for="price">Price</label>
+                    <span style="position:relative"><span class="currency-symbol">$</span><input type="text" id="price" class="price" name="artwork_price" placeholder="Price of artwork" /></span>
+                    <span style="position:relative"><span class="currency-symbol">$</span><input type="text" class="price" name="frame_price" placeholder="Price of frame" /></span>
                     <div id="profit-calculator" style="display: none; margin-top: 15px; padding-left: 35%; padding-right: 5%">
                         <input type="hidden" id="commission-rate" value="<?php echo esc_attr(get_option("jc_commission_rate")); ?>" >
                         <table style="text-align: left; border-top: dashed gray 1px; width: 100%; ">
@@ -96,7 +108,25 @@ class JC_Meta_Box_Artwork_Data
         <section id="ship-from">
             <h4>Will Ship From: </h4>
             <p class="description">This address will be used together with the dimensions and weight to estimate shipping cost.</p>
+            <div style="max-width: 400px">
+                <div>
+                    <label for="address-1" class="col-half">Address 1</label> <label for="address-2" class="col-half">Address 2</label>
+                    <input type="text" class="col-half" id="address-1" name="address_1" />
+                    <input type="text" class="col-half" id="address-2" name="address_2" />
+                </div>
 
+                <div>
+                    <label for="city" class="col-full">City</label>
+                    <input type="text" class="col-full" id="city" name="city" />
+                </div>
+
+                <div>
+                    <label for="state" class="col-half">State</label>
+                    <input type="text" class="col-half" id="state" name="state" />
+                    <label for="postcode" class="col-half">Postcode</label>
+                    <input type="text" class="col-half" id="postcode" name="postcode" />
+                </div>
+            </div>
         </section>
 
         <style>
@@ -115,10 +145,30 @@ class JC_Meta_Box_Artwork_Data
                 width: 10px;
                 margin-left: -10px;
             }
-
-            #for-sale-wrap p>label {
-                padding-left: 2%;
-
+            .currency-symbol {
+                color: gray;
+                font-size: larger;
+                position: absolute;
+                top: -4px;
+                left: 5px;
+            }
+            #for-sale-wrap input.price {
+                padding-left: 14px;
+            }
+            section:not(:last-of-type) {
+                margin-bottom: 50px;
+            }
+            .col-full {
+                display: block;
+                width: 100%;
+            }
+            .col-half {
+                display: inline-block;
+                width: 48%;
+                margin: 0;
+            }
+            .col-half:first-of-type {
+                margin-right: 3%;
             }
         </style>
         <script type="text/javascript">
