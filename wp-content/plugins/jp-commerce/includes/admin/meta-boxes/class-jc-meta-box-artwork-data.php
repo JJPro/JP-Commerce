@@ -122,8 +122,8 @@ class JC_Meta_Box_Artwork_Data
 
                 <div>
                     <label for="state" class="col-half">State</label>
-                    <input type="text" class="col-half" id="state" name="state" />
                     <label for="postcode" class="col-half">Postcode</label>
+                    <input type="text" class="col-half" id="state" name="state" />
                     <input type="text" class="col-half" id="postcode" name="postcode" />
                 </div>
             </div>

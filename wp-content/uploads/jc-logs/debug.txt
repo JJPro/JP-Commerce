@@ -499,3 +499,17 @@
 2015-12-03 19:25:24 | JC_User_Roles: register_user_roles
 2015-12-03 19:26:37 | creating roles: 
 2015-12-03 19:26:37 | JC_User_Roles: register_user_roles
+2015-12-03 19:27:23 | creating roles: 
+2015-12-03 19:27:23 | JC_User_Roles: register_user_roles
+2015-12-03 19:27:58 | creating roles: 
+2015-12-03 19:27:58 | JC_User_Roles: register_user_roles
+2015-12-03 23:03:20 | creating roles: 
+2015-12-03 23:03:20 | creating roles: 
+2015-12-03 23:03:20 | JC_User_Roles: register_user_roles
+2015-12-03 23:03:21 | JC_User_Roles: register_user_roles
+2015-12-03 23:03:21 | creating roles: 
+2015-12-03 23:03:21 | JC_User_Roles: register_user_roles
+2015-12-03 23:03:21 | creating roles: 
+2015-12-03 23:03:21 | JC_User_Roles: register_user_roles
+2015-12-03 23:03:21 | creating roles: 
+2015-12-03 23:03:21 | JC_User_Roles: register_user_roles
