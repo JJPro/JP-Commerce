@@ -134,6 +134,61 @@ class JC_Post_Types
                 'supports'              => array('title')
             )
         );
+
+        register_post_type('order',
+            array(
+                'labels'                => array(
+                    'name'              => __('Orders', 'jp_commerce'),
+                    'singular_name'     => __('Order', 'jp_commerce'),
+                    'add_new_item'      => __('Add New Order', 'jp_commerce'),
+                    'edit_item'         => __('Edit Order', 'jp_commerce'),
+                    'new_item'          => __('New Order', 'jp_commerce'),
+                    'all_items'         => __('All Orders', 'jp_commerce'),
+                    'view_item'         => __('View Order', 'jp_commerce'),
+                    'update_item'       => __('Update Order', 'jp_commerce'),
+                    'search_items'      => __('Search Orders', 'jp_commerce'),
+                    'not_found'         => __('No orders found', 'jp_commerce'),
+                    'not_found_in_trash'=> __('No orders found in Trash', 'jp_commerce'),
+                    'menu_name'         => __('Orders', 'jp_commerce')
+                ),
+                'public'                => false,
+                'publicly_queryable'    => false,
+                'show_ui'               => true,
+                'show_in_menu'          => true,
+                'hierarchical'          => false,
+                'query_var'             => false,
+//                'menu_icon'             => 'dashicons-admin-customizer',
+                'has_archive'           => false,
+                'rewrite'               => false,
+                'capabilities_type'     => 'order',
+                'capabilities'          => array(
+                    // meta caps ( don't assign to roles )
+                    'edit_post'         => 'edit_order',
+                    'read_post'         => 'read_order',
+                    'delete_post'       => 'delete_order',
+
+                    // primitive/meta caps
+                    'create_posts'      => 'manage_orders',
+
+                    // primitive caps used outside of map_meta_cap()
+                    'edit_posts'        => 'manage_orders',
+                    'edit_others_posts' => 'manage_orders',
+                    'publish_posts'     => 'manage_orders',
+                    'read_private_posts'=> 'read',
+
+                    // primitive caps used inside of map_meta_cap()
+                    'read'                      => 'read',
+                    'delete_posts'              => 'manage_orders',
+                    'delete_private_posts'      => 'manage_orders',
+                    'delete_published_posts'    => 'manage_orders',
+                    'delete_others_posts'       => 'manage_orders',
+                    'edit_private_posts'        => 'manage_orders',
+                    'edit_published_posts'      => 'manage_orders'
+                ),
+                'map_meta_cap'          => true,
+                'supports'              => array('')
+            )
+        );
     }
 
     public static function register_taxonomies() {

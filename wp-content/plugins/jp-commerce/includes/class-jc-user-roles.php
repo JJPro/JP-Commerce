@@ -21,8 +21,6 @@ class JC_User_Roles
     }
 
     public static function register_user_roles(){
-        global $logger;
-        $logger->log_action(__CLASS__, __FUNCTION__);
         remove_role('contributor');
 
         add_role('superadmin', 'Super Admin',
@@ -47,6 +45,7 @@ class JC_User_Roles
         $superadmin->add_cap('manage_artworks');
         $superadmin->add_cap('manage_artwork_types');
         $superadmin->add_cap('manage_options');
+        $superadmin->add_cap('manage_orders');
 
         $admin = get_role('administrator');
         $admin->remove_cap('edit_posts');
@@ -65,6 +64,7 @@ class JC_User_Roles
         $admin->add_cap('edit_artworks');
         $admin->add_cap('manage_artworks');
         $admin->add_cap('manage_artwork_types');
+        $admin->add_cap('manage_orders');
 
         $editor = get_role('editor');
         $editor->remove_cap('edit_posts');
@@ -76,5 +76,6 @@ class JC_User_Roles
         $editor->add_cap('manage_promotion_types');
         $editor->add_cap('edit_theme_options');
         $editor->add_cap('manage_options'); // so that it can submit the jc options form
+        $admin->add_cap('manage_orders');
     }
 }

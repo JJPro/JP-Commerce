@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 include_once( 'jc-page-functions.php' );
 include_once( 'jc-tax-functions.php' );
 include_once( 'jc-artwork-functions.php' );
+include_once( 'jc-order-functions.php' );
+include_once( 'jc-options-functions.php' );
 
 
 /**

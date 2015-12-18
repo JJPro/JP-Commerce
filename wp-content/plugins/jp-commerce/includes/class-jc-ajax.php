@@ -28,9 +28,14 @@ class JC_AJAX
 
         // array( event_name => nopriv? )
         $ajax_events = array(
-            'upload_artwork_media'              => false,
-            'remove_artwork_media'              => false,
-            'set_artwork_featured_image'        => false,
+            // Artworks
+            'add_artwork_file'                  => false,
+            'update_artwork_file_order'         => false,
+            'delete_artwork_file'               => false,
+
+            // Orders
+            'add_cs_note'                       => false,
+            'delete_cs_note'                    => false,
         );
 
         foreach ( $ajax_events as $ajax_event => $nopriv ) {
@@ -45,34 +50,22 @@ class JC_AJAX
     /**
      * AJAX upload artwork pictures
      */
-    public static function upload_artwork_media() {
-        global $logger;
-
-        $post_id = $_POST["post_id"];
-        $author_id = $_POST["author_id"];
+    public static function add_artwork_file() {
+        $artwork = $_POST["artwork"];
+        $order   = $_POST["file_order"];
         $nonce   = $_POST["nonce"];
-
-        // save newly uploaded images to meta so that get_thumbnails() knows to when to update thumbnails.
-        $missing_thumbnails = get_post_meta($post_id, "_missing_thumbnails", true);
-        $missing_thumbnails = is_array($missing_thumbnails) ? $missing_thumbnails : array();
 
         if (! wp_verify_nonce($nonce, "jc_upload_media") )
             wp_die("Operation is forbidden.");
 
         if ( is_array($_FILES) && count($_FILES) > 0 )
         {
-            $saved_files = get_post_meta($post_id, "_images", true);
-            $saved_files = is_array($saved_files) ? $saved_files : array();
-
             $file = $_FILES['file']; // uploadMultiple is disabled.
 
+            $filename = $file["name"];
             $tmp_path = $file["tmp_name"];
-            $errn = $file["error"];
-
-            $filename = $file['name'];
-
-            $dest_file_path = _get_image_path($post_id, $author_id, ORIGINAL, $filename);
-            $dest_dir       = dirname($dest_file_path);
+            $ext      = pathinfo($filename, PATHINFO_EXTENSION);
+            $errn     = $file["error"];
 
             switch ($errn) {
                 case 1:
@@ -92,32 +85,30 @@ class JC_AJAX
                     break;
             }
 
-            if ( wp_mkdir_p( $dest_dir ) ) { // create dir if not already exists
-
-
-                if (!move_uploaded_file($tmp_path, $dest_file_path)) {
-                    wp_die("Failed to save file on the server.");
-                }
-                $saved_files[]          = _get_image_url($post_id, $author_id, ORIGINAL, $filename);
-                $missing_thumbnails[]   = $dest_file_path;
-
-
-                if (is_numeric( update_post_meta($post_id, "_images", $saved_files) ))
-                    update_post_meta($post_id, "_images", $saved_files);
-                if (is_numeric( update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails) ))
-                    update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
-            }
-
-
-            wp_send_json_success( array(
-                'filename'      => $filename
-            ) );
+            $artwork = JC_Artwork::instance($artwork);
+            if ($artwork->add_other_image($tmp_path, $ext, $order)) {
+                wp_send_json_success();
+            } else {
+                wp_send_json_error(['filename' => $filename]);
                 // The sent message will be a json object of array( 'success' => true, 'data' => array( 'filename' => xxx ) ).
-
+            }
 
         } else {
             wp_send_json_error("Error: No files are provided");
                 // The sent message will be a json object of array( 'success'   => false, 'data' => 'Error: No files are provided').
+        }
+    }
+
+    public static function update_artwork_file_order() {
+        $artwork = $_POST['artwork'];
+        $file_id = $_POST['file_id'];
+        $order   = $_POST['file_order'];
+
+        $artwork = JC_Artwork::instance($artwork);
+        if ($artwork->update_other_image_order($file_id, $order)){
+            wp_send_json_success();
+        } else {
+            wp_send_json_error("Error: Failed to update file order on the server.");
         }
     }
 
@@ -131,126 +122,159 @@ class JC_AJAX
      *      remove wechat file
      *      unset _wechat meta
      */
-    public static function remove_artwork_media() {
+    public static function delete_artwork_file() {
         global $logger;
 
-        $post_id    = $_POST["post_id"];
-        $author_id  = $_POST["author_id"];
-        $nonce      = $_POST["nonce"];
-        $file       = $_POST["name"];
-
-        $image_path      = _get_image_path($post_id, $author_id, ORIGINAL, $file);
-        $thumbnail_path  = _get_image_path($post_id, $author_id, THUMBNAIL, $file);
+        $artwork = $_POST['artwork'];
+        $file_id = $_POST["file_id"];
+        $nonce   = $_POST["nonce"];
 
         if (! wp_verify_nonce($nonce, "jc_upload_media") )
             wp_die("Operation is forbidden.");
 
-        if (! file_exists($image_path))
-            wp_die(); // we don't do anything if file doesn't exists, because this might be called from "removedfile" emit from Dropzone JS.
-
-        wp_delete_file($image_path);
-        wp_delete_file($thumbnail_path);
-        $images = get_images($post_id);
-
-
-        // unset it from _images meta
-        $image_url_for_file = _get_image_url($post_id, $author_id, ORIGINAL, $file);
-        $key = array_search($image_url_for_file, $images);
-        unset( $images[$key] );
-        $images = array_values($images);
-        update_post_meta($post_id, "_images", $images);
-
-
-
-        // unset and delete from _thumbnails
-        $processed_thumbnails = get_post_meta($post_id, "_thumbnails", true); // Can't use get_thumbnails(), because it will mess up the missing_thumbnails variable we are getting next.
-        $missing_thumbnails = get_post_meta($post_id, "_missing_thumbnails", true);
-
-        if ($missing_thumbnails && in_array($image_path, $missing_thumbnails)){
-
-            if (JC_DEBUG)
-                $logger->log_action("The thumbnail for the deleted file has not been created yet");
-
-            $key = array_search($image_path, $missing_thumbnails);
-
-            if (JC_DEBUG)
-                $logger->log_action("Will unset from missing_thumbnails", sprintf("deleting %s from %s", $thumbnail_path, $missing_thumbnails));
-
-            unset($missing_thumbnails[$key]);
-            $missing_thumbnails = array_values($missing_thumbnails);
-            update_post_meta($post_id, "_missing_thumbnails", $missing_thumbnails);
-
-            if (JC_DEBUG)
-                $logger->log_action("Did unset thumbnail from missing thumbnails: ", sprintf("rest missing thumbnails", json_encode(get_post_meta($post_id, "_missing_thumbnails", true))));
-
+        $artwork = JC_Artwork::instance($artwork);
+        if ($artwork->delete_other_image($file_id)) {
+            wp_send_json_success();
         } else {
-
-            $thumbnail_url_for_file = _get_image_url($post_id, $author_id, THUMBNAIL, $file);
-
-            if (JC_DEBUG)
-                $logger->log_action("Will unset thumbnail: ", sprintf("deleting %s from %s", $thumbnail_url_for_file, json_encode($processed_thumbnails)));
-
-
-            $key = array_search($thumbnail_url_for_file, $processed_thumbnails);
-
-            unset($processed_thumbnails[$key]);
-            $processed_thumbnails = array_values($processed_thumbnails);
-            update_post_meta($post_id, "_thumbnails", $processed_thumbnails);
-
-            if (JC_DEBUG)
-                $logger->log_action("Did unset thumbnail: ", sprintf("rest thumbnails", json_encode(get_post_meta($post_id, "_thumbnails", true))));
-
+            wp_send_json_error("Error: Failed to delete file on the server.");
         }
-
-        // unset _featured if matched
-            // unset and delete wechat
-        $featured = get_featured_image($post_id);
-        if ( $image_url_for_file == $featured ){
-            update_post_meta($post_id, "_featured_image", false);
-            update_post_meta($post_id, "_wechat", false);
-            $wechat_file_path = _get_image_path($post_id, $author_id, WECHAT, $file);
-            wp_delete_file($wechat_file_path);
-        }
+    }
 
 
+    /****************************
+     **** ORDER's ADMIN AJAX ****
+    /****************************/
 
-        $logger->log_action("The file {$file} has been deleted from post meta for post {$post_id}");
+    /**
+     * Adds a customer service note
+     * Sends back time of addition upon success.
+     */
+    public static function add_cs_note() {
+        $order_id = $_POST["order_id"];
+        $content = $_POST["note"];
+        $author = $_POST["note_author"];
+        $private = $_POST["private"];
+        $private = $private === '0' ? false : true;
 
-        wp_die();
+        $order = JC_Order::instance($order_id);
+        $date = $order->add_cs_note($content, $author, $private);
+        if ($date)
+            wp_send_json_success($date);
+        else
+            wp_send_json_error();
     }
 
     /**
-     * Sets featured image of artwork
+     * Expects @order_id and @note_id
      */
-    public static function set_artwork_featured_image() {
-        global $logger;
-        if (JC_DEBUG)
-            $logger->log_action("AJAX", "setting featured image");
-        if (JC_DEBUG)
-            $logger->log_action("Featured Image Setting message", $_POST);
+    public static function delete_cs_note() {
+        $order_id = $_POST["order_id"];
+        $note_id = $_POST["note_id"];
 
-        $post_id    = $_POST["post_id"];
-        $author_id  = $_POST["author_id"];
-        $nonce      = $_POST["nonce"];
-        $file       = $_POST["name"];
-
-        // verify nonce.
-        if (! wp_verify_nonce($nonce, "jc_upload_media") )
-            wp_die("Operation is forbidden.");
-
-        /**
-         * update the meta value
-         * (Note: don't have to do anything with _wechat meta, get_wechat() will auto-generate the wechat image and meta from featured image)
-         */
-        $new_featured = _get_image_url($post_id, $author_id, ORIGINAL, $file);
-
-        if ( $new_featured != get_featured_image($post_id) ) {
-            if (is_numeric( update_post_meta($post_id, "_featured_image", $new_featured) ))
-                update_post_meta($post_id, "_featured_image", $new_featured);
-        }
-
-        wp_die();
+        $order = JC_Order::instance($order_id);
+        $success = $order->delete_cs_note($note_id);
+        if ($success)
+            wp_send_json_success();
+        else
+            wp_send_json_error();
     }
+
+    /**
+     * Adds item to the order and returns the added item.
+     *
+     * Add item to the order details table.
+     *
+     * Expects @order_id and @artwork_id
+     */
+    public static function add_order_item() {
+        $order = JC_Order::instance($_POST['order_id']);
+        $artwork = $_POST['artwork_id'];
+        $success = null;
+
+        if ($order->has_item($artwork))
+            $success = $order->increase_item_qty($artwork);
+        else
+            $success = $order->add_item($artwork);
+
+        if ($success)
+            wp_send_json_success();
+        else
+            wp_send_json_error();
+    }
+
+    /**
+     * Delete this artwork all together from the order.
+     *
+     * Expects @order_id and @artwork_id
+     */
+    public static function delete_order_item() {
+        $order = JC_Order::instance($_POST['order_id']);
+        $artwork = $_POST['artwork_id'];
+        $success = $order->delete_item($artwork);
+
+        if ($success)
+            wp_send_json_success();
+        else
+            wp_send_json_error();
+    }
+
+
+    public static function increase_order_item_qty() {
+        $order = JC_Order::instance($_POST['order_id']);
+        $artwork = $_POST['artwork_id'];
+
+        $success = $order->increase_item_qty($artwork);
+        if ($success)
+            wp_send_json_success();
+        else
+            wp_send_json_error();
+    }
+
+    public static function reduce_order_item_qty() {
+        $order = JC_Order::instance($_POST['order_id']);
+        $artwork = $_POST['artwork_id'];
+
+        $success = $order->reduce_item_qty($artwork);
+        if ($success)
+            wp_send_json_success();
+        else
+            wp_send_json_error();
+    }
+
+    /**
+     * Retrives the updated shipping cost
+     *
+     * Expects @order_id
+     */
+    public static function update_shipping_cost() {
+        $order = JC_Order::instance($_POST['order_id']);
+        $new_shipping_cost = $order->get_shipping_cost();
+
+        wp_send_json(array("updated_shipping_cost" => $new_shipping_cost));
+    }
+
+
+    /**
+     * Called when looking for items to add for an order.
+     * Search artworks by id or title
+     *
+     * Sends back array of Object {artwork_id, title}
+     */
+    public static function search_items() {
+        $term = $_POST['term'];
+        global $wpdb;
+
+        $query = 'SELECT ID AS artwork_id, post_title AS title ';
+        $query .= " FROM {$wpdb->prefix}posts JOIN {$wpdb->prefix}postmeta ON ID = post_id ";
+        $query .= " WHERE post_type = 'artwork' AND post_status = 'publish' AND meta_key = '_stock' AND meta_value > 0 ";
+        $query .= " AND ID LIKE '%%%d%%' OR post_title LIKE '%%%s%%'";
+        $query = wpdb::prepare( $query, absint($term), $term);
+
+        $items = $wpdb->get_results($query);
+        wp_send_json(array("items" => $items));
+
+    }
+
 }
 
 JC_AJAX::init();

@@ -35,8 +35,14 @@ class JC_Scripts {
         // tipTip js
         wp_register_script('tiptip', JC_PLUGIN_DIR_URL . 'js/libs/jquery.tipTip.min.js', ['jquery-core']);
 
+        // bootstrap
+        wp_register_script('bootstrap', JC_PLUGIN_DIR_URL . 'js/libs/bootstrap.min.js', ['jquery-core']);
+
         // general shared script for both frontend and admin areas
         wp_register_script('jc-shared', JC_PLUGIN_DIR_URL . 'js/jc-shared.min.js', ['tiptip']);
+
+        // jcrop
+        wp_register_script('jcrop', JC_PLUGIN_DIR_URL . 'js/libs/jquery.Jcrop.min.js', ['jquery-core']);
     }
 
     /**
@@ -47,10 +53,16 @@ class JC_Scripts {
         wp_register_style('tiptip', JC_PLUGIN_DIR_URL . 'css/libs/tipTip.min.css');
         // css for jquery-ui
         wp_register_style('jquery-ui', 'https://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css');
-        // bootstrap-grid-system
-        wp_register_style('grid-system', JC_PLUGIN_DIR_URL . 'css/libs/bootstrap-grid-system.min.css');
+        // bootstrap
+        wp_register_style('bootstrap', JC_PLUGIN_DIR_URL . 'css/libs/bootstrap.min.css');
         // generic css for both frontend and admin areas
         wp_register_style('jc-shared', JC_PLUGIN_DIR_URL . 'css/jc-shared.min.css');
+
+        // fonts
+        wp_register_style('jc-font', JC_PLUGIN_DIR_URL . 'fonts/jc-font/styles.css');
+
+        // jcrop
+        wp_register_style('jcrop', JC_PLUGIN_DIR_URL . 'css/libs/jcrop.min.css');
     }
 
     /**
@@ -65,8 +77,6 @@ class JC_Scripts {
      * @private_use_DO_NOT_CALL
      */
     private static function admin_css() {
-        // font awesome
-        wp_register_style('font-awesome', JC_PLUGIN_DIR_URL . 'fonts/font-awesome/css/font-awesome.min.css');
     }
 
     /**

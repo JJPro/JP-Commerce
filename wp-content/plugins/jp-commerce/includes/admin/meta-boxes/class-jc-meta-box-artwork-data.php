@@ -43,37 +43,37 @@ class JC_Meta_Box_Artwork_Data
             <p>
                 <label>Does this item have a frame?</label>
                 <span>
-                    <label for="with-frame">YES </label><input type="radio" id="with-frame" name="has-frame" value="true" />
-                    <label for="no-frame">NO </label><input type="radio" id="no-frame" name="has-frame" value="false" />
+                    <label for="has-frame">YES </label><input type="radio" id="has-frame" name="has_frame" value="true" />
+                    <label for="no-frame">NO </label><input type="radio" id="no-frame" name="has_frame" value="false" />
                 </span>
             </p>
-            <p>
+            <p class="hide-if-no-frame">
                 <label>Is the frame an optional add-on?</label>
                 <span>
-                    <label for="frame-optional-true">YES </label><input type="radio" id="frame-optional-true" name="frame-optional" value="true" />
-                    <label for="frame-optional-false">NO </label><input type="radio" id="frame-optional-false" name="frame-optional" value="false" />
+                    <label for="frame-optional-true">YES </label><input type="radio" id="frame-optional-true" name="frame_optional" value="true" />
+                    <label for="frame-optional-false">NO </label><input type="radio" id="frame-optional-false" name="frame_optional" value="false" />
                 </span>
             </p>
-            <p id="dimensions-with-frame">
+            <p class="hide-if-no-frame" id="dimensions-with-frame" >
                 <label>Dimensions with frame</label>
-                <span class="wrap" style="display: inline-block; margin: 0; width: 60%">
+                <span class="wrap" style="display: inline-block; margin: 0; margin-left: -4px; width: 60%">
                     <input type="text" id="_length" name="dimensions_with_frame['length']" placeholder="Length" />
                     <input type="text" name="$dimensions_with_frame['width']" placeholder="Width" />
                     <input type="text" name="$dimensions_with_frame['height']" placeholder="Height" />
                 </span>
             </p>
-            <p>
+            <p class="hide-if-no-frame">
                 <label for="weight-with-frame">Weight with frame (lbs)</label><span><input type="text" id="weight-with-frame" name="weight_with_frame" /></span>
             </p>
             <p id="dimensions-without-frame">
                 <label>Dimensions without frame</label>
-                <span class="wrap" style="display: inline-block; margin: 0; width: 60%">
+                <span class="wrap" style="display: inline-block; margin: 0; margin-left: -4px; width: 60%">
                     <input type="text" id="_length" name="dimensions_without_frame['length']" placeholder="Length" />
                     <input type="text" name="dimensions_without_frame['width']" placeholder="Width" />
                     <input type="text" name="dimensions_without_frame['height']" placeholder="Height" />
                 </span>
             </p>
-            <p>
+            <p id="weight-without-frame">
                 <label for="weight-without-frame">Weight without frame (lbs)</label><span><input type="text" id="weight-without-frame" name="weight_without_frame" /></span>
             </p>
             <p>
@@ -82,8 +82,10 @@ class JC_Meta_Box_Artwork_Data
             <div id="for-sale-wrap">
                 <p>
                     <label for="price">Price</label>
-                    <span style="position:relative"><span class="currency-symbol">$</span><input type="text" id="price" class="price" name="artwork_price" placeholder="Price of artwork" /></span>
-                    <span style="position:relative"><span class="currency-symbol">$</span><input type="text" class="price" name="frame_price" placeholder="Price of frame" /></span>
+                    <span style="display: inline-block; margin-left: -4px;width: 60%;">
+                        <span style="position:relative; display: inline-block"><span class="currency-symbol">$</span><input type="text" id="price" class="price" name="artwork_price" placeholder="Price of artwork" /></span>
+                        <span style="position:relative; display: inline-block"><span class="currency-symbol">$</span><input type="text" class="price" name="frame_price" placeholder="Price of frame" /></span>
+                    </span>
                     <div id="profit-calculator" style="display: none; margin-top: 15px; padding-left: 35%; padding-right: 5%">
                         <input type="hidden" id="commission-rate" value="<?php echo esc_attr(get_option("jc_commission_rate")); ?>" >
                         <table style="text-align: left; border-top: dashed gray 1px; width: 100%; ">
@@ -149,8 +151,14 @@ class JC_Meta_Box_Artwork_Data
                 color: gray;
                 font-size: larger;
                 position: absolute;
-                top: -4px;
+                /*top: -4px;*/
                 left: 5px;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+                transform: translateY(-50%);
             }
             #for-sale-wrap input.price {
                 padding-left: 14px;
@@ -160,7 +168,7 @@ class JC_Meta_Box_Artwork_Data
             }
             .col-full {
                 display: block;
-                width: 100%;
+                width: 98.5%;
             }
             .col-half {
                 display: inline-block;
@@ -168,13 +176,15 @@ class JC_Meta_Box_Artwork_Data
                 margin: 0;
             }
             .col-half:first-of-type {
-                margin-right: 3%;
+                margin-right: 2%;
             }
         </style>
         <script type="text/javascript">
             var not_for_sale = document.getElementById('not-for-sale');
             var wrap = document.getElementById('for-sale-wrap');
             var ship_from = document.getElementById('ship-from');
+
+            // not for sale ?
             if (not_for_sale.checked) {
                 wrap.style.display = 'none';
                 ship_from.style.display = 'none';
@@ -191,6 +201,8 @@ class JC_Meta_Box_Artwork_Data
                     ship_from.style.display = 'block';
                 }
             }, true);
+
+
         </script>
         <?php
     }

@@ -30,6 +30,7 @@ class JC_Admin
         JC_Scripts::register_admin_scripts();
 
         $this->enqueue_common_scripts();
+
     }
 
     /**
@@ -53,7 +54,7 @@ class JC_Admin
         switch ($screen->id) {
             case 'dashboard' :
 //                include_once('class-jc-admin-dashboard.php');
-                /* 
+                /*
                     TODO - Create & Fill out the dashboard file
                     @author - Jason
                     @date   - 11/22/15
@@ -63,6 +64,9 @@ class JC_Admin
             case 'artwork' :
 //                $this->one_column_layout();
                 add_action('before_delete_post', '__delete_artwork_files');
+                break;
+            case 'order' :
+                JC_Order::init(); // initializes actions and filters for orders.
                 break;
 
         }

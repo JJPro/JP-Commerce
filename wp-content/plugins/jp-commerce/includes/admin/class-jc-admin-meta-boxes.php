@@ -39,15 +39,23 @@ class JC_Admin_Meta_Boxes
         // Save Artwork Meta Boxes
         add_action( 'jc_process_artwork_meta', 'JC_Meta_Box_Artwork_Data::save', 10, 2 );
 
+        // Save Artwork Media Meta Box
+        add_action( 'jc_process_artwork_meta', 'JC_Meta_Box_Artwork_Media::save', 10, 2 );
+
         // Save Order Meta Boxes
 
     }
 
     public function remove_meta_boxes(){
+        // artwork
         remove_meta_box('submitdiv', 'artwork', 'normal');
         remove_meta_box('submitdiv', 'artwork', 'side');
         remove_meta_box('artwork_typediv', 'artwork', 'side');
         remove_meta_box('tagsdiv-artwork_tag', 'artwork', 'side');
+
+        // orders
+        remove_meta_box('submitdiv', 'order', 'normal');
+        remove_meta_box('submitdiv', 'order', 'side');
     }
 
     public function rename_meta_boxes(){

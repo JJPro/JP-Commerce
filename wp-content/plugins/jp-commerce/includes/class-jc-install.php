@@ -89,30 +89,55 @@ class JC_Install {
      */
     private static function create_tables() {
         global $wpdb;
+        $sqls = array();
+
+        $table_name = $wpdb->prefix . 'artwork_files';
+        $sqls[] = "CREATE TABLE {$table_name} (
+            id BIGINT NOT NULL AUTO_INCREMENT,
+            post_id BIGINT NOT NULL DEFAULT 0,
+            `name` VARCHAR(80) DEFAULT NULL,
+            description TEXT,
+            path TEXT NOT NULL,
+            url TEXT NOT NULL,
+            `order` INT,
+            PRIMARY KEY (id),
+            INDEX (post_id))";
         $table_name = $wpdb->prefix . 'orders';
-        $sqls = array("CREATE TABLE {$table_name } (
-            id INT NOT NULL AUTO_INCREMENT,
-            customer INT NOT NULL,
-            billing_address VARCHAR(5000),
-            shipping_address VARCHAR(5000),
-            order_datetime TIMESTAMP NOT NULL,
+        $sqls[] = "CREATE TABLE {$table_name } (
+            id BIGINT NOT NULL AUTO_INCREMENT,
+            post_id BIGINT NOT NULL DEFAULT 0,
+            order_date TIMESTAMP NOT NULL,
             order_status VARCHAR(10),
+            customer BIGINT NOT NULL,
+            billing_info VARCHAR(5000),
+            shipping_info VARCHAR(5000),
             PRIMARY KEY (id),
             INDEX (customer),
-            INDEX (order_status));");
+            INDEX (order_status),
+            INDEX (post_id));";
+        $table_name = $wpdb->prefix . 'ordermeta';
+        $sqls[] = "CREATE TABLE {$table_name } (
+            id BIGINT NOT NULL AUTO_INCREMENT,
+            order_id BIGINT NOT NULL DEFAULT '0',
+            `meta_key` VARCHAR(255) DEFAULT NULL,
+            `meta_value` TEXT,
+
+            PRIMARY KEY (id),
+            INDEX (order_id),
+            INDEX (meta_key));";
         $table_name = $wpdb->prefix . 'order_details';
         $sqls[] = "CREATE TABLE {$table_name} (
-            id INT NOT NULL AUTO_INCREMENT,
-            item INT NOT NULL,
-            `order` INT NOT NULL,
-            quantity INT NOT NULL,
+            id BIGINT NOT NULL AUTO_INCREMENT,
+            item BIGINT NOT NULL,
+            `order` BIGINT NOT NULL,
+            quantity INT NOT NULL DEFAULT 1,
             PRIMARY KEY (id),
             INDEX(`order`),
             INDEX(item));";
         $table_name = $wpdb->prefix . 'shipments';
         $sqls[] = "CREATE TABLE {$table_name} (
-            id INT NOT NULL AUTO_INCREMENT,
-            `order` INT NOT NULL,
+            id BIGINT NOT NULL AUTO_INCREMENT,
+            `order` BIGINT NOT NULL,
             ship_datetime DATETIME NOT NULL,
             shipping_status VARCHAR(10),
             tracking_number VARCHAR(50),

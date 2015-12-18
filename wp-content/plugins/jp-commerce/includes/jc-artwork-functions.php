@@ -13,164 +13,117 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Deletes all files related to the artwork post
- * This function is triggered by "before_delete_post" action.
- *
- * @param $post_id int
+ * insert new record for uploaded file
+ * @param $post_id int post_id | artwork_id
+ * @param $path string
+ * @param $url string
+ * @param $order int
+ * @return bool|int file_id on success
  */
-function __delete_artwork_files( $post_id ) {
-    // only delete files when this is an artwork post type
-    global $post_type, $logger;
+function add_artwork_file($post_id, $path, $url, $order) {
+    global $wpdb;
+    $table = "{$wpdb->prefix}artwork_files";
 
-    if ( $post_type != 'artwork' )
-        return;
-
-    $author_id = get_post_field("post_author", $post_id);
-    $files_dir = wp_upload_dir()["basedir"] . "/artworks/{$author_id}/{$post_id}";
-
-    WP_Filesystem_Direct::delete( $files_dir, true);
-}
-
-
-/**
- * Retrieve original size media files associated to the artwork
- *
- * @param $post_id int
- * @return array. URLs to original sized media files.
- */
-function get_images( $post_id ) {
-    $images = get_post_meta($post_id, "_images", true);
-    $images = is_array($images) ? $images : array();
-
-    return $images;
+    return $wpdb->insert($table, array('post_id' => $post_id, 'path' => $path, 'url' => $url, 'order' => $order),
+        array('%d', '%s', '%s', '%d'));
 }
 
 /**
- * Retrieve thumbnails associated to the artwork
- *
- * Regenerates missing thumbnails on the fly if they haven't been created yet or missing some.
- *
- * @param $post_id int
- * @return array. URLs to thumbnail images.
+ * @param $file_id int Entry id for file that requires update
+ * @param $changes array array('column' => new_val)
+ * @return bool
  */
-function get_thumbnails( $post_id ) {
+function update_artwork_file($file_id, $changes) {
+    global $wpdb;
+    $table = "{$wpdb->prefix}artwork_files";
 
-    // Don't save meta boxes for revisions or autosaves
-    if ( defined( 'DOING_AUTOSAVE' ) || is_int( wp_is_post_revision( $post_id ) ) || is_int( wp_is_post_autosave( $post_id ) ) ) {
-        return;
-    }
+    $success = $wpdb->update($table, $changes, array('id' => $file_id));
 
-    global $logger;
-
-
-    $thumbnails = get_post_meta( $post_id, "_thumbnails", true );
-    $thumbnails = is_array($thumbnails) ? $thumbnails : array();
-    $missing_thumbnails = get_post_meta( $post_id, "_missing_thumbnails", true );
-
-    if (
-        $missing_thumbnails &&
-
-        // create directory if needed
-        wp_mkdir_p( dirname(_get_image_path( $post_id, null, THUMBNAIL, pathinfo($missing_thumbnails[0], PATHINFO_BASENAME)) ) )
-        )
-    {
-        $logger->log_action(__FUNCTION__ . " Missing Thumbnails",$missing_thumbnails);
-
-        foreach($missing_thumbnails as $key => $image_path) {
-            // thumbnail url
-            $url  = _get_image_url ($post_id, null, THUMBNAIL, pathinfo($image_path, PATHINFO_BASENAME));
-            // thumbnail path
-            $path = _get_image_path ($post_id, null, THUMBNAIL, pathinfo($image_path, PATHINFO_BASENAME));
-            $image_editor = wp_get_image_editor($image_path);
-            if ( ! is_wp_error($image_editor) ) {
-                $image_editor->resize(120, 120, ["center", "center"]);
-
-                if (JC_DEBUG)
-                    $logger->log_action("Thumbnail path", $path);
-
-                if ( ! is_wp_error( $image_editor->save( $path ) ) ){
-                    $thumbnails[] = $url;
-                }
-            }
-        }
-
-        if ( is_numeric( update_post_meta($post_id, "_thumbnails", $thumbnails) ) )
-            update_post_meta($post_id, "_thumbnails", $thumbnails);
-        update_post_meta($post_id, "_missing_thumbnails", false);
-    }
-
-    return $thumbnails;
+    if ($success === false)
+        return false;
+    else
+        return true;
 }
 
 /**
- * Retrieves the featured image for the artwork
- *
- * Return the first image if not set
- *
- * @param $post_id int
- * @return string. URL to the featured image.
+ * @param $file_id int
+ * @return Object {id, post_id, path, url, order}
  */
-function get_featured_image( $post_id ) {
+function get_artwork_file_with_file_id($file_id) {
+    global $wpdb;
+    $table = "{$wpdb->prefix}artwork_files";
 
-    $featured = get_post_meta($post_id, "_featured_image", true);
-    $images = get_images($post_id);
-    if (! $featured ) {
-        if (!$images){
-            return '';
-        }
-        return $images[0];
-    } else {
-        return $featured;
-    }
+    $query = "SELECT id, post_id, path, url, `order` FROM {$table} WHERE id = {$file_id}";
+
+    return $wpdb->get_row($query);
 }
 
 /**
- * Retrieves wechat sized image (featured image) for the artwork
- *
- * Recreates with featured image if not set yet.
- *
- * @param $post_id int
- * @return string. URL to wechat image.
+ * Retrieve the file object at a given order.
+ * @param $post_id
+ * @param $order
+ * @return Object|null {id, post_id, path, url, order}
  */
-function get_wechat_image($post_id) {
+function get_artwork_file_at_order($post_id, $order) {
+    global $wpdb;
+    $table = "{$wpdb->prefix}artwork_files";
 
-    // Don't save meta boxes for revisions or autosaves
-    if ( defined( 'DOING_AUTOSAVE' ) || is_int( wp_is_post_revision( $post_id ) ) || is_int( wp_is_post_autosave( $post_id ) ) ) {
-        return;
-    }
+    $query = "SELECT id, post_id, path, url, `order` FROM {$table} WHERE post_id = {$post_id} AND `order` = {$order}";
 
-    $wechat = get_post_meta($post_id, "_wechat", true); // path string
+    return $wpdb->get_row($query);
+}
 
-    if (!$wechat) {
-        $featured = get_featured_image($post_id);
-        if (!$featured){
-            return '';
-        }
+/**
+ * Get all the artwork files related to this artwork/post
+ * @param $post_id
+ * @return array(Object)|null Object {id, post_id, path, url, order}
+ */
+function get_artwork_files($post_id) {
+    global $wpdb;
+    $table = "{$wpdb->prefix}artwork_files";
 
-        $path = _get_image_path($post_id, null, WECHAT, pathinfo($featured, PATHINFO_BASENAME));
+    $query = "SELECT id, post_id, path, url, `order` FROM {$table} WHERE post_id = {$post_id} ORDER BY `order`";
 
-        // create the directory if necessary
-        if (! wp_mkdir_p( dirname( $path ) ) ){
-            return '';
-        }
+    return $wpdb->get_results($query);
+}
 
-        $image_editor = wp_get_image_editor($featured);
-        $image_editor->resize(300, 300, ["center", "center"]);
-        $url = _get_image_url($post_id, null, WECHAT, pathinfo($featured, PATHINFO_BASENAME));
-        if (! is_wp_error( $image_editor->save($path) ) ){
-            if ( is_numeric( update_post_meta($post_id, "_wechat", $url) ) )
-                update_post_meta($post_id, "_wechat", $url);
-            return $url;
-        } else {
-            return '';
-        }
-    }
-    return $wechat;
+/**
+ * @param $file_id
+ * @return bool
+ */
+function delete_artwork_file($file_id) {
+    global $wpdb;
+    $table = "{$wpdb->prefix}artwork_files";
+
+    $success = $wpdb->delete($table, array('id' => $file_id), array('%d'));
+
+    if ($success === false)
+        return false;
+    else
+        return true;
+}
+
+/**
+ * This function deletes the database record of the files, it doesn't delete the files on disk.
+ * @param $post_id
+ * @return bool
+ */
+function delete_all_artwork_files($post_id) {
+    global $wpdb;
+    $table = "{$wpdb->prefix}artwork_files";
+
+    $success = $wpdb->delete($table, array('post_id' => $post_id), array('%d'));
+
+    if ($success === false)
+        return false;
+    else
+        return true;
 }
 
 
+
 /**
- * Gets path to image
+ * Locate image with its name and post info
  *
  * @param $post_id int
  * @param $author_id int
@@ -181,6 +134,7 @@ function get_wechat_image($post_id) {
 if (!defined("ORIGINAL")) {define("ORIGINAL", "ORIGINAL");}
 if (!defined("THUMBNAIL")) {define("THUMBNAIL", "THUMBNAIL");}
 if (!defined("WECHAT")) {define("WECHAT", "WECHAT");}
+if (!defined("DROPZONE_THUMBNAIL")) {define("DROPZONE_THUMBNAIL", "DROPZONE_THUMBNAIL");}
 function _get_image_path( $post_id, $author_id = null, $image_size, $image_name) {
     return __get_image__($post_id, $author_id, $image_size, $image_name, PATH);
 }
@@ -205,13 +159,15 @@ function _get_image_url( $post_id, $author_id = null, $image_size, $image_name) 
  * @param $post_id int
  * @param $author_id int
  * @param $image_size int ORIGINAL|THUMBNAIL|WECHAT
- * @param $image_name string The image you are getting path for. e.g. profile.png
+ * @param $image_name string The image you are getting path for, can also be a path if you are getting the destination path for moving files. e.g. profile.png
  * @param $link_type int PATH|URL
  * @return string. path or url to image.
  */
 if (!defined("PATH")) {define("PATH", "PATH");}
 if (!defined("URL")) {define("URL", "URL");}
 function __get_image__( $post_id, $author_id = null, $image_size, $image_name, $link_type) {
+
+    global $logger;
 
     $filename   = pathinfo($image_name, PATHINFO_FILENAME);
     $extension  = pathinfo($image_name, PATHINFO_EXTENSION);
@@ -223,6 +179,10 @@ function __get_image__( $post_id, $author_id = null, $image_size, $image_name, $
     $sizeinfo = '';
     if ($image_size == THUMBNAIL){
         $foldername = 'thumbnails/';
+        $sizeinfo   = '-300xAUTO';
+    }
+    elseif ($image_size == DROPZONE_THUMBNAIL) {
+        $foldername = 'thumbnails/';
         $sizeinfo   = '-120x120';
     }
     elseif ($image_size == WECHAT){
@@ -232,14 +192,4 @@ function __get_image__( $post_id, $author_id = null, $image_size, $image_name, $
     $path .= $foldername . $filename . $sizeinfo . '.' . $extension;
 
     return $path;
-}
-
-/**
- * Retrieve artwork object
- *
- * @param $post int|Object
- * @return JC_Artwork|bool False if artwork not found.
- */
-function get_artwork( $post ) {
-//    $product = new JC_Artwork($post);
 }

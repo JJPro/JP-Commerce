@@ -2,10 +2,20 @@
  * Generic Styling for both frontend and admin
  */
 
+// jc-fonts
+@import '../fonts/jc-font/styles.css';
 
 // reset box-sizing
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+// tiptip
+.tiptip {
+  &.description {
+    border-bottom: dashed 1px;
+    cursor: help;
+  }
 }

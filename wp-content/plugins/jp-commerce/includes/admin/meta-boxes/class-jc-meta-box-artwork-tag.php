@@ -21,8 +21,7 @@ class JC_Meta_Box_Artwork_Tag
             <span class="tiptip description" 
             title="<p>Artwork Tags helps customers to discover your work on search;</p><p>It also increases the chances of being displayed in the up-selling and cross-selling promotions section at customer checkout.</p>
             <p>However, too many tags will confuse the search engine. <br />
-            So, please <strong>be brief</strong> and <strong>accurate!</strong></p>"
-            style="border-bottom: dashed 1px;">
+            So, please <strong>be brief</strong> and <strong>accurate!</strong></p>">
                 Show More
             </span>
 

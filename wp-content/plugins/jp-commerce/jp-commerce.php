@@ -164,12 +164,13 @@ final class JJProCommerce {
         include_once( 'includes/jc-core-functions.php' );
         include_once( 'includes/class-jc-user-roles.php' );
         include_once( 'includes/class-jc-post-types.php' );                     // Registers post types
+        include_once( 'includes/class-jc-order.php' );
         include_once( 'includes/class-jc-install.php' );
         include_once( 'includes/class-jc-ajax.php' );
-        require_once( 'includes/admin-bar.php' );
+        include_once( 'includes/admin-bar.php' );
         // Registration functions for all scripts in JP Commerce.
         // You have to call the respective class functions to register scripts in either admin or frontend.
-        require_once( 'includes/class-jc-scripts.php' );
+        include_once( 'includes/class-jc-scripts.php' );
         include_once( 'includes/class-jc-artwork.php' );
 
 
