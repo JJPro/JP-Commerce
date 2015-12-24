@@ -50,9 +50,9 @@ class JC_Meta_Box_Tax_Select_Style
                     <fieldset class="widefat">
                         <?php foreach (get_terms($taxonomy, array('hide_empty' => false)) as $term): ?>
 
-                            <input type="radio" name="<?php echo "tax_input[$taxonomy][]"; ?>" class="<?php echo $taxonomy->name; ?>" id="<?php echo $taxonomy->name; ?>-<?php echo esc_attr($term->slug); ?>"
+                            <input type="radio" name="<?php echo "tax_input[$taxonomy][]"; ?>" class="<?php echo $tax->name; ?>" id="<?php echo $tax->name; ?>-<?php echo esc_attr($term->slug); ?>"
                                    value="<?php echo esc_attr($term->slug); ?>" <?php checked($term->term_id, count($selected) >= 1 ? $selected[0] : ''); ?> />
-                            <label for="<?php echo $taxonomy->name; ?>-<?php echo esc_attr($term->slug); ?>" class="<?php echo $taxonomy->name; ?>-icon <?php echo $taxonomy->name; ?>-<?php echo esc_attr($term->slug); ?>">
+                            <label for="<?php echo $tax->name; ?>-<?php echo esc_attr($term->slug); ?>" class="<?php echo $tax->name; ?>-icon <?php echo $tax->name; ?>-<?php echo esc_attr($term->slug); ?>">
                                 <?php echo esc_html($term->name); ?>
                             </label>
                             <br />

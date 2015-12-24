@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @property-read   int    $artist
  * @property        string $name
  * @property-read   date   $post_date
+ * @property        int    $is_featured 1|0
  *
  * **** Artwork Type ****
  * @property        string $artwork_type
@@ -31,9 +32,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @method'         void   set_dimensions($l, $w, $h)
  * @property        string $description
  *
- * @property        bool   $is_for_sale
- * @property        bool   $have_frame
- * @property        bool   $is_frame_optional
+ * @property        int    $is_for_sale 1|0
+ * @property        int    $have_frame  1|0
+ * @property        int    $is_frame_optional 1|0
  * @property        float  $shipping_weight
  * @property-read   Object $shipping_dimensions
  * @method'         void   set_shipping_dimensions($l, $w, $h)
@@ -105,7 +106,7 @@ class JC_Artwork
     private static $direct_post_meta = ['date_created', 'dimensions', 'description',
                                          'is_for_sale', 'have_frame', 'is_frame_optional',
                                          'shipping_weight', 'shipping_dimensions', 'price_of_artwork', 'price_of_frame', 'stock', 'shipping_from',
-                                         'cover_image', ];
+                                         'cover_image', 'is_featured'];
 
 
     private static $through_methods = ['artwork_type', 'commission_fee', 'artist_profit', 'wechat_image', 'other_images', 'other_images_thumbnails', 'cover_thumbnail', 'other_images_dropzone_thumbnails'];
@@ -121,7 +122,15 @@ class JC_Artwork
      * @return JC_Artwork
      */
     public static function instance( $artwork ) {
-        return self::$_instance ? self::$_instance : new self($artwork);
+        if ( self::$_instance ) {
+            if ( is_numeric($artwork) && self::$_instance->id === $artwork)
+                return self::$_instance;
+            elseif ( $artwork instanceof WP_Post && self::$_instance->id === $artwork->ID )
+                return self::$_instance;
+            elseif ( $artwork instanceof JC_Artwork && $artwork->id === self::$_instance->id )
+                return self::$_instance;
+        }
+        return new self($artwork);
     }
 
     /**
@@ -519,7 +528,11 @@ class JC_Artwork
         $dir = dirname( _get_image_path($this->id, $this->artist, ORIGINAL, $this->cover_image) );
 
         // delete the directory recursively
+        include_once(ABSPATH . 'wp-admin/includes/class-wp-filesystem-base.php');
+        include_once(ABSPATH . 'wp-admin/includes/class-wp-filesystem-direct.php');
         global $wp_filesystem;
+        if (!$wp_filesystem)
+            $wp_filesystem = new WP_Filesystem_Direct();
         $wp_filesystem->rmdir($dir, true);
 
         // cover image post meta will be taken care of automatically.

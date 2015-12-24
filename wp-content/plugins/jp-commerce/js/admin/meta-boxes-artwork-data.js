@@ -26,8 +26,17 @@ jQuery(function($){
     var has_frame = $('input[name="has_frame"]:checked').val();
     if (has_frame === "false") {
         $('.hide-if-no-frame').hide();
-        // change the text for weight/dimensions without frame to just weight / dimensions
-        $('#dimensions-without-frame').hide();
     }
+
+    $('input[name="has_frame"]').on('change', function() {
+        var has_frame = $(this).val();
+
+        if (has_frame === "false") {
+            $('.hide-if-no-frame').hide();
+        } else {
+            $('.hide-if-no-frame').show();
+
+        }
+    })
 
 });

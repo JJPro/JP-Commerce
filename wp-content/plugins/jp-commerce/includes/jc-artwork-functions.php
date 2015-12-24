@@ -109,6 +109,10 @@ function delete_artwork_file($file_id) {
  * @return bool
  */
 function delete_all_artwork_files($post_id) {
+
+    global $logger;
+    $logger->log_action('Delete function is called');
+
     global $wpdb;
     $table = "{$wpdb->prefix}artwork_files";
 

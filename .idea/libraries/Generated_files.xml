@@ -8,6 +8,7 @@
         <item url="file://$PROJECT_DIR$/wp-includes/js/swfobject.min.js" />
         <item url="file://$PROJECT_DIR$/wp-admin/js/custom-header.min.js" />
         <item url="file://$PROJECT_DIR$/wp-admin/js/iris.min.min.js" />
+        <item url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/admin/artworks-list-table.min.js" />
         <item url="file://$PROJECT_DIR$/wp-admin/js/farbtastic.min.js" />
         <item url="file://$PROJECT_DIR$/wp-admin/js/customize-nav-menus.min.js" />
         <item url="file://$PROJECT_DIR$/wp-admin/js/postbox.min.js" />
@@ -149,8 +150,8 @@
         <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/datepicker.min.min.js" />
         <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/selectmenu.min.min.js" />
         <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/selectable.min.min.js" />
-        <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/jquery.hotkeys.min.js" />
         <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/resizable.min.min.js" />
+        <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/jquery.hotkeys.min.js" />
         <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/droppable.min.min.js" />
         <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.min.js" />
         <item url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/draggable.min.min.js" />
@@ -439,6 +440,7 @@
       <root url="file://$PROJECT_DIR$/wp-includes/js/swfobject.min.js" />
       <root url="file://$PROJECT_DIR$/wp-admin/js/custom-header.min.js" />
       <root url="file://$PROJECT_DIR$/wp-admin/js/iris.min.min.js" />
+      <root url="file://$PROJECT_DIR$/wp-content/plugins/jp-commerce/js/admin/artworks-list-table.min.js" />
       <root url="file://$PROJECT_DIR$/wp-admin/js/farbtastic.min.js" />
       <root url="file://$PROJECT_DIR$/wp-admin/js/customize-nav-menus.min.js" />
       <root url="file://$PROJECT_DIR$/wp-admin/js/postbox.min.js" />
@@ -583,8 +585,8 @@
       <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/datepicker.min.min.js" />
       <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/selectmenu.min.min.js" />
       <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/selectable.min.min.js" />
-      <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/jquery.hotkeys.min.js" />
       <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/resizable.min.min.js" />
+      <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/jquery.hotkeys.min.js" />
       <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/droppable.min.min.js" />
       <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.min.js" />
       <root url="file://$PROJECT_DIR$/wp-includes/js/jquery/ui/draggable.min.min.js" />

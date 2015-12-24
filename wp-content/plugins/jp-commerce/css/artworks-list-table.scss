@@ -1,0 +1,20 @@
+td.column-featured {
+  text-align: center;
+}
+
+span[data-is_featured] {
+  cursor: pointer;
+}
+
+span.featured[data-is_featured]::before {
+  content: '&#xe008;'; //icon-star'; // &#xe008;
+}
+
+span[data-is_featured]::before {
+  content: '&#xe009;'; //'icon-heart'; // &#xe009;
+}
+
+table thead th,
+table tfoot th{
+  text-align: center !important;
+}

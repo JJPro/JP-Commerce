@@ -158,49 +158,6 @@ $background-color: #f7f7f7;
     filter: blur(3px);
   }
 
-
-  /********* PROGRESS BAR *********/
-  .dz-progress{
-    position: absolute;
-    bottom: 10%;
-
-
-    height: 10px;
-    width: 95%;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    overflow: hidden;
-
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
-  .dz-upload {
-    height: 100%;
-    background-color: #74c9ee;
-
-    display: block;
-
-    /*opacity: 0;*/
-    -webkit-transition-property: opacity;
-    -moz-transition-property: opacity;
-    -ms-transition-property: opacity;
-    -o-transition-property: opacity;
-    transition-property: opacity;
-  }
-
-  &.dz-processing .dz-upload {
-    opacity: 1;
-  }
-  &.dz-complete .dz-upload {
-    opacity: 0;
-  }
-
   .dz-remove {
     cursor: pointer;
     position: absolute;

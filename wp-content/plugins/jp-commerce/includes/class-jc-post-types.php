@@ -18,8 +18,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 class JC_Post_Types
 {
     public static function init() {
+
+        // register post types and taxonomies
         add_action( 'init', array( __CLASS__, 'register_taxonomies' ) );
         add_action( 'init', array( __CLASS__, 'register_post_types' ) );
+
+        self::artworks_list_table();
+    }
+
+    public static function artworks_list_table() {
+        // define columns
+        add_filter( 'manage_artwork_posts_columns', function( $columns) {
+            $columns = array(
+                'cover_image' => '<span class="icon-eye tiptip description" title="Cover Image"></span>',
+                'title' => 'Name',
+                'stock' => 'Stock',
+                'price' => 'Price',
+                'taxonomy-artwork_type' => 'Artwork Type',
+                'featured' => '<span class="icon-star tiptip description" title="Featured"></span>',
+                'date'  => 'Date',
+            );
+            return $columns;
+        });
+
+        // get column values
+        add_action( 'manage_artwork_posts_custom_column', function( $col_name, $post_id ) {
+
+            $artwork = JC_Artwork::instance($post_id);
+            switch ($col_name) {
+                case 'cover_image' :
+                    echo '<img src="' . $artwork->wechat_image . '" width="100%" style="min-width: 50px;"/>';
+                    break;
+                case 'stock' :
+                    echo $artwork->stock;
+                    break;
+                case 'price' :
+                    if ($artwork->is_for_sale && $artwork->price_of_artwork > 0)
+                        echo '$ '. $artwork->price_of_artwork;
+                    else
+                        echo '0';
+                    break;
+                case 'featured' :
+                    printf('<span class="%s" data-artwork="%d" data-is_featured></span>',
+                        $artwork->is_featured ? 'featured' : '',
+                        $artwork->id
+                        );
+                    break;
+
+            }
+        }, 10, 2 );
     }
 
     public static function register_post_types(){

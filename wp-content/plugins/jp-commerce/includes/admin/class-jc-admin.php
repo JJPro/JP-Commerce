@@ -62,11 +62,26 @@ class JC_Admin
                 */
                 break;
             case 'artwork' :
-//                $this->one_column_layout();
-                add_action('before_delete_post', '__delete_artwork_files');
+                add_action('before_delete_post', function($post_id) {
+                    $artwork = JC_Artwork::instance($post_id);
+                    $artwork->pre_delete_artwork();
+                });
                 break;
             case 'order' :
                 JC_Order::init(); // initializes actions and filters for orders.
+                break;
+            case 'edit-artwork' :
+                add_action('admin_enqueue_scripts', function () {
+                    wp_enqueue_script('artworks-list-table');
+                    wp_enqueue_style('artworks-list-table');
+                    wp_localize_script('artworks-list-table', 'jc_data', array(
+                        'ajaxurl'   => admin_url('admin-ajax.php'),
+                    ));
+                });
+                break;
+            default :
+                global $logger;
+                $logger->log_action('Screen', $screen);
                 break;
 
         }

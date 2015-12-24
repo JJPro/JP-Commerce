@@ -255,7 +255,6 @@ jQuery(function ($){
                                         '   <div class="dz-details">' +
                                         '       <img data-dz-thumbnail />' +
                                         '   </div>' +
-                                        '   <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div> ' +
                                         '   <div class="controls">' +
                                         '       <i class="dz-remove icon-x-circle" data-dz-remove title="Delete"></i>' +
                                         '   </div>' +
@@ -441,7 +440,6 @@ jQuery(function ($){
      * Load existing images
      */
     function load_existing_files() {
-
         var existing_file_count = other_thumbnails.length,
             thumbnail,
             mockFile;
@@ -470,7 +468,6 @@ jQuery(function ($){
         if (dropzone_api.options.maxFiles === 0) {
             $dropdiv.addClass('dz-max-files-reached');
         }
-        debugger;
     }
 
     // collect changes for submissoin

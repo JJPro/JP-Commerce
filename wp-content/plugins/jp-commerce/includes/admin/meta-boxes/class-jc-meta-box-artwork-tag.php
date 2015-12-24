@@ -15,10 +15,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class JC_Meta_Box_Artwork_Tag 
 {
+
+    public static function init() {
+        self::enqueue_scripts();
+    }
+
+    public static function enqueue_scripts() {
+        add_action('admin_enqueue_scripts',
+            function()
+            {
+                wp_enqueue_script('tags-box');
+                wp_enqueue_script('quicktags');
+                wp_enqueue_script('admin-tags');
+            }
+        );
+    }
+
     public static function output($post, $box) {
+
+        /*
+         * Verify that the js files are loaded
+         */
+         global $logger;
+         $logger->log_action('tags-box', wp_script_is('tags-box'));
+         $logger->log_action('tags-box', wp_script_is('quicktags'));
+         $logger->log_action('tags-box', wp_script_is('admin-tags'));
+
+         $logger->log_action('post', $post);
+         $logger->log_action('box', $box);
+
         ?>
         <p class="description">Tags are keywords that emphasises characters of your artwork. </p>
-            <span class="tiptip description" 
+            <span class="tiptip description"
             title="<p>Artwork Tags helps customers to discover your work on search;</p><p>It also increases the chances of being displayed in the up-selling and cross-selling promotions section at customer checkout.</p>
             <p>However, too many tags will confuse the search engine. <br />
             So, please <strong>be brief</strong> and <strong>accurate!</strong></p>">

@@ -84,7 +84,7 @@ class JC_Meta_Box_Artwork_Media
         <?php /** pass some data **/ ?>
         <script type="text/javascript">
             var artwork = <?php echo $id; ?>;
-            var cover_thumb = <?php echo $cover_thumbnail ? $cover_thumbnail : "''"; ?>;
+            var cover_thumb = <?php echo $cover_thumbnail ? wp_json_encode($cover_thumbnail) : "''"; ?>;
             var other_thumbnails = <?php echo wp_json_encode($other_thumbnails); ?>;
         </script>
 

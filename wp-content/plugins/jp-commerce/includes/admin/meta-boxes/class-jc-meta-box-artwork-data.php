@@ -38,20 +38,20 @@ class JC_Meta_Box_Artwork_Data
         <section id="artwork-detail">
             <h4>Artwork Detail:</h4>
             <p>
-                <label for="make-date">When was it made?</label><input id="make-date" name="make-date" max="<?php echo date_i18n( 'm/d/Y', time() ); ?>" value="<?php echo $artwork->make_date; ?>"/>
+                <label for="make-date">When was it made?</label><input id="make-date" name="make-date" max="<?php echo date_i18n( 'm/d/Y', time() ); ?>" value="<?php echo $artwork->date_created; ?>"/>
             </p>
             <p>
                 <label>Does this item have a frame?</label>
                 <span>
-                    <label for="has-frame">YES </label><input type="radio" id="has-frame" name="has_frame" value="true" />
-                    <label for="no-frame">NO </label><input type="radio" id="no-frame" name="has_frame" value="false" />
+                    <label for="has-frame">YES </label><input type="radio" id="has-frame" name="has_frame" value="true" <?php self::checked($artwork->have_frame, true); ?>/>
+                    <label for="no-frame">NO </label><input type="radio" id="no-frame" name="has_frame" value="false" <?php self::checked($artwork->have_frame, false); ?>/>
                 </span>
             </p>
             <p class="hide-if-no-frame">
                 <label>Is the frame an optional add-on?</label>
                 <span>
-                    <label for="frame-optional-true">YES </label><input type="radio" id="frame-optional-true" name="frame_optional" value="true" />
-                    <label for="frame-optional-false">NO </label><input type="radio" id="frame-optional-false" name="frame_optional" value="false" />
+                    <label for="frame-optional-true">YES </label><input type="radio" id="frame-optional-true" name="frame_optional" value="true" <?php self::checked($artwork->is_frame_optional, true); ?>/>
+                    <label for="frame-optional-false">NO </label><input type="radio" id="frame-optional-false" name="frame_optional" value="false" <?php self::checked($artwork->is_frame_optional, false); ?>/>
                 </span>
             </p>
             <p class="hide-if-no-frame" id="dimensions-with-frame" >
@@ -100,33 +100,34 @@ class JC_Meta_Box_Artwork_Data
                     </div>
                 </p>
                 <p>
-                    <label for="stock">Inventory <span>(Enter -1 for unlimited)</span></label><span data-required=true><input type="number" id="stock" name="stock" value="1" /></span>
+                    <label for="stock">Inventory <span>(Enter -1 for unlimited)</span></label><input type="number" id="stock" name="stock" value="1" required />
                 </p>
             </div>
             <p>
-                <label for="description">Description</label><span data-required=true style="display: inline-block; width: 60%"><textarea id="description" name="description" style="width: 100%; min-height: 100px"></textarea></span>
+                <label for="description">Description</label><textarea required id="description" name="description" style="width: 70%; min-height: 100px"></textarea>
             </p>
         </section>
         <section id="ship-from">
             <h4>Will Ship From: </h4>
+            <?php $shipping_from = $artwork->shipping_from; ?>
             <p class="description">This address will be used together with the dimensions and weight to estimate shipping cost.</p>
             <div style="max-width: 400px">
                 <div>
                     <label for="address-1" class="col-half">Address 1</label> <label for="address-2" class="col-half">Address 2</label>
-                    <input type="text" class="col-half" id="address-1" name="address_1" />
-                    <input type="text" class="col-half" id="address-2" name="address_2" />
+                    <input type="text" class="col-half" id="address-1" name="address_1" value="<?php if ($shipping_from) echo $shipping_from->addr1; ?>"/>
+                    <input type="text" class="col-half" id="address-2" name="address_2" value="<?php if ($shipping_from) echo $shipping_from->addr2; ?>"/>
                 </div>
 
                 <div>
                     <label for="city" class="col-full">City</label>
-                    <input type="text" class="col-full" id="city" name="city" />
+                    <input type="text" class="col-full" id="city" name="city" value="<?php if ($shipping_from) echo $shipping_from->city; ?>"/>
                 </div>
 
                 <div>
                     <label for="state" class="col-half">State</label>
                     <label for="postcode" class="col-half">Postcode</label>
-                    <input type="text" class="col-half" id="state" name="state" />
-                    <input type="text" class="col-half" id="postcode" name="postcode" />
+                    <input type="text" class="col-half" id="state" name="state" value="<?php if ($shipping_from) echo $shipping_from->state; ?>"/>
+                    <input type="text" class="col-half" id="postcode" name="postcode" value="<?php if ($shipping_from) echo $shipping_from->zip; ?>"/>
                 </div>
             </div>
         </section>
@@ -140,13 +141,7 @@ class JC_Meta_Box_Artwork_Data
             #artwork-data span.wrap input {
                 width: 30%;
             }
-            span[data-required]::before {
-                content: "*";
-                color: red;
-                display: inline-block;
-                width: 10px;
-                margin-left: -10px;
-            }
+
             .currency-symbol {
                 color: gray;
                 font-size: larger;
@@ -208,5 +203,10 @@ class JC_Meta_Box_Artwork_Data
     }
 
     public static function save($post_id, $post){
+    }
+
+    private static function checked($val1, $val2) {
+        if ($val1 === $val2)
+            echo 'checked="checked"';
     }
 }

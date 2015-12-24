@@ -32,6 +32,8 @@ class JC_AJAX
             'add_artwork_file'                  => false,
             'update_artwork_file_order'         => false,
             'delete_artwork_file'               => false,
+            'set_artwork_as_featured'           => false,
+            'cancel_artwork_featured'           => false,
 
             // Orders
             'add_cs_note'                       => false,
@@ -137,6 +139,40 @@ class JC_AJAX
             wp_send_json_success();
         } else {
             wp_send_json_error("Error: Failed to delete file on the server.");
+        }
+    }
+
+    public static function set_artwork_as_featured() {
+        $artwork = $_POST['artwork'];
+
+        $artwork = JC_Artwork::instance($artwork);
+
+        $artwork->is_featured = 1;
+
+        global $logger;
+        $logger->log_action(__FUNCTION__, $artwork->is_featured);
+
+        if ($artwork->is_featured) {
+            wp_send_json_success();
+        } else {
+            wp_send_json_error("Error: Failed to set artwork as featured.");
+        }
+    }
+
+    public static function cancel_artwork_featured () {
+        $artwork = $_POST['artwork'];
+
+        $artwork = JC_Artwork::instance($artwork);
+
+        $artwork->is_featured = 0;
+
+        global $logger;
+        $logger->log_action(__FUNCTION__, $artwork->is_featured);
+
+        if (!$artwork->is_featured) {
+            wp_send_json_success();
+        } else {
+            wp_send_json_error("Error: Failed to set artwork as featured.");
         }
     }
 
