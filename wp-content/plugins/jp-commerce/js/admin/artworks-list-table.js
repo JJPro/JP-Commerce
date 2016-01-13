@@ -12,7 +12,7 @@ jQuery(function($){
 
     $('span[data-is_featured]').on('click', function(e, target) {
         var artwork = $(this).attr('data-artwork');
-        var is_featured = this.hasAttribute('featured');
+        var is_featured = $(this).attr('data-is_featured');
         var that = this;
         var action;
 
@@ -29,7 +29,8 @@ jQuery(function($){
             type: 'POST',
             success: function(result, status, xhr) {
                 if ( result.success ) {
-                    $(that).toggleClass('featured');
+                    $(that).attr('data-is_featured', 1- parseInt(is_featured));
+                    $(that).toggleClass('icon-star-o icon-star-1');
                 }
             }
         });

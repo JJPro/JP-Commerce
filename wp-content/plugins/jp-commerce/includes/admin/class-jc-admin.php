@@ -24,13 +24,12 @@ class JC_Admin
         add_action('admin_init', array($this, 'prevent_admin_access_for_customers'));
         add_action('current_screen', array($this, 'conditional_includes'));
         add_action('current_screen', array($this, 'hide_contextual_help'));
-        add_filter('screen_options_show_screen', '__return_false');   // hide screen options
+//        add_filter('screen_options_show_screen', '__return_false');   // hide screen options
         add_action('current_screen', array($this, 'limit_artists_visibility_of_posts'));
         $this->remove_footer_text();
         JC_Scripts::register_admin_scripts();
 
-        $this->enqueue_common_scripts();
-
+        JC_Scripts::enqueue_common_admin_scripts();
     }
 
     /**
@@ -52,15 +51,6 @@ class JC_Admin
         $screen = get_current_screen();
 
         switch ($screen->id) {
-            case 'dashboard' :
-//                include_once('class-jc-admin-dashboard.php');
-                /*
-                    TODO - Create & Fill out the dashboard file
-                    @author - Jason
-                    @date   - 11/22/15
-                    @time   - 3:42 AM
-                */
-                break;
             case 'artwork' :
                 add_action('before_delete_post', function($post_id) {
                     $artwork = JC_Artwork::instance($post_id);
@@ -78,6 +68,14 @@ class JC_Admin
                         'ajaxurl'   => admin_url('admin-ajax.php'),
                     ));
                 });
+                // remove quick edit link
+                add_filter('post_row_actions',
+                    function($actions, $post) {
+                        unset($actions['inline hide-if-no-js']);
+                        return $actions;
+                    },
+                    10, 2
+                );
                 break;
             default :
                 global $logger;
@@ -206,23 +204,6 @@ class JC_Admin
                 'advanced' => '',
             );
         }
-    }
-
-    /**
-     * Enqueues commonly used scripts on most admin pages.
-     */
-    private function enqueue_common_scripts() {
-
-        add_action('admin_enqueue_scripts', function() {
-            // tipTip jquery plugin
-            wp_enqueue_script ( 'tiptip' );
-            wp_enqueue_style  ( 'tiptip' );
-            // shared
-            wp_enqueue_script ( 'jc-shared' );
-            wp_enqueue_style  ( 'jc-shared' );
-
-
-        });
     }
 }
 

@@ -30,6 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @property        date   $date_created
  * @property-read   Object dimensions   Object {length, width, height}
  * @method'         void   set_dimensions($l, $w, $h)
+ * @property        string unit_for_dimensions
  * @property        string $description
  *
  * @property        int    $is_for_sale 1|0
@@ -38,6 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @property        float  $shipping_weight
  * @property-read   Object $shipping_dimensions
  * @method'         void   set_shipping_dimensions($l, $w, $h)
+ * @property        string unit_for_shipping_dimensions
  * @property        float  $price_of_artwork
  * @property        float  $price_of_frame
  * @property        int    $stock
@@ -55,6 +57,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @property-read    array  $other_images_thumbnails
  * @property-read    array  $other_images_dropzone_thumbnails
  * @property-read    string $wechat_image
+ *
+ * **** User Statistics ****
+ * @property         int    $views
+ * @property         int    $favorites
  *
  * @method'          bool   add_other_image($tmp, $order).
  * @method'          bool   update_image_order($uuid, $new_order)
@@ -103,10 +109,10 @@ class JC_Artwork
     /**
      * properties from direct access to post meta
      */
-    private static $direct_post_meta = ['date_created', 'dimensions', 'description',
+    private static $direct_post_meta = ['date_created', 'dimensions', 'unit_for_dimensions', 'description',
                                          'is_for_sale', 'have_frame', 'is_frame_optional',
-                                         'shipping_weight', 'shipping_dimensions', 'price_of_artwork', 'price_of_frame', 'stock', 'shipping_from',
-                                         'cover_image', 'is_featured'];
+                                         'shipping_weight', 'shipping_dimensions', 'unit_for_shipping_dimensions', 'price_of_artwork', 'price_of_frame', 'stock', 'shipping_from',
+                                         'cover_image', 'is_featured', 'views', 'favorites'];
 
 
     private static $through_methods = ['artwork_type', 'commission_fee', 'artist_profit', 'wechat_image', 'other_images', 'other_images_thumbnails', 'cover_thumbnail', 'other_images_dropzone_thumbnails'];

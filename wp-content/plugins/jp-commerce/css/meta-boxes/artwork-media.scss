@@ -99,7 +99,7 @@ $background-color: #f7f7f7;
 
       #upload-indicator {
         font-size: 60px;
-        line-height: calc(120px - 15*2px - 3*2px);
+        line-height: 84px; // calc(120px - 15*2px - 3*2px);
         text-align: center;
         color: lightgrey;
         background-color: white;

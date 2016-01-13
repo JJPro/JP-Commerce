@@ -22,18 +22,17 @@ class JC_Frontend
         JC_Scripts::register_frontend_scripts();
 
         // Load the commonly needed scripts/styles on most frontend pages
-        $this->$this->enqueue_common_scripts();
+        $this->enqueue_common_scripts();
     }
 
 
     /**
      * Include required frontend files.
      */
-    private function includes() {
+    public function includes() {
 //        include_once( 'includes/jc-template-hooks.php' );
 //        include_once( 'includes/class-jc-frontend-scripts.php' );               // Frontend Scripts
 //        include_once( 'includes/class-jc-cart.php' );                           // The main cart class
-//        include_once( 'includes/class-jc-customer.php' );                       // Customer class
 //        include_once( 'includes/class-jc-https.php' );                          // https Helper
     }
 
@@ -43,11 +42,15 @@ class JC_Frontend
     private function enqueue_common_scripts() {
         add_action('wp_enqueue_scripts', function() {
 
-            // tooltip jquery plugin
-            wp_enqueue_script( 'tooltip' );
-            wp_enqueue_style ( 'tooltip' );
+            wp_enqueue_script( 'tiptip' );
+            wp_enqueue_style ( 'tiptip' );
+            wp_enqueue_script( 'bootstrap' );
+            wp_enqueue_style ( 'bootstrap' );
+            wp_enqueue_style ( 'jc-font' );
 
 
         });
     }
 }
+
+new JC_Frontend();

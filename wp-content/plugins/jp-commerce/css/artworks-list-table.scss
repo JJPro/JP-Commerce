@@ -1,4 +1,8 @@
-td.column-featured {
+td.column-cover_image,
+td.column-featured,
+td.column-stock,
+td.column-views,
+td.column-favorites {
   text-align: center;
 }
 
@@ -6,15 +10,14 @@ span[data-is_featured] {
   cursor: pointer;
 }
 
-span.featured[data-is_featured]::before {
-  content: '&#xe008;'; //icon-star'; // &#xe008;
-}
-
-span[data-is_featured]::before {
-  content: '&#xe009;'; //'icon-heart'; // &#xe009;
-}
-
 table thead th,
 table tfoot th{
   text-align: center !important;
+}
+
+td.cover_image img {max-width: 100px;}
+
+[class~="icon-eye"]:before,
+[class~="icon-heart"]:before {
+  border: solid 1px black;
 }

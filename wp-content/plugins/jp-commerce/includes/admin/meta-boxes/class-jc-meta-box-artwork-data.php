@@ -23,7 +23,7 @@ class JC_Meta_Box_Artwork_Data
         add_action("admin_enqueue_scripts",
             function()
             {
-                wp_enqueue_script('meta-boxes-artwork-data', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-data.min.js', ['tiptip', 'jquery-ui-datepicker']);
+                wp_enqueue_script('meta-boxes-artwork-data', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-data.min.js', ['tiptip', 'jquery-ui-spinner']);
                 wp_enqueue_style ('jquery-ui');
             }
         );
@@ -34,11 +34,14 @@ class JC_Meta_Box_Artwork_Data
 
         $artwork = new JC_Artwork($post);
 
+        $dateCreated = $artwork->date_created;
+        $dateCreated = empty($dateCreated) ? date_i18n( 'Y', time() ) : $dateCreated;
+
         ?>
         <section id="artwork-detail">
             <h4>Artwork Detail:</h4>
             <p>
-                <label for="make-date">When was it made?</label><input id="make-date" name="make-date" max="<?php echo date_i18n( 'm/d/Y', time() ); ?>" value="<?php echo $artwork->date_created; ?>"/>
+                <label for="make-date">When was it made?</label><input id="make-date" name="make-date" max="<?php echo date_i18n( 'Y', time() ); ?>" value="<?php echo $dateCreated; ?>"/>
             </p>
             <p>
                 <label>Does this item have a frame?</label>

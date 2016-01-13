@@ -64,7 +64,7 @@ class JC_Meta_Box_Artwork_Media
                 );
 
                 // css
-                wp_enqueue_style('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'css/meta-boxes/artwork-media.min.css');
+                wp_enqueue_style('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'css/meta-boxes/artwork-media.css');
             }
         );
     }

@@ -1,4 +1,0 @@
-Usage: give element at least one of the position classes: hint--top, hint--bottom, hint--left, hint--right to position the tooltip
-        tooltip text is provided in data-hint attribute.
-
-        E.g <span class="hint--bottom" data-hint="Thank You!">hover over me.</span>

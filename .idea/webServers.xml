@@ -5,6 +5,13 @@
       <webServer id="c92cd632-64e3-494a-9e04-67c8f6faea31" name="wp clean" url="http://localhost">
         <fileTransfer accessType="LOCAL" />
       </webServer>
+      <webServer id="6983774a-00a0-433e-b8ad-4af65f2b49cb" name="jjpronet" url="http://jjpro.net/jc">
+        <fileTransfer host="jjpro.net" port="22" rootFolder="/home3/jjpronet/www/jc" accessType="SFTP" password="dfe6dfdfdf84dfc0dfc3df9bdfcfdfc3dfda" username="jjpronet">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

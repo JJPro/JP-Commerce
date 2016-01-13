@@ -37,7 +37,7 @@ class JC_Meta_Box_Promotion_Coupon
             <tr>
                 <th>Coupon Code:</th>
                 <td>
-                    <input type="text" name="_promo_coupon_code" value="<?php echo esc_attr($promo_coupon_code); ?>" maxlength="7" size="8" style="text-transform: uppercase">
+                    <input type="text" name="_promo_coupon_code" value="<?php echo esc_attr($promo_coupon_code); ?>" maxlength="20" size="22" style="text-transform: uppercase">
                 </td>
             </tr>
         </table>

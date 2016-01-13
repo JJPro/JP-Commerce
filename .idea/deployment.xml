@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="wp clean">
+  <component name="PublishConfigData" serverName="jjpronet">
     <serverData>
+      <paths name="jjpronet">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/wp-config.php" />
+            <excludedPath path="/wp-config.php" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
       <paths name="wp clean">
         <serverdata>
           <mappings>

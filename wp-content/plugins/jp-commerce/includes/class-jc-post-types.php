@@ -30,13 +30,15 @@ class JC_Post_Types
         // define columns
         add_filter( 'manage_artwork_posts_columns', function( $columns) {
             $columns = array(
-                'cover_image' => '<span class="icon-eye tiptip description" title="Cover Image"></span>',
+                'cover_image' => '<span class="icon-picture-o tiptip description" title="Cover Image"></span>',
                 'title' => 'Name',
                 'stock' => 'Stock',
                 'price' => 'Price',
                 'taxonomy-artwork_type' => 'Artwork Type',
-                'featured' => '<span class="icon-star tiptip description" title="Featured"></span>',
+                'featured' => '<span class="icon-star-1 tiptip description" title="Featured"></span>',
                 'date'  => 'Date',
+                'views' => '<span class="icon-eye tiptip description" title="Views"></span>',
+                'favorites' => '<span class="icon-heart tiptip description" title="Favorites"></span>',
             );
             return $columns;
         });
@@ -47,10 +49,7 @@ class JC_Post_Types
             $artwork = JC_Artwork::instance($post_id);
             switch ($col_name) {
                 case 'cover_image' :
-                    echo '<img src="' . $artwork->wechat_image . '" width="100%" style="min-width: 50px;"/>';
-                    break;
-                case 'stock' :
-                    echo $artwork->stock;
+                    echo '<a href="'.get_edit_post_link($post_id).'"><img src="' . $artwork->wechat_image . '" /></a>';
                     break;
                 case 'price' :
                     if ($artwork->is_for_sale && $artwork->price_of_artwork > 0)
@@ -59,10 +58,21 @@ class JC_Post_Types
                         echo '0';
                     break;
                 case 'featured' :
-                    printf('<span class="%s" data-artwork="%d" data-is_featured></span>',
-                        $artwork->is_featured ? 'featured' : '',
-                        $artwork->id
+                    $is_featured = $artwork->is_featured;
+                    printf('<span class="%s" data-artwork="%d" data-is_featured="%d"></span>',
+                        $is_featured ? 'icon-star-1' : 'icon-star-o',
+                        $artwork->id,
+                        $is_featured ? 1 : 0
                         );
+                    break;
+                case 'stock' :
+                case 'views' :
+                case 'favorites' :
+                    $amt = $artwork->$col_name;
+                    if ($amt)
+                        echo $amt;
+                    else
+                        echo '0';
                     break;
 
             }

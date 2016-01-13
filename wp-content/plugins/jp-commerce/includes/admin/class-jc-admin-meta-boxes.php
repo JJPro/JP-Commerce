@@ -63,23 +63,35 @@ class JC_Admin_Meta_Boxes
     }
 
     public function add_meta_boxes(){
-        // Artworks
-        JC_Meta_Box_Artwork_Media::init();
-        JC_Meta_Box_Artwork_Type::enqueue_scripts();
-        JC_Meta_Box_Artwork_Data::init();
-//        JC_Meta_Box_Artwork_Tag::init();
-        add_meta_box('artwork_typediv', __('Artwork Type'),
-            wp_is_mobile() ? 'post_categories_meta_box' : 'JC_Meta_Box_Artwork_Type::output'
-            , 'artwork', 'normal', 'high');
-        add_meta_box('artwork-media', 'Pictures', 'JC_Meta_Box_Artwork_Media::output', 'artwork', 'side', 'default');
-        add_meta_box('artwork-data', 'Artwork Information', 'JC_Meta_Box_Artwork_Data::output', 'artwork', 'normal', 'default');
-//        add_meta_box('tagsdiv-artwork_tag', 'Artwork Tags', 'JC_Meta_Box_Artwork_Tag::output', 'artwork', 'normal', 'default', array( 'taxonomy' => 'artwork_tag' ));
-        add_meta_box('artwork-submit', 'Submit', 'JC_Meta_Box_Artwork_Submit::output', 'artwork', 'normal', 'default');
+        $screen = get_current_screen();
 
-        // Promotions
-        add_meta_box('coupondiv', 'Set Coupon', 'JC_Meta_Box_Promotion_Coupon::output', 'promotion', 'side', 'high');
+        if ($screen->post_type == 'artwork') {
 
-        // Orders
+            // Artworks
+            JC_Meta_Box_Artwork_Media::init();
+            JC_Meta_Box_Artwork_Type::enqueue_scripts();
+            JC_Meta_Box_Artwork_Data::init();
+            JC_Meta_Box_Artwork_Tag::init();
+            add_meta_box('artwork_typediv', __('Artwork Type'),
+                wp_is_mobile() ? 'post_categories_meta_box' : 'JC_Meta_Box_Artwork_Type::output'
+                , 'artwork', 'normal', 'high');
+            add_meta_box('artwork-media', 'Pictures', 'JC_Meta_Box_Artwork_Media::output', 'artwork', 'side', 'default');
+            add_meta_box('artwork-data', 'Artwork Information', 'JC_Meta_Box_Artwork_Data::output', 'artwork', 'normal', 'default');
+            add_meta_box('tagsdiv-artwork_tag', 'Artwork Tags', 'JC_Meta_Box_Artwork_Tag::output', 'artwork', 'normal', 'default', array( 'taxonomy' => 'artwork_tag' ));
+            add_meta_box('artwork-submit', 'Submit', 'JC_Meta_Box_Artwork_Submit::output', 'artwork', 'normal', 'default');
+
+        } elseif ($screen->post_type == 'promotion') {
+
+            // Promotions
+            add_meta_box('coupondiv', 'Set Coupon', 'JC_Meta_Box_Promotion_Coupon::output', 'promotion', 'side', 'high');
+
+        } elseif ($screen->post_type == 'order') {
+
+            // Orders
+
+        }
+
+
     }
 
     /**

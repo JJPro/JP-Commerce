@@ -52,11 +52,11 @@ class JC_User_Roles
         $admin->remove_cap('manage_categories');
         $admin->remove_cap('update_core');
         $admin->remove_cap('export');           // hide tools menu
-        $admin->remove_cap('edit_plugins');
-        $admin->remove_cap('install_plugins');
-        $admin->remove_cap('activate_plugins');
-        $admin->remove_cap('update_plugins');
-        $admin->remove_cap('update_themes');
+//        $admin->remove_cap('edit_plugins');
+//        $admin->remove_cap('install_plugins');
+//        $admin->remove_cap('activate_plugins');
+//        $admin->remove_cap('update_plugins');
+//        $admin->remove_cap('update_themes');
         $admin->add_cap('edit_promotions');
         $admin->add_cap('manage_promotions');
         $admin->add_cap('manage_promotion_types');

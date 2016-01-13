@@ -3,7 +3,7 @@
  */
 jQuery(function($){
     // datepicker
-    $('#make-date').datepicker({maxDate: 0});
+    $('#make-date').spinner({max: (new Date()).getFullYear(), numberFormat: 'n'});
 
     $("#price").on("focus", function(){
         $("#profit-calculator").slideDown();
