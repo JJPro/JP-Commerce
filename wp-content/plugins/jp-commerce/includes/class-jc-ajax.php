@@ -38,6 +38,9 @@ class JC_AJAX
             // Orders
             'add_cs_note'                       => false,
             'delete_cs_note'                    => false,
+
+            // Promotions
+            'toggle_promotion'                  => false,
         );
 
         foreach ( $ajax_events as $ajax_event => $nopriv ) {
@@ -48,6 +51,14 @@ class JC_AJAX
             }
         }
     }
+
+
+    /**
+            =====================
+            ARTWORK ADMIN AJAX
+            =====================
+
+     */
 
     /**
      * AJAX upload artwork pictures
@@ -177,9 +188,12 @@ class JC_AJAX
     }
 
 
-    /****************************
-     **** ORDER's ADMIN AJAX ****
-    /****************************/
+    /**
+            =====================
+            ORDERS ADMIN AJAX
+            =====================
+
+     */
 
     /**
      * Adds a customer service note
@@ -309,6 +323,29 @@ class JC_AJAX
         $items = $wpdb->get_results($query);
         wp_send_json(array("items" => $items));
 
+    }
+
+
+    /**
+            =====================
+                        PROMOTION ADMIN AJAX
+            =====================
+
+     */
+
+    /**
+     * Toggles the active promotion.
+     *
+     * Either activates it or cancels it.
+     */
+    public static function toggle_promotion() {
+        $promo_id = $_POST['promotion'];
+        $promo = JC_Promotion::instance( $promo_id );
+
+        if ( $promo->toggle_active() )
+            wp_send_json_success();
+        else
+            wp_send_json_error();
     }
 
 }

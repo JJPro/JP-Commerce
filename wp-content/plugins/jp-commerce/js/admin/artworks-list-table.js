@@ -16,7 +16,9 @@ jQuery(function($){
         var that = this;
         var action;
 
-        if (is_featured)
+        //debugger;
+
+        if (is_featured === '1')
             action = action_cancel_featured;
         else
             action = action_set_as_featured;

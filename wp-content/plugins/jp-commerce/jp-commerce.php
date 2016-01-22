@@ -124,6 +124,7 @@ final class JJProCommerce {
         $this->define('JC_META_BOXES', JC_ADMIN . '/meta-boxes');
         $this->define( 'JC_PLUGIN_DIR_URL', plugin_dir_url(__FILE__) );
         $this->define( 'JC_DEBUG', true );
+        $this->define( 'JC_INC', plugin_dir_path(__FILE__) . 'includes' );
     }
 
     /**
@@ -172,6 +173,7 @@ final class JJProCommerce {
         // You have to call the respective class functions to register scripts in either admin or frontend.
         include_once( 'includes/class-jc-scripts.php' );
         include_once( 'includes/class-jc-artwork.php' );
+        include_once( 'includes/class-jc-promotion.php' );
 
 
 

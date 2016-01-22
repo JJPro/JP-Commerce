@@ -46,3 +46,20 @@ function url_to_path($url) {
     $url = str_replace(rtrim(get_site_url(), '/') . '/', ABSPATH, $url);
     return $url;
 }
+
+/**
+ * Displays an error notice to admin notices
+ * @param $msg . Error message to send
+ * @param bool $dismissible Is message dismissible/closable by user?
+ */
+function jc_admin_error_notice($msg, $dismissible=false) {
+    add_action( 'admin_notices', function() use (&$msg, &$dismissible) {
+        ?>
+        <div class="notice error <?php echo $dismissible?'is-dismissible':''; ?>">
+            <p>
+                <?php echo $msg; ?>
+            </p>
+        </div>
+        <?php
+    });
+}

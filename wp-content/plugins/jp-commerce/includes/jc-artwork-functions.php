@@ -197,3 +197,20 @@ function __get_image__( $post_id, $author_id = null, $image_size, $image_name, $
 
     return $path;
 }
+
+/**
+ * Get all artwork_materials as an array.
+ * @return array
+ */
+function get_artwork_materials() {
+    $taxonomies = 'artwork_material';
+    $args = array(
+        'hide_empty' => false,
+    );
+
+    $materials = get_terms($taxonomies, $args);
+    if (! is_wp_error($materials))
+        return $materials;
+    else
+        return array();
+}

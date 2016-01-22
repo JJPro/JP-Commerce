@@ -22,6 +22,7 @@ class JC_Admin
     {
         add_action('init', array($this, 'includes'));
         add_action('admin_init', array($this, 'prevent_admin_access_for_customers'));
+        add_action('admin_init', array($this, 'hide_update_notices_from_non_admins'), 1);
         add_action('current_screen', array($this, 'conditional_includes'));
         add_action('current_screen', array($this, 'hide_contextual_help'));
 //        add_filter('screen_options_show_screen', '__return_false');   // hide screen options
@@ -40,6 +41,19 @@ class JC_Admin
         include_once('jc-meta-box-functions.php');
         include_once('class-jc-admin-menus.php');
         include_once('class-jc-admin-meta-boxes.php');
+
+        // fixing some admin styles
+        add_action( 'admin_head', function() {
+            ?>
+            <style type="text/css">
+                .notice-dismiss {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 100%;
+                }
+            </style>
+            <?php
+        });
     }
 
     /**
@@ -51,14 +65,48 @@ class JC_Admin
         $screen = get_current_screen();
 
         switch ($screen->id) {
+
+            case 'promotion' :
+                add_action( 'admin_head', function() {
+                    ?>
+                    <style type="text/css">
+                        #wp-word-count { display: none; }
+                    </style>
+                    <?php
+                });
+                break;
+            case 'edit-promotion' :
+                add_action('admin_enqueue_scripts', function () {
+                    wp_enqueue_script( 'jc-font' );
+                    wp_enqueue_style( 'jc-font' );
+                    wp_enqueue_script( 'tiptip' );
+                    wp_enqueue_style( 'tiptip' );
+                    wp_enqueue_script( 'jc-shared' );
+                    wp_enqueue_style( 'jc-shared' );
+                    wp_enqueue_script('promotions-list-table');
+                    wp_enqueue_style('promotions-list-table');
+                    wp_localize_script('promotions-list-table', 'jc_data', array(
+                        'ajaxurl'   => admin_url('admin-ajax.php'),
+                    ));
+                });
+                break;
             case 'artwork' :
                 add_action('before_delete_post', function($post_id) {
                     $artwork = JC_Artwork::instance($post_id);
                     $artwork->pre_delete_artwork();
                 });
-                break;
-            case 'order' :
-                JC_Order::init(); // initializes actions and filters for orders.
+                // remove edit-slug-box beneath title
+                // vertical center notice dismiss button
+                add_action( 'admin_head', function() {
+                    ?>
+                    <style type="text/css">
+                        #edit-slug-box {
+                            display: none;
+                        }
+
+                    </style>
+                    <?php
+                });
                 break;
             case 'edit-artwork' :
                 add_action('admin_enqueue_scripts', function () {
@@ -77,9 +125,10 @@ class JC_Admin
                     10, 2
                 );
                 break;
+            case 'order' :
+                JC_Order::init(); // initializes actions and filters for orders.
+                break;
             default :
-                global $logger;
-                $logger->log_action('Screen', $screen);
                 break;
 
         }
@@ -93,6 +142,13 @@ class JC_Admin
         if (current_user_can('customer')) {
             wp_safe_redirect(jc_get_page_permalink('myaccount'));
             exit;
+        }
+    }
+
+    public function hide_update_notices_from_non_admins()
+    {
+        if (!current_user_can('update_core')){
+            remove_action( 'admin_notices', 'update_nag', 3 );
         }
     }
 

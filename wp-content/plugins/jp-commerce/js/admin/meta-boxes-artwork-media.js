@@ -4,6 +4,47 @@
  * Handles Ajax of the artwork-media meta box to upload media files to the server
  */
 jQuery(function ($){
+    var $notices_div = $('#cover-image-notices');
+
+    function coverNotice(msg) {
+        $notices_div.append('<div class="notice error is-dismissible inline">' +
+            '<p>' + msg + '</p>' +
+            '<button type="button" class="notice-dismiss">' +
+            '<span class="screen-reader-text">Dismiss this notice.</span>' +
+            '</button>' +
+            '</div>')
+            .on('click', 'div.is-dismissible button.notice-dismiss', function() {
+                $(this).parent().slideUp(function() {
+                    $(this).remove();
+                });
+            });
+    }
+
+    function clearCoverNotice() {
+        $notices_div.empty();
+    }
+
+    // reject submission if cover image is not set
+    $('form').on('submit', function(){
+
+        if ( ! $('#cover-preview').attr('src') )
+        {
+
+
+            // display notice
+            coverNotice('A Cover Image is required!');
+
+
+            // scroll to notice
+            $('html, body').animate( {
+                scrollTop: $notices_div.offset().top - 60
+            }, 500);
+
+            $notices_div.effect('bounce', { times: 3}, 'slow');
+            return false;
+        }
+    });
+
 
     // disable dropping file into document default behavior.
     // This avoids situation where user mistakenly dragged a file onto the page, and the browser opens that file
@@ -50,37 +91,85 @@ jQuery(function ($){
      */
     $("#btn-update-cover").on('click', function(e){
         e.preventDefault();
-        $('#cover-input').trigger('click').on('change', function(e){
+
+        // something else is also bind to the change event, so the event is triggered twice somehow, used unbind() to remove other listeners.
+        $('#cover-input').trigger('click').unbind('change').on('change', function(e){
+
             if (this.value != '') {
+
+
                 var file   = this.files[0];
                 var reader = new FileReader(); // HTML5 FileReader
 
+                //debugger;
+
+                clearCoverNotice();
+
                 // set up file reader onloadend event to preview the image
-                reader.onloadend = function() {
-                    var newImage = reader.result;
+                reader.onloadend = function(theFile) {
 
-                    $wechat.attr('src', newImage);
+                    /*
+                            ====================
+                                Size Check > 1500px
+                            ====================
+                     */
+                    var image = new Image();
+                    image.src = theFile.target.result;
 
-                    if (jcrop_api) {
-                        jcrop_api.destroy();
+                    image.onload = function() {
+                        // access image size here. this.width, this.height
+                        console.log('(' + this.width + ', ' + this.height + ')');
+                        if ( this.width >= 1500 && this.height >= 1500 ) {
+                            /*
+                                     ====================
+                                         Passed Size Check, read the image in
+                                     ====================
+                             */
 
-                        $preview.remove();
+                            var newImage = reader.result;
 
-                        $preview = $('<img id="cover-preview" style="width:100%; height:auto;" />');
-                        $preview.attr('src', reader.result);
-                        $preview.appendTo($preview_container);
+                            $wechat.attr('src', newImage);
 
-                        initJcrop();
+                            if (jcrop_api) {
+                                jcrop_api.destroy();
 
-                    } else {
-                        $preview.attr('src', newImage);
-                        $preview.css('display', 'initial');
-                        $wechat.css('display', 'initial');
+                                $preview.remove();
 
-                        // init jcrop
-                        initJcrop();
+                                $preview = $('<img id="cover-preview" style="width:100%; height:auto;" />');
+                                $preview.attr('src', reader.result);
+                                $preview.appendTo($preview_container);
+
+                                initJcrop();
+
+                            } else {
+                                $preview.attr('src', newImage);
+                                $preview.css('display', 'initial');
+                                $wechat.css('display', 'initial');
+
+                                // init jcrop
+                                initJcrop();
+                            }
+                        }
+                        else {
+
+                            /*
+                                     ====================
+                                         Failed Size Check, alert user
+                                     ====================
+                             */
+                            coverNotice(
+                                "<p>" +
+                                "<strong>Please re-upload a image with the smallest side being at least 1500 pixels.</strong> " +
+                                "</p>" +
+                                "<p><strong>Please select a different file.</strong></p>");
+
+                        }
+
                     }
+
                 }
+
+                //debugger;
 
                 reader.readAsDataURL(file);
             }

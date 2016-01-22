@@ -3,6 +3,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+define( 'ARTWORK_DIMENSION_UNIT_CM', 'cm');
+define( 'ARTWORK_DIMENSION_UNIT_INCH', 'inches');
+define( 'JC_SHIPPING_WEIGHT_UNIT_POUNDS', 'pounds');
+define( 'JC_SHIPPING_WEIGHT_UNIT_KG', 'kg');
+
 /**
  * JC Artwork
  *
@@ -28,27 +33,30 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * **** Artwork Details ****
  * @property        date   $date_created
- * @property-read   Object dimensions   Object {length, width, height}
- * @method'         void   set_dimensions($l, $w, $h)
- * @property        string unit_for_dimensions
+ * @property-read   Object dimensions   Object {width, height, depth, unit}
+ * @method'         void   set_dimensions($l, $w, $h, $unit)
+ * @property        Array  materials    [str]
  * @property        string $description
  *
- * @property        int    $is_for_sale 1|0
+ * @property        int    $status. 1-> for sale, 0-> not for sale.
+ * @method'         is_for_sale(): null -> bool
  * @property        int    $have_frame  1|0
  * @property        int    $is_frame_optional 1|0
- * @property        float  $shipping_weight
  * @property-read   Object $shipping_dimensions
- * @method'         void   set_shipping_dimensions($l, $w, $h)
- * @property        string unit_for_shipping_dimensions
+ * @property        float  $shipping_weight
+ * @property        string $shipping_weight_unit
+ * @method'         void   set_shipping_dimensions($l, $w, $h, $unit)
  * @property        float  $price_of_artwork
  * @property        float  $price_of_frame
  * @property        int    $stock
  * @property-read   float|Object  $commission_fee
  * @property-read   float|Object  $artist_profit
- * @property-read   Object shipping_from {addr1, addr2, city, state, country, zip}
- * @method'         void   set_shipping_from($addr1, $addr2, $city, $state, $country, $zip)
+ * @property-read   Object shipping_from {addr1, addr2, city, state, country, zip, phone}
+ * @method'         void   set_shipping_from($addr1, $addr2, $city, $state, $country, $zip, phone)
  * @method'         int    increase_stock($amt=1)
  * @method'         int    reduce_stock($amt=1)
+ * @method'         is_required($property) : str -> bool
+ * @method'         get_status() : null -> str
  *
  * **** Pictures ****
  * @property         string $cover_image
@@ -57,14 +65,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @property-read    array  $other_images_thumbnails
  * @property-read    array  $other_images_dropzone_thumbnails
  * @property-read    string $wechat_image
+ * @method'          bool   add_other_image($tmp, $order).
+ * @method'          bool   update_image_order($uuid, $new_order)
+ * @method'          bool   delete_other_image($uuid)
  *
  * **** User Statistics ****
  * @property         int    $views
  * @property         int    $favorites
  *
- * @method'          bool   add_other_image($tmp, $order).
- * @method'          bool   update_image_order($uuid, $new_order)
- * @method'          bool   delete_other_image($uuid)
+ *
+ *
+ * @method' @static  array  featured_artworks($n = 5)
+ * @method' @static  array  new_artworks($n = 5)
+ * @method' @static  array  trending_artworks($n = 5)
  *
  *
  *
@@ -84,7 +97,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *      Deleting an image:
  */
 
-
 class JC_Artwork 
 {
 
@@ -92,6 +104,9 @@ class JC_Artwork
 
     private static $wechat_width = 300, $wechat_height = 300;
     private static $thumbnail_width = 300;
+
+    public static $required_properties = ['name', 'description', 'date_created', 'artwork_type', 'materials', 'dimensions', 'stock', 'shipping_dimensions',
+                                            'shipping_weight', 'price', 'shipping_from'];
 
 
     /**
@@ -109,13 +124,13 @@ class JC_Artwork
     /**
      * properties from direct access to post meta
      */
-    private static $direct_post_meta = ['date_created', 'dimensions', 'unit_for_dimensions', 'description',
-                                         'is_for_sale', 'have_frame', 'is_frame_optional',
-                                         'shipping_weight', 'shipping_dimensions', 'unit_for_shipping_dimensions', 'price_of_artwork', 'price_of_frame', 'stock', 'shipping_from',
+    private static $direct_post_meta = ['date_created', 'dimensions', 'description',
+                                         'status', 'have_frame', 'is_frame_optional',
+                                         'shipping_weight', 'shipping_weight_unit', 'shipping_dimensions', 'price_of_artwork', 'price_of_frame', 'stock', 'shipping_from',
                                          'cover_image', 'is_featured', 'views', 'favorites'];
 
 
-    private static $through_methods = ['artwork_type', 'commission_fee', 'artist_profit', 'wechat_image', 'other_images', 'other_images_thumbnails', 'cover_thumbnail', 'other_images_dropzone_thumbnails'];
+    private static $through_methods = ['artwork_type', 'materials', 'commission_fee', 'artist_profit', 'wechat_image', 'other_images', 'other_images_thumbnails', 'cover_thumbnail', 'other_images_dropzone_thumbnails'];
 
     private static $direct_post_property = ['post_date', ];
     private static $indirect_post_property = ['artist', 'name'];
@@ -136,7 +151,10 @@ class JC_Artwork
             elseif ( $artwork instanceof JC_Artwork && $artwork->id === self::$_instance->id )
                 return self::$_instance;
         }
-        return new self($artwork);
+
+        self::$_instance = new self($artwork);
+        return self::$_instance;
+
     }
 
     /**
@@ -145,7 +163,7 @@ class JC_Artwork
      *
      * @param $artwork int|Post|Artwork
      */
-    public function __construct( $artwork )
+    private function __construct( $artwork )
     {
         if ( is_numeric($artwork) ) {
             $this->id = absint($artwork);
@@ -215,7 +233,7 @@ class JC_Artwork
                 return;
             }
             // call set_ method
-            elseif ( in_array($name, ['artwork_type']) ) {
+            else {
                 return call_user_func( array($this, "set_{$name}"), $value );
             }
         }
@@ -232,32 +250,49 @@ class JC_Artwork
         }
     }
 
-    public function set_dimensions($l, $w, $h) {
+    /**
+     * @param $w
+     * @param $h
+     * @param $d
+     * @param $unit Constant ARTWORK_DIMENSION_UNIT_CM | ARTWORK_DIMENSION_UNIT_INCH
+     * @return bool|int
+     */
+    public function set_dimensions($w, $h, $d, $unit) {
         $dimensions = new stdClass();
-        $dimensions->length = $l;
         $dimensions->width  = $w;
         $dimensions->height = $h;
+        $dimensions->depth  = $d;
+        $dimensions->unit = $unit;
 
         return update_post_meta($this->id, "_dimensions", $dimensions);
     }
 
-    public function set_shipping_dimensions($l, $w, $h) {
+    /**
+     * @param $w
+     * @param $h
+     * @param $d
+     * @param $unit Constant ARTWORK_DIMENSION_UNIT_CM | ARTWORK_DIMENSION_UNIT_INCH
+     * @return bool|int
+     */
+    public function set_shipping_dimensions($w, $h, $d, $unit) {
         $dimensions = new stdClass();
-        $dimensions->length = $l;
         $dimensions->width  = $w;
         $dimensions->height = $h;
+        $dimensions->depth  = $d;
+        $dimensions->unit   = $unit;
 
         return update_post_meta($this->id, "_shipping_dimensions", $dimensions);
     }
 
-    public function set_shipping_from($addr1, $addr2, $city, $state, $country, $zip) {
+    public function set_shipping_from($addr1, $addr2, $city, $state, $country, $zip, $phone) {
         $addr_array = array(
             'address1' => $addr1,
             'address2' => $addr2,
             'city'     => $city,
             'state'    => $state,
             'country'  => $country,
-            'zip'      => $zip
+            'zip'      => $zip,
+            'phone'    => $phone,
         );
 
         $addr = (object)$addr_array;
@@ -614,4 +649,76 @@ class JC_Artwork
     public function other_artwork_ids_from_this_artist() {
         echo __METHOD__ . ' is not implemented';
     }
+
+    /**
+     * Is this artwork for sale or display only?
+     * @return bool
+     */
+    public function is_for_sale() {
+        return ($this->status === '1');
+    }
+
+    /**
+     * Is this property a required field?
+     * @param $property string. Property Name.
+     * @return bool
+     */
+    public function is_required($property) {
+        return in_array($property, self::$required_properties);
+    }
+
+    public function get_status() {
+        if ($this->is_for_sale()) {
+            if ($this->stock > 0) {
+                return 'In Stock';
+            } else {
+                return 'Sold Out';
+            }
+        } else {
+            return 'Not For Sale';
+        }
+    }
+
+    public function get_materials() {
+        $its_materials = get_the_terms($this->id, 'artwork_material');
+        if (! $its_materials || is_wp_error($its_materials) )
+            $its_materials = [];
+
+        return $its_materials;
+    }
+
+    /**
+     * @param $materials Array
+     */
+    public function set_materials($materials) {
+        $materials_ids = array_map('intval', (array)$materials);
+        wp_set_post_terms($this->id, $materials_ids, 'artwork_material', false);
+    }
+
+    /**
+     * @param int $n
+     * @return array Returns an array of the first $n featured artworks
+     */
+    public static function featured_artworks($n = 5) {
+
+    }
+
+    /**
+     * @param int $n
+     * @return array|Loop Returns an array of the first $n newly published artworks
+     */
+    public static function new_artworks($n = 5) {
+
+    }
+
+    /**
+     * @param int $n
+     * @return array|Loop Returns an array of the first $n trending artworks
+     *
+     * Trending artworks are artworks of the most views.
+     */
+    public static function trending_artworks($n = 5) {
+
+    }
+
 }

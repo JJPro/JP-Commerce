@@ -24,6 +24,7 @@ class JC_Post_Types
         add_action( 'init', array( __CLASS__, 'register_post_types' ) );
 
         self::artworks_list_table();
+        self::promotions_list_table();
     }
 
     public static function artworks_list_table() {
@@ -52,7 +53,7 @@ class JC_Post_Types
                     echo '<a href="'.get_edit_post_link($post_id).'"><img src="' . $artwork->wechat_image . '" /></a>';
                     break;
                 case 'price' :
-                    if ($artwork->is_for_sale && $artwork->price_of_artwork > 0)
+                    if ($artwork->is_for_sale() && $artwork->price_of_artwork > 0)
                         echo '$ '. $artwork->price_of_artwork;
                     else
                         echo '0';
@@ -75,6 +76,41 @@ class JC_Post_Types
                         echo '0';
                     break;
 
+            }
+        }, 10, 2 );
+    }
+
+    public static function promotions_list_table() {
+        // define columns
+        add_filter( 'manage_promotion_posts_columns', function( $columns) {
+            $columns = array(
+                'title' => 'Title',
+                'coupon_code' => 'Coupon Code',
+                'coupon_rate' => 'Coupon Rate',
+                'active' => '<span class="icon-paper-airplane tiptip description" title="Activate Promotion"></span>',
+                'date'  => 'Date',
+            );
+            return $columns;
+        });
+
+        // get column values
+        add_action( 'manage_promotion_posts_custom_column', function( $col_name, $post_id ) {
+
+            $promo = JC_Promotion::instance($post_id);
+            switch ($col_name) {
+                case 'coupon_code' :
+                    echo $promo->coupon_code;
+                    break;
+                case 'coupon_rate' :
+                    echo $promo->coupon_rate_for_display();
+                    break;
+                case 'active' :
+                    $is_active = $promo->is_active();
+                    printf('<span class="%s" data-promo="%d"></span>',
+                        $is_active ? 'icon-toggle-filled' : 'icon-toggle',
+                        $promo->id
+                    );
+                    break;
             }
         }, 10, 2 );
     }
@@ -188,7 +224,7 @@ class JC_Post_Types
                     'edit_private_posts'        => 'edit_artworks',
                     'edit_published_posts'      => 'edit_artworks'
                 ),
-                'supports'              => array('title')
+                'supports'              => false
             )
         );
 
@@ -325,41 +361,75 @@ class JC_Post_Types
             )
         );
 
-        include_once( 'admin/meta-boxes/class-jc-meta-box-tax-select-style.php');
-        register_taxonomy('promotion_type',
-            'promotion',
+        register_taxonomy('artwork_material',
+            'artwork',
             array(
                 'labels'            => array(
-                    'name'          => __('Promotion Types', 'jp_commerce'),
-                    'singular_name' => __('Promotion Type', 'jp_commerce'),
-                    'search_items'  => __('Search Promotion Types', 'jp_commerce'),
-                    'popular_items' => __('Popular Promotion Types', 'jp_commerce'),
-                    'all_items'     => __('All Promotion Types', 'jp_commerce'),
-                    'edit_item'     => __('Edit Promotion Type', 'jp_commerce'),
-                    'view_item'     => __('View Promotion Type', 'jp_commerce'),
-                    'update_item'   => __('Update Promotion Type', 'jp_commerce'),
-                    'add_new_item'  => __('Add New Promotion Type', 'jp_commerce'),
-                    'new_item_name' => __('New Promotion Type Name', 'jp_commerce'),
-                    'not_found'     => __('No promotion types found', 'jp_commerce'),
-                    'no_terms'      => __('No promotion types', 'jp_commerce')
+                    'name'          => __('Artwork Materials', 'jp_commerce'),
+                    'singular_name' => __('Artwork Material', 'jp_commerce'),
+                    'search_items'  => __('Search Artwork Materials', 'jp_commerce'),
+                    'popular_items' => __('Popular Artwork Materials', 'jp_commerce'),
+                    'all_items'     => __('All Artwork Materials', 'jp_commerce'),
+                    'edit_item'     => __('Edit Artwork Material', 'jp_commerce'),
+                    'view_item'     => __('View Artwork Material', 'jp_commerce'),
+                    'update_item'   => __('Update Artwork Material', 'jp_commerce'),
+                    'add_new_item'  => __('Add New Artwork Material', 'jp_commerce'),
+                    'new_item_name' => __('New Artwork Material Name', 'jp_commerce'),
+                    'not_found'     => __('No artwork materials found', 'jp_commerce'),
+                    'no_terms'      => __('No artwork materials', 'jp_commerce')
                 ),
-                'description'       => 'Taxonomy to classify promotions',
-                'public'            => false,
+                'description'       => 'Materials will help categorize and find artworks',
+                'public'            => true,
                 'hierarchical'      => false,
                 'show_ui'           => true,
                 'show_in_menu'      => true,
-                'show_in_nav_menus' => false,
-                'show_tagcloud'     => false,
+                'show_in_nav_menus' => true,
+                'show_tagcloud'     => true,
                 'show_admin_column' => true,
-                'meta_box_cb'       => array('JC_Meta_Box_Tax_Select_Style', 'output'),
                 'capabilities'      => array(
-                    'manage_terms'  => 'manage_promotion_types',
-                    'edit_terms'    => 'manage_promotion_types',
-                    'delete_terms'  => 'manage_promotion_types',
-                    'assign_terms'  => 'edit_promotions',
+                    'manage_terms'  => 'manage_artworks',
+                    'edit_terms'    => 'manage_artworks',
+                    'delete_terms'  => 'manage_artworks',
+                    'assign_terms'  => 'edit_artworks',
                 )
             )
         );
+
+//        include_once( 'admin/meta-boxes/class-jc-meta-box-tax-select-style.php');
+//        register_taxonomy('promotion_type',
+//            'promotion',
+//            array(
+//                'labels'            => array(
+//                    'name'          => __('Promotion Types', 'jp_commerce'),
+//                    'singular_name' => __('Promotion Type', 'jp_commerce'),
+//                    'search_items'  => __('Search Promotion Types', 'jp_commerce'),
+//                    'popular_items' => __('Popular Promotion Types', 'jp_commerce'),
+//                    'all_items'     => __('All Promotion Types', 'jp_commerce'),
+//                    'edit_item'     => __('Edit Promotion Type', 'jp_commerce'),
+//                    'view_item'     => __('View Promotion Type', 'jp_commerce'),
+//                    'update_item'   => __('Update Promotion Type', 'jp_commerce'),
+//                    'add_new_item'  => __('Add New Promotion Type', 'jp_commerce'),
+//                    'new_item_name' => __('New Promotion Type Name', 'jp_commerce'),
+//                    'not_found'     => __('No promotion types found', 'jp_commerce'),
+//                    'no_terms'      => __('No promotion types', 'jp_commerce')
+//                ),
+//                'description'       => 'Taxonomy to classify promotions',
+//                'public'            => false,
+//                'hierarchical'      => false,
+//                'show_ui'           => true,
+//                'show_in_menu'      => true,
+//                'show_in_nav_menus' => false,
+//                'show_tagcloud'     => false,
+//                'show_admin_column' => true,
+//                'meta_box_cb'       => array('JC_Meta_Box_Tax_Select_Style', 'output'),
+//                'capabilities'      => array(
+//                    'manage_terms'  => 'manage_promotion_types',
+//                    'edit_terms'    => 'manage_promotion_types',
+//                    'delete_terms'  => 'manage_promotion_types',
+//                    'assign_terms'  => 'edit_promotions',
+//                )
+//            )
+//        );
     }
 }
 

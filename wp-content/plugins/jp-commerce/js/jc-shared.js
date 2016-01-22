@@ -17,6 +17,19 @@ jQuery(function($){
     //    $("#set-price-div").toggle(!this.checked);
     //})
 
-
+    //jQuery.fn.jc_notice = function notice(msg) {
+    //    $('<div class="notice error is-dismissible">' +
+    //        '<p>' + msg + '</p>' +
+    //        '<button type="button" class="notice-dismiss">' +
+    //        '<span class="screen-reader-text">Dismiss this notice.</span>' +
+    //        '</button>' +
+    //        '</div>')
+    //        .on('click', 'div.is-dismissible button.notice-dismiss', function() {
+    //            $(this).parent().slideUp(function() {
+    //                $(this).remove();
+    //            });
+    //        })
+    //        .insertAfter('#wpbody-content .wrap h1');
+    //}
 
 });

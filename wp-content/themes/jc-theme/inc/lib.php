@@ -1,13 +1,8 @@
 <?php
 /**
- * User: jjpro
- * Date: 1/5/16
- * Time: 4:08 PM
+ * Utility functions
  */
-function jc_enqueue_scripts() {
-    wp_enqueue_style( 'dashicons' );
-    wp_enqueue_style( 'template_style', get_template_directory_uri() . '/style.css' );
-}
+
 
 function jc_theme_setup() {
     nav_menus();
@@ -26,4 +21,8 @@ function hide_admin_bar_from_artists() {
     if (current_user_can('artist')) {
         show_admin_bar(false);
     }
+}
+
+function shopping_cart_items_count() {
+
 }

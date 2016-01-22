@@ -33,17 +33,6 @@ class JC_Meta_Box_Artwork_Tag
 
     public static function output($post, $box) {
 
-        /*
-         * Verify that the js files are loaded
-         */
-         global $logger;
-         $logger->log_action('tags-box', wp_script_is('tags-box'));
-         $logger->log_action('tags-box', wp_script_is('quicktags'));
-         $logger->log_action('tags-box', wp_script_is('admin-tags'));
-
-         $logger->log_action('post', $post);
-         $logger->log_action('box', $box);
-
         ?>
         <p class="description">Tags are keywords that emphasises characters of your artwork. </p>
             <span class="tiptip description"

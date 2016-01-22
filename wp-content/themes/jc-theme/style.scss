@@ -5,14 +5,46 @@
  Author URI: http://jjpro.net
  Version: 1.0
 */
-/* CONSTANTS */
+/*
+      Variables
+      -------------------------
+ */
 $baseColor-light: darkgray;
 $baseColor-dark: gray;
 $super-light-gray: #eee;
 $orange: #dd5638;
 $highlightColor: #e4e3e3;
 
-/* Generic */
+/*
+      Mixins
+      -------------------------
+ */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin animate( $attr, $time ) {
+  -webkit-transition: $attr $time;
+  -moz-transition: $attr $time;
+  -ms-transition: $attr $time;
+  -o-transition: $attr $time;
+  transition: $attr $time;
+}
+
+@mixin transform( $val ) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -ms-transform: $val;
+  -o-transform: $val;
+  transform: $val;
+}
+
+/*
+      Generic
+      -------------------------
+ */
 a {
   &:hover {
     text-decoration: none;
@@ -23,6 +55,42 @@ a {
 /* Header */
 header {
   // hide search text and submit button
+
+  .form-group-has-icon {
+    position: relative;
+
+    .input-search-box {
+      @include border-radius(23px);
+      margin: 5px 0;
+      padding-left: 2.25em;
+    }
+
+    .form-control-icon {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+    }
+  }
+
+  .user-dropdown {
+    display: inline-block;
+  }
+
+  .btn-signin,
+  .btn-user-dropdown{
+    display: inline-block;
+    padding: 5px;
+    color: $baseColor-dark;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    &:hover {
+      border-bottom: solid $baseColor-light 1px;
+      font-weight:bold;
+      color: $baseColor-light;
+    }
+
+  }
 }
 
 footer {

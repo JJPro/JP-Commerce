@@ -91,8 +91,8 @@ class JC_Scripts {
      * @private_use_DO_NOT_CALL
      */
     private static function admin_js() {
-        wp_register_script('artworks-list-table', JC_PLUGIN_DIR_URL . 'js/admin/artworks-list-table.min.js', [], true);
-
+        wp_register_script('artworks-list-table', JC_PLUGIN_DIR_URL . 'js/admin/artworks-list-table.js', [], true);
+        wp_register_script('promotions-list-table', JC_PLUGIN_DIR_URL . 'js/admin/promotions-list-table.min.js', array('jquery-core'), '1.0', true);
     }
 
     /**
@@ -100,6 +100,7 @@ class JC_Scripts {
      */
     private static function admin_css() {
         wp_register_style('artworks-list-table', JC_PLUGIN_DIR_URL . 'css/artworks-list-table.css');
+        wp_register_style('promotions-list-table', JC_PLUGIN_DIR_URL . 'css/promotions-list-table.css');
     }
 
     /**

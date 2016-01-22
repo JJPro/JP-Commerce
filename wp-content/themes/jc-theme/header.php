@@ -29,38 +29,43 @@
 
     <body <?php body_class(); ?>>
 
+        <div id="promotion-top" class="container">
+            <?php
+                $active_promo = JC_Promotion::the_active_promotion();
+                if ($active_promo) {
+                    echo $active_promo->content;
+                }
+            ?>
+        </div>
+
         <header class="container">
             <div class="row">
                 <div class="col-xs-3 text-left">
-                    <?php
-                        $logo_url = logo_url();
-                        if ($logo_url) {
-                            echo "<img src='$logo_url'/>";
-                        }
-                    ?>
+                    <?php $logo_url = logo_url(); ?>
+                    <?php if ($logo_url) : ?>
+                    <a href="<?php home_url(); ?>">
+                        <img class="logo-image" src="<?php echo $logo_url; ?>" />
+                    </a>
+                    <?php endif; ?>
                 </div>
                 <div class="col-xs-6 text-center">
                     <?php jc_search_form(); ?>
                 </div>
-                <div class="col-xs-3 text-right">
-                    <span class="dashicons-before dashicons-admin-users"></span>
-                    <?php if (current_user_can('artist')): ?>
-                        <li><a href="<?php echo admin_url('post-new.php?post_type=artwork'); ?>">Upload New Art</a> </li>
-                        <li><a href="<?php echo admin_url('edit.php?post_type=artwork'); ?>">All Arts</a> </li>
-                    <?php endif; ?>
+                <div class="col-xs-3 text-right right-side-controls">
+                    <?php get_template_part('layout/menu', 'account'); ?>
                 </div>
                 <div class="row">
 
-                    <nav class="navbar navbar-default navbar-jc">
-                        <?php
-                            wp_nav_menu( array(
-                                'theme_location' => 'header',
-                                'container' => false,
-                                'menu_class' => 'nav navbar-nav',
-                            ) );
-                        ?>
-
-                    </nav>
+<!--                    <nav class="navbar navbar-default navbar-jc">-->
+<!--                        --><?php
+//                            wp_nav_menu( array(
+//                                'theme_location' => 'header',
+//                                'container' => false,
+//                                'menu_class' => 'nav navbar-nav',
+//                            ) );
+//                        ?>
+<!---->
+<!--                    </nav>-->
                 </div>
             </div>
         </header>

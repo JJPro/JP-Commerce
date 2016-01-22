@@ -57,7 +57,7 @@ class JC_Meta_Box_Artwork_Media
                 wp_register_script('dropzone-core', JC_PLUGIN_DIR_URL . 'js/libs/dropzone.min.js');
 
                 // js
-                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.js', ['tiptip', 'jquery-ui-sortable', 'jquery-effects-shake', 'dropzone-core', 'jquery-ui-dialog']);
+                wp_enqueue_script('meta-boxes-artwork-media', JC_PLUGIN_DIR_URL . 'js/admin/meta-boxes-artwork-media.min.js', ['tiptip', 'jquery-ui-sortable', 'jquery-effects-shake', 'dropzone-core', 'jquery-ui-dialog', 'jquery-effects-bounce']);
                 wp_localize_script('meta-boxes-artwork-media', 'jc_data', array(
                         'ajaxurl'   => admin_url('admin-ajax.php'),
                     )
@@ -91,6 +91,7 @@ class JC_Meta_Box_Artwork_Media
         <?php /** HTML  **/ ?>
         <div id="cover-image">
             <h3>Cover Image</h3>
+            <div id="cover-image-notices"></div>
             <p class="description">Cover image will show on the main page and the will be used as the icon image when shared. </p>
 
             <div id="cover-image-upload-container">
@@ -149,7 +150,6 @@ class JC_Meta_Box_Artwork_Media
 
 
     public static function save($post_id, $post) {
-        global $logger;
 
         /********* Save the cover image ***********/
         $coord = $_POST["coord"];
@@ -162,6 +162,5 @@ class JC_Meta_Box_Artwork_Media
 
             $artwork->set_cover_image($tmp_name, $img_type, $coord);
         }
-
     }
 }
