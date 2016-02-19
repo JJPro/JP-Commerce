@@ -13,4 +13,10 @@ function jc_enqueue_scripts() {
 
     // application style
     wp_enqueue_style( 'application_style', get_template_directory_uri() . '/style.css' );
+
+    // bootstrap
+    wp_enqueue_script( 'bootstrap' );
+    
+    // theme js
+    wp_enqueue_script( 'jc-theme', get_template_directory_uri() . '/js/script.min.js', array('jquery-core', 'bootstrap'), '1.0', true );
 }

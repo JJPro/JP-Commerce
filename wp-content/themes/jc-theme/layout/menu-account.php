@@ -1,24 +1,24 @@
 <?php if (!is_user_logged_in()) : ?>
 <a class="btn btn-signin" href="<?php echo home_url('signin'); ?>">Sign In</a>
 <?php else : ?>
-<div class="dropdown user-dropdown">
+<div class="user-dropdown">
 
-    <button class="btn btn-user-dropdown" type="button" id="user-account-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <a href="#">
         <?php
             $logged_user = wp_get_current_user();
             echo $logged_user->display_name;
         ?>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="user-account-menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="#">Separated link</a></li>
+    </a>
+    <ul class="sub-menu">
+        <li><a href="<?php echo home_url('favorites'); ?>"><span class="icon-heart-o"></span> Favorites</a></li>
+        <li><a href="<?php echo home_url('orders'); ?>"><span class="icon-cube"></span> Orders</a></li>
+        <li><a href="<?php echo home_url('account'); ?>"><span class="icon-cog"></span> Account</a></li>
+        <hr>
+        <li><a href="<?php echo wp_logout_url( home_url() ); ?>"><span class="icon-sign-out"></span> Sign Out</a></li>
     </ul>
 </div>
 <?php endif; ?>
-<a class="btn btn-primary" href="<?php echo home_url('shopping_cart'); ?>"><i class="icon-shopping-cart"></i><span class="badge pull-right"><?php echo shopping_cart_items_count(); ?></span></a>
+<a class="btn btn-primary" href="<?php echo home_url('cart'); ?>"> <i class="icon-shopping-cart"></i><span class="badge pull-right"><?php echo shopping_cart_items_count(); ?></span></a>
 
 
 <?php //if (current_user_can('artist')): ?>

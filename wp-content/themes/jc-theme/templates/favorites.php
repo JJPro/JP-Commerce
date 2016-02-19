@@ -4,14 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * 
+ * Template Name: Favorites Template
  *
- * Template for each search entry
+ * The shopping cart page
  *
  * @version     1.0
  * @author      JJPRO Technologies LLC.
  */
-
-if ( get_post_type() === 'artwork' ) {
-    get_template_part( 'template-parts/content-artwork' );
-}
+echo 'hehe';

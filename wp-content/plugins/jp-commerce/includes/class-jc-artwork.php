@@ -168,6 +168,9 @@ class JC_Artwork
         if ( is_numeric($artwork) ) {
             $this->id = absint($artwork);
             $this->post = get_post($this->id);
+            if ( !$this->views ) {
+                $this->views = 0;
+            }
         }
         elseif ( $artwork instanceof WP_Post ) {
             $this->id = $artwork->ID;
@@ -695,30 +698,55 @@ class JC_Artwork
         wp_set_post_terms($this->id, $materials_ids, 'artwork_material', false);
     }
 
-    /**
-     * @param int $n
-     * @return array Returns an array of the first $n featured artworks
-     */
-    public static function featured_artworks($n = 5) {
-
-    }
-
-    /**
-     * @param int $n
-     * @return array|Loop Returns an array of the first $n newly published artworks
-     */
-    public static function new_artworks($n = 5) {
-
-    }
-
-    /**
-     * @param int $n
-     * @return array|Loop Returns an array of the first $n trending artworks
-     *
-     * Trending artworks are artworks of the most views.
-     */
-    public static function trending_artworks($n = 5) {
-
-    }
+//    /**
+//     * @param int $n
+//     * @return array Returns an array of the first $n featured artworks
+//     */
+//    public static function featured_artworks($n = 5) {
+//        if ( false === ( $featured_artwork_ids = get_transient( 'featured_artwork_ids' ) ) ) {
+//
+//            // find the featured artwork ids and set the transient
+//            $featured_args = array(
+//                'post_status' => 'publish',
+//                'post_type' => 'artwork',
+//                'meta_key' => '_is_featured',
+//                'meta_value' => 1,
+//                'posts_per_page' => $n,
+//                'orderby' => 'rand',
+//            );
+//
+//            // The featured artworks query.
+//            $featured = new WP_Query( $featured_args );
+//
+//            if ( $featured->have_posts() ) {
+//                while ( $featured->have_posts() ) {
+//                    $featured->the_post();
+//                    $featured_artwork_ids[] = $featured->post->ID;
+//                }
+//                set_transient( 'featured_artwork_ids', $featured_artwork_ids );
+//            }
+//        }
+//
+//        // Return the post ID's, either from the cache, or from the loop.
+//        return $featured_artwork_ids;
+//    }
+//
+//    /**
+//     * @param int $n
+//     * @return array|Loop Returns an array of the first $n trending artworks
+//     *
+//     * Trending artworks are artworks of the most views.
+//     */
+//    public static function trending_artworks($n = 5) {
+//
+//    }
+//
+//    /**
+//     * @param int $n
+//     * @return array|Loop Returns an array of the first $n newly published artworks
+//     */
+//    public static function new_artworks($n = 5) {
+//
+//    }
 
 }

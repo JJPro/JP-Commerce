@@ -2,7 +2,10 @@
 <footer class="container">
     <div class="row">
         <div class="col-xs-12 text-center">
-            <?php wp_nav_menu( array('theme_location' => 'footer') ); ?>
+            <?php
+            if (has_nav_menu('footer'))
+                wp_nav_menu( array('theme_location' => 'footer') );
+            ?>
         </div>
     </div>
     <div class="row text-center">

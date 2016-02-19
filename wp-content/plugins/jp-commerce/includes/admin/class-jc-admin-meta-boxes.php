@@ -18,6 +18,7 @@ require_once( 'meta-boxes/class-jc-meta-box-artwork-data.php' );
 require_once( 'meta-boxes/class-jc-meta-box-artwork-tag.php' );
 require_once( 'meta-boxes/class-jc-meta-box-artwork-submit.php' );
 require_once( 'meta-boxes/class-jc-meta-box-promotion-coupon.php' );
+require_once( 'meta-boxes/class-jc-meta-box-promotion-submit.php' );
 require_once( 'meta-boxes/class-jc-artwork-materials-field.php');
 
 
@@ -45,9 +46,14 @@ class JC_Admin_Meta_Boxes
 
         // Save Order Meta Boxes
 
+
     }
 
     public function remove_meta_boxes(){
+        // promotion
+        remove_meta_box('submitdiv', 'promotion', 'normal');
+        remove_meta_box('submitdiv', 'promotion', 'side');
+
         // artwork
         remove_meta_box('submitdiv', 'artwork', 'normal');
         remove_meta_box('submitdiv', 'artwork', 'side');
@@ -69,7 +75,6 @@ class JC_Admin_Meta_Boxes
 
         if ($screen->post_type == 'artwork') {
 
-            // Artworks
             JC_Meta_Box_Artwork_Media::init();
 //            JC_Meta_Box_Artwork_Type::enqueue_scripts();
 
@@ -85,8 +90,11 @@ class JC_Admin_Meta_Boxes
 
         } elseif ($screen->post_type == 'promotion') {
 
+            JC_Meta_Box_Promotion_Submit::init();
+
             // Promotions
             add_meta_box('coupondiv', 'Set Coupon', 'JC_Meta_Box_Promotion_Coupon::output', 'promotion', 'side', 'high');
+            add_meta_box('submitdiv', 'Publish', 'JC_Meta_Box_Promotion_Submit::output', 'promotion', 'side', 'low');
 
         } elseif ($screen->post_type == 'order') {
 

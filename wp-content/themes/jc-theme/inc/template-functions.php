@@ -16,24 +16,55 @@ function jc_search_form() {
     $keyword = $_GET['s'];
     ?>
     <form id="searchform" class="form-group form-group-has-icon" action="<?php echo home_url(); ?>" method="get" role="search">
-        <label class="form-control-icon"><i class="icon-search"></i></label>
+        <i class="icon-search"></i>
         <input type="text" id="s" class="form-control input-search-box" name="s" value="<?php echo $keyword; ?>" placeholder="Search for arts or artists">
     </form>
     <?php
 }
 
-/**
- * TODO:
- * This function must be called by action "pre_get_posts"
- *
- * Starts the primary loop for featured, or new, or trending artworks
- *
- * @param $query This is provided by the "pre_get_posts" action
- * @param $for JC_PRIMARY_LOOP_FEATURED|JC_PRIMARY_LOOP_NEW|JC_PRIMARY_LOOP_TRENDING
- */
-if (!defined( 'JC_PRIMARY_LOOP_FEATURED') ) define( 'JC_PRIMARY_LOOP_FEATURED', 'featured' );
-if (!defined( 'JC_PRIMARY_LOOP_NEW') ) define( 'JC_PRIMARY_LOOP_NEW', 'new' );
-if (!defined( 'JC_PRIMARY_LOOP_TRENDING') ) define( 'JC_PRIMARY_LOOP_TRENDING', 'trending' );
-function start_primary_loop($query, $for) {
-    $query->set( 'post_type', 'artwork' );
+function shopping_cart_items_count() {
+    /**
+     * TODO:
+     * Rely on class JC_Cart
+     * 1. get current user id
+     * 2. retrieve entry count for user's shopping cart
+     */
+
+
 }
+
+function set_featured_artwork_ids( $ids ) {
+	$GLOBALS['featured_artwork_ids'] = $ids;
+}
+
+function get_featured_artwork_ids() {
+	return $GLOBALS['featured_artwork_ids'];
+}
+
+function set_trending_artwork_ids( $ids ) {
+	$GLOBALS['trending_artwork_ids'] = $ids;
+}
+
+function get_trending_artwork_ids() {
+	return $GLOBALS['trending_artwork_ids'];
+}
+
+function set_new_artwork_ids( $ids ) {
+	$GLOBALS['new_artwork_ids'] = $ids;
+}
+
+function get_new_artwork_ids() {
+	return $GLOBALS['new_artwork_ids'];
+}
+
+
+
+/*
+	===================
+		Inside the Loop functions 
+	===================
+*/
+function jc_get_featured_image() {
+	return JC_Artwork::instance( get_the_ID() )->cover_thumbnail;
+}
+

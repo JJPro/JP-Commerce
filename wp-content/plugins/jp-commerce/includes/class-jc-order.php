@@ -242,7 +242,7 @@ class JC_Order
          *
          * return inserted artwork on success, otherwise return false.
          */
-        $artwork = new JC_Artwork($artwork);
+        $artwork = JC_Artwork.instace($artwork);
         if ($artwork->stock > 0){
             $artwork->reduce_stock();
 
@@ -261,7 +261,7 @@ class JC_Order
      */
     public function delete_item($artwork) {
         // increase stock amount by released amount from this order
-        $artwork = new JC_Artwork($artwork);
+        $artwork = JC_Artwork.instace($artwork);
         $qty = $this->get_item_qty($artwork);
         if ($qty > 0){
             $artwork->increase_stock($qty);
@@ -272,7 +272,7 @@ class JC_Order
     }
 
     public function increase_item_qty($artwork) {
-        $artwork = new JC_Artwork($artwork);
+        $artwork = JC_Artwork.instace($artwork);
 
         // check stock availability
         if ($artwork->stock > 0){
@@ -288,7 +288,7 @@ class JC_Order
     }
 
     public function reduce_item_qty ($artwork) {
-        $artwork = new JC_Artwork($artwork);
+        $artwork = JC_Artwork.instace($artwork);
 
         // increase artwork stock
         $artwork->increase_stock();

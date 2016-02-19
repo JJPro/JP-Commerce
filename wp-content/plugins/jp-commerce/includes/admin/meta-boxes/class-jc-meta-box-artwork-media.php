@@ -161,6 +161,24 @@ class JC_Meta_Box_Artwork_Media
             $img_type = pathinfo($cover["name"], PATHINFO_EXTENSION);
 
             $artwork->set_cover_image($tmp_name, $img_type, $coord);
+        } else {
+            global $logger;
+            switch ( $cover['error'] ) {
+                case 1:
+                case 2:
+                    $logger->log_action( 'upload cover image', 'cover image size is too big' );
+                    break;
+                case 7:
+                    $logger->log_action( 'upload cover image', 'Failed to write file to disk' );
+                    break;
+//                case 1:
+//                case 2:
+//                    $_SESSION['my_admin_notices'] .= '<div class="error"><p>cover image size is too big</p></div>';
+//                    break;
+//                case 7:
+//                    $_SESSION['my_admin_notices'] .= '<div class="error"><p>Failed to write file to disk</p></div>';
+//                    break;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
         <link ref="profile" href="http://gmpg.org/xfn/11">
         <?php if (is_singular() && pings_open( get_queried_object() ) ): ?>
             <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -31,12 +31,14 @@
 
         <div id="promotion-top" class="container">
             <?php
-                $active_promo = JC_Promotion::the_active_promotion();
-                if ($active_promo) {
-                    echo $active_promo->content;
-                }
+            $preview_promo_id = $_GET['preview_promo'];
+            $active_promo = $preview_promo_id ? JC_Promotion::instance($preview_promo_id) : JC_Promotion::the_active_promotion();
+
+            if ($active_promo) {
+                echo $active_promo->content;
+            }
             ?>
-        </div>
+        </div> <!-- Promotion -->
 
         <header class="container">
             <div class="row">
@@ -54,19 +56,25 @@
                 <div class="col-xs-3 text-right right-side-controls">
                     <?php get_template_part('layout/menu', 'account'); ?>
                 </div>
-                <div class="row">
 
-<!--                    <nav class="navbar navbar-default navbar-jc">-->
-<!--                        --><?php
-//                            wp_nav_menu( array(
-//                                'theme_location' => 'header',
-//                                'container' => false,
-//                                'menu_class' => 'nav navbar-nav',
-//                            ) );
-//                        ?>
-<!---->
-<!--                    </nav>-->
-                </div>
+            </div> <!-- .row -->
+            <div class="row">
+                <?php if (has_nav_menu('primary')): ?>
+                    <div class="nav-container">
+
+                        <nav class="navbar navbar-tabs navbar-jc">
+                            <?php
+                            wp_nav_menu( array(
+                                'theme_location' => 'primary',
+                                'container' => false,
+                                'menu_class' => 'nav nav-tabs',
+                                'walker' => new JC_Walker_Nav_Primary()
+                            ) );
+                            ?>
+
+                        </nav>
+                    </div> <!-- .nav-container -->
+                <?php endif; ?>
             </div>
         </header>
         <main class="container">

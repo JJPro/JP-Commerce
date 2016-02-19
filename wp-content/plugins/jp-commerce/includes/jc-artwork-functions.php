@@ -171,8 +171,6 @@ if (!defined("PATH")) {define("PATH", "PATH");}
 if (!defined("URL")) {define("URL", "URL");}
 function __get_image__( $post_id, $author_id = null, $image_size, $image_name, $link_type) {
 
-    global $logger;
-
     $filename   = pathinfo($image_name, PATHINFO_FILENAME);
     $extension  = pathinfo($image_name, PATHINFO_EXTENSION);
 

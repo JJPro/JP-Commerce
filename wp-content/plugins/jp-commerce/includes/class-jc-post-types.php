@@ -105,11 +105,15 @@ class JC_Post_Types
                     echo $promo->coupon_rate_for_display();
                     break;
                 case 'active' :
-                    $is_active = $promo->is_active();
-                    printf('<span class="%s" data-promo="%d"></span>',
-                        $is_active ? 'icon-toggle-filled' : 'icon-toggle',
-                        $promo->id
-                    );
+                    $status = get_post_status($post_id);
+                    if ($status == 'publish')
+                    {
+                        $is_active = $promo->is_active();
+                        printf('<span class="%s" data-promo="%d"></span>',
+                            $is_active ? 'icon-toggle-filled' : 'icon-toggle',
+                            $promo->id
+                        );
+                    }
                     break;
             }
         }, 10, 2 );

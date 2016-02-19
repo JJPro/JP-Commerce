@@ -8,23 +8,6 @@
 <?php get_header(); ?>
 
 
-<section id="header">
-
-</section> <!-- #header-->
-
-<section id="featured">
-
-</section> <!-- #featured -->
-
-<section id="trending">
-
-</section> <!-- #trending -->
-
-<section id="new">
-
-</section> <!-- #new -->
-
-
 
 
 <?php get_footer(); ?>

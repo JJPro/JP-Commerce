@@ -8,7 +8,9 @@
 include_once( 'inc/cleanup.php' );
 include_once( 'inc/scripts.php' );
 include_once( 'inc/lib.php' );
+include_once( 'inc/init.php' ); // theme setup: eg. adding pages.
 include_once( 'inc/template-functions.php' );
+include_once( 'inc/walker.php' );
 
 include_once( 'inc/pages.php' );
 
