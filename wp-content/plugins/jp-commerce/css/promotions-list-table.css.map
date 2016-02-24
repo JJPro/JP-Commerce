@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAOA,gBAAiB;EACf,MAAM,EAAE,OAAO;;AAGjB,gBAAiB;EACf,SAAS,EAAE,KAAK",
+"sources": ["promotions-list-table.scss"],
+"names": [],
+"file": "promotions-list-table.css"
+}

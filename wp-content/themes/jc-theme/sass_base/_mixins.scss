@@ -1,0 +1,31 @@
+/*
+      Mixins
+      -------------------------
+ */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin animate( $attr, $time ) {
+  -webkit-transition: $attr $time;
+  -moz-transition: $attr $time;
+  -ms-transition: $attr $time;
+  -o-transition: $attr $time;
+  transition: $attr $time;
+}
+
+@mixin transform( $val ) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -ms-transform: $val;
+  -o-transform: $val;
+  transform: $val;
+}
+
+@mixin box-shadow( $inset, $hoff, $voff, $blur, $color ) {
+  -webkit-box-shadow: $inset $hoff $voff $blur $color;
+  -moz-box-shadow: $inset $hoff $voff $blur $color;
+  box-shadow: $inset $hoff $voff $blur $color;
+}

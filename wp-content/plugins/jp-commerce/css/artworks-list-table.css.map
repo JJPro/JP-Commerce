@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;;mBAIoB;EAClB,UAAU,EAAE,MAAM;;AAGpB,sBAAuB;EACrB,MAAM,EAAE,OAAO;EACf,SAAS,EAAE,KAAK;;AAGlB;cACc;EACZ,UAAU,EAAE,iBAAiB;;AAG/B,kBAAmB;EAAC,SAAS,EAAE,KAAK;;AAEpC;4BAC6B;EAC3B,MAAM,EAAE,eAAe",
+"sources": ["artworks-list-table.scss"],
+"names": [],
+"file": "artworks-list-table.css"
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,6BAA8B;EAC5B,KAAK,EAAE,GAAG;;AAEZ,mCAAoC;EAClC,OAAO,EAAE,YAAY;EACrB,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,KAAK;EAClB,KAAK,EAAE,QAAQ",
+"sources": ["artwork-materials-field.scss"],
+"names": [],
+"file": "artwork-materials-field.css"
+}
