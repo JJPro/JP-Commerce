@@ -57,6 +57,12 @@ function get_new_artwork_ids() {
 	return $GLOBALS['new_artwork_ids'];
 }
 
+function get_artwork_size($artwork){
+	$dimensions = $artwork->dimensions;
+	
+	return "$dimensions->width W x $dimensions->height H x $dimensions->depth D $dimensions->unit";
+}
+
 
 
 /*
@@ -65,6 +71,6 @@ function get_new_artwork_ids() {
 	===================
 */
 function jc_get_featured_image() {
-	return JC_Artwork::instance( get_the_ID() )->cover_thumbnail;
+	return JC_Artwork::instance( get_the_ID() )->wechat_image;
 }
 

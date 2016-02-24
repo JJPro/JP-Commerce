@@ -102,8 +102,9 @@ class JC_Artwork
 
     private static $_instance = null;
 
-    private static $wechat_width = 300, $wechat_height = 300;
-    private static $thumbnail_width = 300;
+    private static $wechat_width = 600, $wechat_height = 600;
+    private static $thumbnail_width = 600;
+    private static $dropzone_thumbnail_width = 240, $dropzone_thumbnail_height = 240;
 
     public static $required_properties = ['name', 'description', 'date_created', 'artwork_type', 'materials', 'dimensions', 'stock', 'shipping_dimensions',
                                             'shipping_weight', 'price', 'shipping_from'];
@@ -170,6 +171,9 @@ class JC_Artwork
             $this->post = get_post($this->id);
             if ( !$this->views ) {
                 $this->views = 0;
+            }
+            if ( !$this->favorites ) {
+                $this->favorites = 0;
             }
         }
         elseif ( $artwork instanceof WP_Post ) {
@@ -619,8 +623,8 @@ class JC_Artwork
             $max_w = self::$thumbnail_width;
             $max_h = null;
         } elseif ($image_size === DROPZONE_THUMBNAIL) {
-            $max_w = 120;
-            $max_h = 120;
+            $max_w = self::$dropzone_thumbnail_width;
+            $max_h = self::$dropzone_thumbnail_height;
         } elseif ($image_size === WECHAT) {
             $max_w = self::$wechat_width;
             $max_h = self::$wechat_height;

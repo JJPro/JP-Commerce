@@ -109,8 +109,8 @@ class JC_Meta_Box_Artwork_Media
             </p>
 
 
-            <h4>Wechat Thumbnail</h4>
-            <p class="description">Used as icon image when the artwork is shared via social network, such as <span class="tiptip description" title="http://www.facebook.com" >Facebook</span> and <span class="tiptip description" title="<p>Wechat is a extremely popular social App from Tencent China. It has more than 1 billion daily active users worldwide. </p><p>http://www.wechat.com</p>" >Wechat</span>.</p>
+            <h4>Thumbnail</h4>
+            <p class="description">Will be used as thumbnail on the home page, and as icon image when the artwork is shared via social network, such as <span class="tiptip description" title="http://www.facebook.com" >Facebook</span> and <span class="tiptip description" title="<p>Wechat is a extremely popular social App from Tencent China. It has more than 1 billion daily active users worldwide. </p><p>http://www.wechat.com</p>" >Wechat</span>.</p>
             <div id="wechat-preview-wrap-wrap">
 
                 <div id="wechat-preview-container">

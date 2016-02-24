@@ -181,15 +181,15 @@ function __get_image__( $post_id, $author_id = null, $image_size, $image_name, $
     $sizeinfo = '';
     if ($image_size == THUMBNAIL){
         $foldername = 'thumbnails/';
-        $sizeinfo   = '-300xAUTO';
+        $sizeinfo   = '-600xAUTO';
     }
     elseif ($image_size == DROPZONE_THUMBNAIL) {
         $foldername = 'thumbnails/';
-        $sizeinfo   = '-120x120';
+        $sizeinfo   = '-240x240';
     }
     elseif ($image_size == WECHAT){
         $foldername = 'wechat/';
-        $sizeinfo   = '-300x300';
+        $sizeinfo   = '-600x600';
     }
     $path .= $foldername . $filename . $sizeinfo . '.' . $extension;
 

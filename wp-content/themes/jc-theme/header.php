@@ -58,6 +58,8 @@
                 </div>
 
             </div> <!-- .row -->
+
+            <!-- navigation -->
             <div class="row">
                 <?php if (has_nav_menu('primary')): ?>
                     <div class="nav-container">
